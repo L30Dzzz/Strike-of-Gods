@@ -567,7 +567,7 @@ MonoBehaviour:
   players:
   - {fileID: 1256933937}
   - {fileID: 489578486}
-  offset: {x: 0.54, y: 1.19, z: -5.24}
+  offset: {x: 0, y: 1.19, z: -6.26}
   smoothTime: 0.5
 --- !u!1 &777673774
 GameObject:
