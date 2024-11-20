@@ -20,7 +20,12 @@ public class MenuScreenChanger : MonoBehaviour
     void Awake()
     {
        ScreenChanger1 = GetComponent<Button>();
-       ScreenChanger1.onClick.AddListener(ScreenChange);
+
+       if(ScreenChanger1 != null)
+       {
+            ScreenChanger1.onClick.AddListener(ScreenChange);
+       }
+
         
     }
 
@@ -37,15 +42,19 @@ public class MenuScreenChanger : MonoBehaviour
 
     public void ScreenChange()
     {
+        Debug.Log("here");
         if (isButtonWorking == true)
         {
+             
          ScreenDuo.gameObject.SetActive(true);
          ScreenUno.gameObject.SetActive(false);
          //buttonSound.PlayOneShot(selectSound, 1.5f);
         }
+        /*
         else
         {
            buttonSound.PlayOneShot(errorSound, 3.0f); 
         }
+        */
     }
 }
