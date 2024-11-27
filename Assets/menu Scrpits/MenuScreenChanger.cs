@@ -42,7 +42,6 @@ public class MenuScreenChanger : MonoBehaviour
 
     public void ScreenChange()
     {
-        Debug.Log("here");
         if (isButtonWorking == true)
         {
              
@@ -50,11 +49,11 @@ public class MenuScreenChanger : MonoBehaviour
          ScreenUno.gameObject.SetActive(false);
          //buttonSound.PlayOneShot(selectSound, 1.5f);
         }
-        /*
+        
         else
         {
            buttonSound.PlayOneShot(errorSound, 3.0f); 
         }
-        */
+        
     }
 }
