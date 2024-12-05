@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 1846319266995829861}
   - component: {fileID: 1846319266995829858}
   - component: {fileID: 1846319266995829860}
+  - component: {fileID: 1256933938}
   m_Layer: 7
   m_Name: Test player 2
   m_TagString: Untagged
@@ -193,6 +194,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 4b1c5b20-ec8c-439e-b8af-574923886b08
     m_ActionName: Battle Controls/Special Attack[/Keyboard/i]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1256933938}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: Paused
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 71168e8b-a615-4bc2-a7d1-c5f31aeab069
+    m_ActionName: Battle Controls/Pause[/Keyboard/p]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Battle Controls
@@ -215,7 +232,7 @@ MonoBehaviour:
   movespeed1: 5
   movespeed2: 2.5
   movespeed3: 0
-  regJump: 8
+  regJump: 14
   jsFrame: 5
   jsFrameStart: 5
   doubleJumps: 1
@@ -286,6 +303,19 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1, y: 2}
   m_Direction: 0
+--- !u!114 &1256933938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1846319266995829859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ae4b605d98244f9aadac2876a62ed69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PauseSystem: {fileID: 0}
 --- !u!1 &1846319267140041486
 GameObject:
   m_ObjectHideFlags: 0

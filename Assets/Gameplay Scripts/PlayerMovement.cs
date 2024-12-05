@@ -166,6 +166,7 @@ public class PlayerMovement : MonoBehaviour
     
     //fun fact: a slight tap on a button or probaly any button last for 3 frames.
     
+    /*
     public void LightAttack(InputAction.CallbackContext context)
     {
       Debug.Log("Light attack had been pressed");
@@ -185,4 +186,5 @@ public class PlayerMovement : MonoBehaviour
     {
      Debug.Log("Special Attack had been pressed");
     }
+    */
 }
