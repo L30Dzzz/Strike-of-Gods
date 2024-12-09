@@ -21,22 +21,22 @@ public class DummyMoveset : MonoBehaviour
     
     public void LightAttack(InputAction.CallbackContext context)
     {
-      Debug.Log("Dummy did a Light attack ");
+      Debug.Log("Light attack had been pressed");
     }
 
     public void MediumAttack(InputAction.CallbackContext context)
     {
-      Debug.Log("Dummy did a Medium attack ");
+      Debug.Log("Medium attack had been pressed");
     }
 
     public void HeavyAttack(InputAction.CallbackContext context)
     {
-      Debug.Log("Dummy did a Heavy attack ");
+      Debug.Log("Heavy attack had been pressed");
     }
 
     public void SpecialAttack(InputAction.CallbackContext context)
     {
-     Debug.Log("Dummy did a Special Attack ");
+     Debug.Log("Special Attack had been pressed");
     }
 
 }
