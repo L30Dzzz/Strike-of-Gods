@@ -75,7 +75,7 @@ public class PlayerMovement : MonoBehaviour
     
        Vector2 boxSize = new Vector2(0.5f, 5);
     
-      float distance = 0.1f; // Small distance to check for collisions
+      float distance = 2f; // Small distance to check for collisions
       // Check for collisions on the right side
       
       RaycastHit2D rightSideDetector = Physics2D.BoxCast(rb.position + new Vector2(2, 0), boxSize, 0, Vector2.right, distance, opsLayer);
@@ -93,21 +93,19 @@ public class PlayerMovement : MonoBehaviour
     }
     
     else if (leftSideDetector.collider != null && leftSideDetector.collider.gameObject != this.gameObject)
-    {
+      {
         transform.localScale = new Vector3(-2.5f, 2, 1); // Flip to face left
         isFacingRight = false;
-    }
-    //////////////motion input////////////
-
+      }
     }
 
     void OnDrawGizmos()
     {
         Gizmos.color = Color.blue; 
-        Gizmos.DrawCube(rb.position + new Vector2(2,0), new Vector2(0.5f,5));
-        Gizmos.DrawCube(rb.position + new Vector2(-2,0), new Vector2(0.5f,5));
+        Gizmos.DrawCube(rb.position + new Vector2(2,0), new Vector2 (0.5f, 5));
+        Gizmos.DrawCube(rb.position + new Vector2(-2,0), new Vector2 (0.5f, 5));
     }
-    
+
 ////////////////////////////////   MOVEMENT     //////////////////////////////////////
     public void Move(InputAction.CallbackContext context)
     {
@@ -164,8 +162,11 @@ public class PlayerMovement : MonoBehaviour
 
 //////////////////ATTACKING/////////////////////////
     
+    //Attacking will be done on the players respective character script. Like for example if they was playing oni then most of their attacking will come from the oni script inside of this script(if that makes sense)
+    
     //fun fact: a slight tap on a button or probaly any button last for 3 frames.
     
+    /*
     public void LightAttack(InputAction.CallbackContext context)
     {
       Debug.Log("Light attack had been pressed");
@@ -185,4 +186,5 @@ public class PlayerMovement : MonoBehaviour
     {
      Debug.Log("Special Attack had been pressed");
     }
+    */
 }
