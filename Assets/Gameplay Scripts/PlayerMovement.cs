@@ -19,12 +19,12 @@ public class PlayerMovement : MonoBehaviour
    public int doubleJumps;
    public int airMovementFrames;  
    public bool isFacingRight = true; 
-   bool isCrouching; 
+   public bool isCrouching; 
    public bool isGrounded = false;
    bool jumpSquat; 
    private CharacterController playerController; 
    public PlayerTemplate playerTemplate; 
-    private LayerMask yourLayer;
+   private LayerMask yourLayer;
    private LayerMask opsLayer;
   // String[] inputCommand; //work on this later
    //enum motionInput{}; 
