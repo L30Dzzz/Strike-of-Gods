@@ -26,6 +26,7 @@ public class PlayerMovement : MonoBehaviour
    public PlayerTemplate playerTemplate; 
    private LayerMask yourLayer;
    private LayerMask opsLayer;
+  
   // String[] inputCommand; //work on this later
    //enum motionInput{}; 
    // public GameObject cube; 
@@ -42,7 +43,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
+      
     }
     
     void FixedUpdate()
@@ -106,7 +107,7 @@ public class PlayerMovement : MonoBehaviour
         Gizmos.DrawCube(rb.position + new Vector2(-2,0), new Vector2 (0.5f, 5));
     }
 
-////////////////////////////////   MOVEMENT     //////////////////////////////////////
+ ////////////////////////////////   MOVEMENT     //////////////////////////////////////////////////////////////////////////////
     public void Move(InputAction.CallbackContext context)
     {
         Input.x = context.ReadValue<Vector2>().x;
@@ -164,27 +165,9 @@ public class PlayerMovement : MonoBehaviour
     
     //Attacking will be done on the players respective character script. Like for example if they was playing oni then most of their attacking will come from the oni script inside of this script(if that makes sense)
     
-    //fun fact: a slight tap on a button or probaly any button last for 3 frames.
-    
-    /*
-    public void LightAttack(InputAction.CallbackContext context)
-    {
-      Debug.Log("Light attack had been pressed");
-    }
+ 
 
-    public void MediumAttack(InputAction.CallbackContext context)
-    {
-      Debug.Log("Medium attack had been pressed");
-    }
+///////////////// Input History ///////////////////////////
 
-    public void HeavyAttack(InputAction.CallbackContext context)
-    {
-      Debug.Log("Heavy attack had been pressed");
-    }
-
-    public void SpecialAttack(InputAction.CallbackContext context)
-    {
-     Debug.Log("Special Attack had been pressed");
-    }
-    */
+ 
 }

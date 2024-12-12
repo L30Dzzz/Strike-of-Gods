@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 public class DummyMoveset : MonoBehaviour
 {
     PlayerMovement Player;
-
+    int[] movehistory = {1,2,3,4};
     
     // Start is called before the first frame update
     void Start()
@@ -23,17 +23,21 @@ public class DummyMoveset : MonoBehaviour
     public void LightAttack(InputAction.CallbackContext context)
     {
       
-      if(context.started && Player.isCrouching == false)
+      if(context.started && Player.isCrouching == false && Player.isGrounded == true)
       {
         Debug.Log("Standing Light attack had been pressed");
       }
       
-       if(context.started && Player.isCrouching == true)
+       if(context.started && Player.isCrouching == true )
       {
         Debug.Log("Crouching Light attack had been pressed");
-        
       }
       
+      if(context.started && Player.isGrounded == false)
+      {
+            Debug.Log("Jumping Light attack had been pressed");
+      }
+
     }
 
     public void MediumAttack(InputAction.CallbackContext context)
