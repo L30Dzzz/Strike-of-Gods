@@ -10,14 +10,14 @@ public class PlayerMovement : MonoBehaviour
    // Note that this type of way to get the x and y inputs for your player is good when using unity new input system as far as I know
    public Rigidbody2D  rb; 
    float speed; 
-   public float movespeed1; // normal movement speed
-   public float movespeed2; // moving back movement speed
-   public float movespeed3; // running movment speed 
+   [SerializeField] float movespeed1; // normal movement speed
+   [SerializeField] float movespeed2; // moving back movement speed
+   float movespeed3; // running movment speed 
    public float regJump; // How high the character will jump
    public int jsFrame; 
    public int jsFrameStart;
    public int doubleJumps;
-   public int airMovementFrames;  
+   int airMovementFrames;  
    public bool isFacingRight = true; 
    public bool isCrouching; 
    public bool isGrounded = false;
