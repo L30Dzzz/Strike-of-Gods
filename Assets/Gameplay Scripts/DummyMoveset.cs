@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 public class DummyMoveset : MonoBehaviour
 {
     PlayerMovement Player;
+    int Frames = 0;
     
     // Start is called before the first frame update
     void Start()
@@ -34,7 +35,7 @@ public class DummyMoveset : MonoBehaviour
       
       if(context.started && Player.isGrounded == false)
       {
-            Debug.Log("Jumping Light attack had been pressed");
+        Debug.Log("Jumping Light attack had been pressed");
       }
 
       if(context.started && ((Player.Input.x < 0 &&  Player.isFacingRight == false) || (Player.Input.x > 0 &&  Player.isFacingRight == true)))
@@ -51,12 +52,30 @@ public class DummyMoveset : MonoBehaviour
 
     public void HeavyAttack(InputAction.CallbackContext context)
     {
-      Debug.Log("Heavy attack had been pressed");
+      if(context.started && Player.isCrouching == false && Player.isGrounded == true)
+      {
+        Debug.Log("Standing Heavy attack had been pressed");
+      }
+      
+       if(context.started && Player.isCrouching == true )
+      {
+        Debug.Log("Crouching Heavy attack had been pressed");
+      }
+      
+      if(context.started && Player.isGrounded == false)
+      {
+            Debug.Log("Jumping Heavy attack had been pressed");
+      }
     }
 
     public void SpecialAttack(InputAction.CallbackContext context)
     {
      Debug.Log("Special Attack had been pressed");
     }
+
+
+
+
+    //// Frame data method ////////
 
 }
