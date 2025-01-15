@@ -76,6 +76,16 @@ public class DummyMoveset : MonoBehaviour
 
 
 
-    //// Frame data method ////////
+    ///////////// Frame data method ////////////
+
+    public void SingleHitAttackI(GameObject HitBox, int Frame, int AStart, int AEnd)
+    {
+      
+       
+
+
+
+
+    }
 
 }
