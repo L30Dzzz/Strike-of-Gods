@@ -7,7 +7,8 @@ public class DummyMoveset : MonoBehaviour
 {
     PlayerMovement Player;
     int Frames = 0;
-    
+    public GameObject CrouchingLight; 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +27,9 @@ public class DummyMoveset : MonoBehaviour
       if(context.started && Player.isCrouching == false && Player.isGrounded == true)
       {
         Debug.Log("Standing Light attack had been pressed");
+        Frames = 10;
+
+        SingleHitAttack(CrouchingLight,Frames, 6, 3);
       }
       
        if(context.started && Player.isCrouching == true )
@@ -78,10 +82,24 @@ public class DummyMoveset : MonoBehaviour
 
     ///////////// Frame data method ////////////
 
-    public void SingleHitAttackI(GameObject HitBox, int Frame, int AStart, int AEnd)
+    public void SingleHitAttack( GameObject hitbox, int Frame, int AStart, int AEnd)
     {
       
-       
+       for(int s = Frame; s >= 0 ; s--)
+       {
+         
+         if( s <= AStart && s >= AEnd)
+         {
+           hitbox.SetActive(true);   
+           Debug.Log("Active attack frame");
+         }
+         else
+         {
+            hitbox.SetActive(false);
+         }
+
+
+       }
 
 
 
