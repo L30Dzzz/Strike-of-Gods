@@ -85,17 +85,19 @@ public class DummyMoveset : MonoBehaviour
     public void SingleHitAttack( GameObject hitbox, int Frame, int AStart, int AEnd)
     {
       
-       for(int s = Frame; s >= 0 ; s--)
+       for(int s = Frame; s > 0 ; s--)
        {
          
-         if( s <= AStart && s >= AEnd)
+         if( s <= AStart && s > AEnd)
          {
            hitbox.SetActive(true);   
            Debug.Log("Active attack frame");
          }
          else
          {
+
             hitbox.SetActive(false);
+            Debug.Log("Attack is not active");
          }
 
 
