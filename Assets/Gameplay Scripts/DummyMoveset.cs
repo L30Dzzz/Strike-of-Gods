@@ -21,7 +21,27 @@ public class DummyMoveset : MonoBehaviour
     
     public void LightAttack(InputAction.CallbackContext context)
     {
-      Debug.Log("Light attack had been pressed");
+      
+      if(context.started && Player.isCrouching == false && Player.isGrounded == true)
+      {
+        Debug.Log("Standing Light attack had been pressed");
+      }
+      
+       if(context.started && Player.isCrouching == true )
+      {
+        Debug.Log("Crouching Light attack had been pressed");
+      }
+      
+      if(context.started && Player.isGrounded == false)
+      {
+            Debug.Log("Jumping Light attack had been pressed");
+      }
+
+      if(context.started && ((Player.Input.x < 0 &&  Player.isFacingRight == false) || (Player.Input.x > 0 &&  Player.isFacingRight == true)))
+      {
+        Debug.Log("6L has been pressed");
+      }
+
     }
 
     public void MediumAttack(InputAction.CallbackContext context)
