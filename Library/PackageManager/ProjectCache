@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638658218150000000
-    m_Hash: 3374161828
+      ticks: 638726500390000000
+    m_Hash: 3707807585
   m_LockFileStatus:
     m_FilePath: /Users/teacher/Documents/GitHub/Strike-of-Gods/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638658218150000000
-    m_Hash: 2280992854
+      ticks: 638726500390000000
+    m_Hash: 1715460384
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_PackageAssets:
@@ -33,7 +33,7 @@ m_PackageAssets:
         name: 
         email: 
         url: 
-      category: 2D
+      category: 
       type: asset
       description: 2D Animation provides all the necessary tooling and runtime components
         for skeletal animation using Sprites.
@@ -139,6 +139,8 @@ m_PackageAssets:
         - 7.0.12
         - 7.0.13
         - 7.1.0
+        - 7.1.1
+        - 7.1.2
         - 8.0.0-pre.3
         - 8.0.0-pre.4
         - 8.0.0
@@ -156,6 +158,8 @@ m_PackageAssets:
         - 9.0.4
         - 9.1.0
         - 9.1.1
+        - 9.1.2
+        - 9.1.3
         - 10.0.0-pre.1
         - 10.0.0-pre.2
         - 10.0.0
@@ -164,6 +168,9 @@ m_PackageAssets:
         - 10.0.3
         - 10.1.0
         - 10.1.1
+        - 10.1.2
+        - 10.1.3
+        - 10.1.4
         compatible:
         - 5.0.10
         - 5.1.0
@@ -178,10 +185,10 @@ m_PackageAssets:
       dependencies:
       - name: com.unity.2d.common
         version: 4.0.4
-      - name: com.unity.mathematics
-        version: 1.1.0
       - name: com.unity.2d.sprite
         version: 1.0.0
+      - name: com.unity.mathematics
+        version: 1.1.0
       - name: com.unity.modules.animation
         version: 1.0.0
       - name: com.unity.modules.uielements
@@ -318,7 +325,7 @@ m_PackageAssets:
         name: 
         email: 
         url: 
-      category: 2D
+      category: 
       type: asset
       description: A ScriptedImporter for importing Adobe Photoshop PSB (Photoshop
         Big) file format. The ScriptedImporter is currently targeted for users who
@@ -407,6 +414,7 @@ m_PackageAssets:
         - 9.0.1
         - 9.0.2
         - 9.0.3
+        - 10.0.0
         compatible:
         - 4.1.3
         - 4.2.0
@@ -416,10 +424,10 @@ m_PackageAssets:
       dependencies:
       - name: com.unity.2d.common
         version: 4.0.4
-      - name: com.unity.2d.animation
-        version: 5.0.10
       - name: com.unity.2d.sprite
         version: 1.0.0
+      - name: com.unity.2d.animation
+        version: 5.0.10
       resolvedDependencies:
       - name: com.unity.2d.common
         version: 4.0.4
@@ -529,7 +537,7 @@ m_PackageAssets:
         name: 
         email: 
         url: 
-      category: 2D
+      category: 
       type: asset
       description: SpriteShape Runtime & Editor Package contains the tooling and
         the runtime component that allows you to create very organic looking spline
@@ -617,6 +625,8 @@ m_PackageAssets:
         - 9.0.1
         - 9.0.2
         - 9.0.3
+        - 9.0.4
+        - 9.0.5
         - 10.0.0-pre.1
         - 10.0.0-pre.2
         - 10.0.0
@@ -624,23 +634,26 @@ m_PackageAssets:
         - 10.0.2
         - 10.0.3
         - 10.0.4
+        - 10.0.5
+        - 10.0.6
+        - 10.0.7
         compatible:
         - 5.1.7
         - 5.2.0
         - 5.3.0
         verified: 5.1.7
       dependencies:
-      - name: com.unity.mathematics
-        version: 1.1.0
-      - name: com.unity.2d.common
-        version: 4.0.4
       - name: com.unity.2d.path
         version: 4.0.2
+      - name: com.unity.2d.common
+        version: 4.0.4
+      - name: com.unity.mathematics
+        version: 1.1.0
       - name: com.unity.modules.physics2d
         version: 1.0.0
       resolvedDependencies:
-      - name: com.unity.mathematics
-        version: 1.1.0
+      - name: com.unity.2d.path
+        version: 4.0.2
       - name: com.unity.2d.common
         version: 4.0.4
       - name: com.unity.2d.sprite
@@ -655,8 +668,8 @@ m_PackageAssets:
         version: 1.0.0
       - name: com.unity.modules.uielementsnative
         version: 1.0.0
-      - name: com.unity.2d.path
-        version: 4.0.2
+      - name: com.unity.mathematics
+        version: 1.1.0
       - name: com.unity.modules.physics2d
         version: 1.0.0
       keywords:
@@ -736,6 +749,204 @@ m_PackageAssets:
         url: 
         revision: 
         path: 
+    - packageId: com.unity.cinemachine@2.6.17
+      testable: 0
+      isDirectDependency: 1
+      version: 2.6.17
+      source: 1
+      resolvedPath: /Users/teacher/Documents/GitHub/Strike-of-Gods/Library/PackageCache/com.unity.cinemachine@2.6.17
+      assetPath: Packages/com.unity.cinemachine
+      name: com.unity.cinemachine
+      displayName: Cinemachine
+      author:
+        name: 
+        email: 
+        url: 
+      category: 
+      type: asset
+      description: "Smart camera tools for passionate creators. \n\nIMPORTANT NOTE:
+        If you are upgrading from the Asset Store version of Cinemachine, delete
+        the Cinemachine asset from your project BEFORE installing this version from
+        the Package Manager."
+      status: 4
+      errors: []
+      versions:
+        all:
+        - 2.1.11-beta.1
+        - 2.1.12
+        - 2.1.13
+        - 2.2.0
+        - 2.2.7
+        - 2.2.8
+        - 2.2.9
+        - 2.2.10-preview.3
+        - 2.2.10-preview.4
+        - 2.3.1
+        - 2.3.3
+        - 2.3.4
+        - 2.3.5-preview.3
+        - 2.4.0-preview.3
+        - 2.4.0-preview.4
+        - 2.4.0-preview.6
+        - 2.4.0-preview.7
+        - 2.4.0-preview.8
+        - 2.4.0-preview.9
+        - 2.4.0-preview.10
+        - 2.4.0
+        - 2.5.0
+        - 2.6.0-preview.2
+        - 2.6.0-preview.3
+        - 2.6.0-preview.5
+        - 2.6.0-preview.8
+        - 2.6.0
+        - 2.6.1-preview.6
+        - 2.6.1
+        - 2.6.2-preview.1
+        - 2.6.2
+        - 2.6.3-preview.2
+        - 2.6.3
+        - 2.6.4
+        - 2.6.5
+        - 2.6.9
+        - 2.6.10
+        - 2.6.11
+        - 2.6.14
+        - 2.6.15
+        - 2.6.17
+        - 2.7.1
+        - 2.7.2
+        - 2.7.3
+        - 2.7.4
+        - 2.7.5
+        - 2.7.8
+        - 2.7.9
+        - 2.8.0-exp.1
+        - 2.8.0-exp.2
+        - 2.8.0-pre.1
+        - 2.8.0
+        - 2.8.1
+        - 2.8.2
+        - 2.8.3
+        - 2.8.4
+        - 2.8.6
+        - 2.8.9
+        - 2.9.0-pre.1
+        - 2.9.0-pre.6
+        - 2.9.1
+        - 2.9.2
+        - 2.9.4
+        - 2.9.5
+        - 2.9.7
+        - 2.10.0
+        - 2.10.1
+        - 2.10.2
+        - 2.10.3
+        - 3.0.0-pre.3
+        - 3.0.0-pre.4
+        - 3.0.0-pre.5
+        - 3.0.0-pre.6
+        - 3.0.0-pre.7
+        - 3.0.0-pre.8
+        - 3.0.0-pre.9
+        - 3.0.1
+        - 3.1.0
+        - 3.1.1
+        - 3.1.2
+        compatible:
+        - 2.5.0
+        - 2.6.0-preview.2
+        - 2.6.0-preview.3
+        - 2.6.0-preview.5
+        - 2.6.0-preview.8
+        - 2.6.0
+        - 2.6.1-preview.6
+        - 2.6.1
+        - 2.6.2-preview.1
+        - 2.6.2
+        - 2.6.3-preview.2
+        - 2.6.3
+        - 2.6.4
+        - 2.6.5
+        - 2.6.9
+        - 2.6.10
+        - 2.6.11
+        - 2.6.14
+        - 2.6.15
+        - 2.6.17
+        - 2.7.1
+        - 2.7.2
+        - 2.7.3
+        - 2.7.4
+        - 2.7.5
+        - 2.7.8
+        - 2.7.9
+        - 2.8.0-exp.1
+        - 2.8.0-exp.2
+        - 2.8.0-pre.1
+        - 2.8.0
+        - 2.8.1
+        - 2.8.2
+        - 2.8.3
+        - 2.8.4
+        - 2.8.6
+        - 2.8.9
+        - 2.9.0-pre.1
+        - 2.9.0-pre.6
+        - 2.9.1
+        - 2.9.2
+        - 2.9.4
+        - 2.9.5
+        - 2.9.7
+        - 2.10.0
+        - 2.10.1
+        - 2.10.2
+        - 2.10.3
+        verified: 2.6.17
+      dependencies: []
+      resolvedDependencies: []
+      keywords:
+      - camera
+      - follow
+      - rig
+      - fps
+      - cinematography
+      - aim
+      - orbit
+      - cutscene
+      - cinematic
+      - collision
+      - freelook
+      - cinemachine
+      - compose
+      - composition
+      - dolly
+      - track
+      - clearshot
+      - noise
+      - framing
+      - handheld
+      - lens
+      - impulse
+      registry:
+        id: main
+        name: 
+        url: https://packages.unity.com
+        scopes: []
+        isDefault: 1
+        capabilities: 7
+      hasRegistry: 1
+      hideInEditor: 0
+      entitlements:
+        isAllowed: 1
+      isAssetStorePackage: 0
+      datePublishedTicks: 637975495960000000
+      documentationUrl: 
+      hasRepository: 1
+      repository:
+        type: git
+        url: https://github.com/Unity-Technologies/com.unity.cinemachine.git
+        revision: 57501b59e2a5755e26dc54181b2b097af0045a44
+        path: 
     - packageId: com.unity.collab-proxy@1.15.7
       testable: 0
       isDirectDependency: 1
@@ -749,7 +960,7 @@ m_PackageAssets:
         name: 
         email: 
         url: 
-      category: Editor
+      category: 
       type: asset
       description: The Version Control package gives you the ability to use either
         Collaborate or Plastic SCM for Unity (beta) in the Unity editor. To use Plastic
@@ -830,6 +1041,11 @@ m_PackageAssets:
         - 2.1.0
         - 2.2.0
         - 2.3.1
+        - 2.4.3
+        - 2.4.4
+        - 2.5.1
+        - 2.5.2
+        - 2.6.0
         compatible:
         - 1.15.7
         - 1.15.9
@@ -861,17 +1077,17 @@ m_PackageAssets:
         - 2.1.0-preview.6
         verified: 1.15.18
       dependencies:
-      - name: com.unity.nuget.newtonsoft-json
-        version: 2.0.0
       - name: com.unity.services.core
         version: 1.0.1
-      resolvedDependencies:
       - name: com.unity.nuget.newtonsoft-json
         version: 2.0.0
+      resolvedDependencies:
       - name: com.unity.services.core
         version: 1.0.1
       - name: com.unity.modules.unitywebrequest
         version: 1.0.0
+      - name: com.unity.nuget.newtonsoft-json
+        version: 2.0.0
       keywords:
       - backup
       - cloud
@@ -970,6 +1186,8 @@ m_PackageAssets:
         - 3.0.26
         - 3.0.27
         - 3.0.28
+        - 3.0.31
+        - 3.0.34
         compatible:
         - 1.0.2
         - 1.0.6
@@ -1013,6 +1231,8 @@ m_PackageAssets:
         - 3.0.26
         - 3.0.27
         - 3.0.28
+        - 3.0.31
+        - 3.0.34
         verified: 2.0.7
       dependencies:
       - name: com.unity.test-framework
@@ -1292,6 +1512,12 @@ m_PackageAssets:
         - 1.8.0
         - 1.8.1
         - 1.8.2
+        - 1.9.0
+        - 1.10.0
+        - 1.11.0
+        - 1.11.1
+        - 1.11.2
+        - 1.12.0
         compatible:
         - 0.1.2-preview
         - 0.2.0-preview
@@ -1339,6 +1565,12 @@ m_PackageAssets:
         - 1.8.0
         - 1.8.1
         - 1.8.2
+        - 1.9.0
+        - 1.10.0
+        - 1.11.0
+        - 1.11.1
+        - 1.11.2
+        - 1.12.0
         verified: 1.3.0
       dependencies:
       - name: com.unity.modules.uielements
@@ -1396,7 +1628,7 @@ m_PackageAssets:
         name: 
         email: 
         url: 
-      category: Unity Test Framework
+      category: 
       type: asset
       description: Test framework for running Edit mode and Play mode tests in Unity.
       status: 4
@@ -1451,6 +1683,7 @@ m_PackageAssets:
         - 1.4.2
         - 1.4.3
         - 1.4.4
+        - 1.4.5
         - 2.0.1-exp.1
         - 2.0.1-exp.2
         - 2.0.1-pre.12
@@ -1474,6 +1707,7 @@ m_PackageAssets:
         - 1.4.2
         - 1.4.3
         - 1.4.4
+        - 1.4.5
         - 2.0.1-exp.1
         - 2.0.1-exp.2
         - 2.0.1-pre.12
@@ -1529,7 +1763,7 @@ m_PackageAssets:
         name: 
         email: 
         url: 
-      category: Text Rendering
+      category: 
       type: asset
       description: 'TextMeshPro is the ultimate text solution for Unity. It''s the
         perfect replacement for Unity''s UI Text and the legacy Text Mesh.
@@ -1648,6 +1882,8 @@ m_PackageAssets:
         - 3.2.0-pre.7
         - 3.2.0-pre.8
         - 3.2.0-pre.9
+        - 3.2.0-pre.10
+        - 3.2.0-pre.11
         - 4.0.0-pre.1
         - 4.0.0-pre.2
         compatible:
@@ -1664,6 +1900,7 @@ m_PackageAssets:
         - 3.2.0-pre.7
         - 3.2.0-pre.8
         - 3.2.0-pre.9
+        - 3.2.0-pre.10
         verified: 3.0.9
       dependencies:
       - name: com.unity.ugui
@@ -1807,6 +2044,7 @@ m_PackageAssets:
         - 1.8.4
         - 1.8.5
         - 1.8.6
+        - 1.8.7
         compatible:
         - 1.4.8
         - 1.5.0-pre.2
@@ -1848,20 +2086,21 @@ m_PackageAssets:
         - 1.8.4
         - 1.8.5
         - 1.8.6
+        - 1.8.7
         verified: 1.4.8
       dependencies:
+      - name: com.unity.modules.audio
+        version: 1.0.0
       - name: com.unity.modules.director
         version: 1.0.0
       - name: com.unity.modules.animation
         version: 1.0.0
-      - name: com.unity.modules.audio
-        version: 1.0.0
       - name: com.unity.modules.particlesystem
         version: 1.0.0
       resolvedDependencies:
-      - name: com.unity.modules.director
-        version: 1.0.0
       - name: com.unity.modules.audio
+        version: 1.0.0
+      - name: com.unity.modules.director
         version: 1.0.0
       - name: com.unity.modules.animation
         version: 1.0.0
@@ -3714,7 +3953,7 @@ m_PackageAssets:
         name: 
         email: 
         url: 
-      category: Libraries
+      category: 
       type: asset
       description: Custom version of the nunit package build to work with Unity.
         Used by the Unity Test Framework.
@@ -3769,6 +4008,120 @@ m_PackageAssets:
         type: git
         url: https://github.cds.internal.unity3d.com/unity/com.unity.ext.nunit.git
         revision: 29ea4d6504a5f58fb3a6934db839aa80ae6d9d88
+        path: 
+    - packageId: com.unity.services.core@1.0.1
+      testable: 0
+      isDirectDependency: 0
+      version: 1.0.1
+      source: 1
+      resolvedPath: /Users/teacher/Documents/GitHub/Strike-of-Gods/Library/PackageCache/com.unity.services.core@1.0.1
+      assetPath: Packages/com.unity.services.core
+      name: com.unity.services.core
+      displayName: Services Core
+      author:
+        name: 
+        email: 
+        url: 
+      category: 
+      type: asset
+      description: 'This package defines common components used by multiple Game
+        Service packages.
+
+        These are standardized and aim to unify the overall
+        experience of working with Game Services packages.'
+      status: 4
+      errors: []
+      versions:
+        all:
+        - 1.0.1
+        - 1.1.0-pre.7
+        - 1.1.0-pre.8
+        - 1.1.0-pre.9
+        - 1.1.0-pre.10
+        - 1.1.0-pre.11
+        - 1.1.0-pre.41
+        - 1.1.0-pre.69
+        - 1.2.0
+        - 1.3.1
+        - 1.3.2
+        - 1.4.0
+        - 1.4.1
+        - 1.4.2
+        - 1.4.3
+        - 1.5.2
+        - 1.6.0
+        - 1.7.0
+        - 1.7.1
+        - 1.8.1
+        - 1.8.2
+        - 1.9.0
+        - 1.10.1
+        - 1.11.0
+        - 1.12.0
+        - 1.12.1
+        - 1.12.2
+        - 1.12.4
+        - 1.12.5
+        - 1.13.0
+        - 1.14.0
+        compatible:
+        - 1.0.1
+        - 1.1.0-pre.7
+        - 1.1.0-pre.8
+        - 1.1.0-pre.9
+        - 1.1.0-pre.10
+        - 1.1.0-pre.11
+        - 1.1.0-pre.41
+        - 1.1.0-pre.69
+        - 1.2.0
+        - 1.3.1
+        - 1.3.2
+        - 1.4.0
+        - 1.4.1
+        - 1.4.2
+        - 1.4.3
+        - 1.5.2
+        - 1.6.0
+        - 1.7.0
+        - 1.7.1
+        - 1.8.1
+        - 1.8.2
+        - 1.9.0
+        - 1.10.1
+        - 1.11.0
+        - 1.12.0
+        - 1.12.1
+        - 1.12.2
+        - 1.12.4
+        - 1.12.5
+        - 1.13.0
+        verified: 1.0.1
+      dependencies:
+      - name: com.unity.modules.unitywebrequest
+        version: 1.0.0
+      resolvedDependencies:
+      - name: com.unity.modules.unitywebrequest
+        version: 1.0.0
+      keywords: []
+      registry:
+        id: main
+        name: 
+        url: https://packages.unity.com
+        scopes: []
+        isDefault: 1
+        capabilities: 7
+      hasRegistry: 1
+      hideInEditor: 0
+      entitlements:
+        isAllowed: 1
+      isAssetStorePackage: 0
+      datePublishedTicks: 637604883250000000
+      documentationUrl: 
+      hasRepository: 1
+      repository:
+        type: git
+        url: https://github.cds.internal.unity3d.com/unity/operate-services-sdk.git
+        revision: 4cd880d4fd5c60597629249bf4f324e4c8d7aa2e
         path: 
     - packageId: com.unity.nuget.newtonsoft-json@2.0.0
       testable: 0
@@ -3856,97 +4209,56 @@ m_PackageAssets:
         url: https://github.cds.internal.unity3d.com/unity/com.unity.nuget.newtonsoft-json.git
         revision: d2fd6ed876261bbd82f59199ad711e7667bf633a
         path: 
-    - packageId: com.unity.services.core@1.0.1
+    - packageId: com.unity.2d.path@4.0.2
       testable: 0
       isDirectDependency: 0
-      version: 1.0.1
+      version: 4.0.2
       source: 1
-      resolvedPath: /Users/teacher/Documents/GitHub/Strike-of-Gods/Library/PackageCache/com.unity.services.core@1.0.1
-      assetPath: Packages/com.unity.services.core
-      name: com.unity.services.core
-      displayName: Services Core
+      resolvedPath: /Users/teacher/Documents/GitHub/Strike-of-Gods/Library/PackageCache/com.unity.2d.path@4.0.2
+      assetPath: Packages/com.unity.2d.path
+      name: com.unity.2d.path
+      displayName: 2D Path
       author:
         name: 
         email: 
         url: 
       category: 
       type: asset
-      description: 'This package defines common components used by multiple Game
-        Service packages.
-
-        These are standardized and aim to unify the overall
-        experience of working with Game Services packages.'
+      description: "2D Path provides tooling to edit shapes (polygons and B\xE9zier
+        splines) in EditorWindows and the SceneView."
       status: 4
       errors: []
       versions:
         all:
-        - 1.0.1
-        - 1.1.0-pre.7
-        - 1.1.0-pre.8
-        - 1.1.0-pre.9
-        - 1.1.0-pre.10
-        - 1.1.0-pre.11
-        - 1.1.0-pre.41
-        - 1.1.0-pre.69
-        - 1.2.0
-        - 1.3.1
-        - 1.3.2
-        - 1.4.0
-        - 1.4.1
-        - 1.4.2
-        - 1.4.3
-        - 1.5.2
-        - 1.6.0
-        - 1.7.0
-        - 1.7.1
-        - 1.8.1
-        - 1.8.2
-        - 1.9.0
-        - 1.10.1
-        - 1.11.0
-        - 1.12.0
-        - 1.12.1
-        - 1.12.2
-        - 1.12.4
-        - 1.12.5
+        - 1.0.0-preview.1
+        - 1.0.0-preview.4
+        - 2.0.1
+        - 2.0.2
+        - 2.0.3
+        - 2.0.4
+        - 2.0.5
+        - 2.0.6
+        - 2.1.0
+        - 2.1.1
+        - 3.0.0
+        - 3.0.1
+        - 3.0.2
+        - 4.0.0
+        - 4.0.1
+        - 4.0.2
+        - 5.0.0-pre.1
+        - 5.0.0-pre.2
+        - 5.0.0
+        - 5.0.1
+        - 5.0.2
         compatible:
-        - 1.0.1
-        - 1.1.0-pre.7
-        - 1.1.0-pre.8
-        - 1.1.0-pre.9
-        - 1.1.0-pre.10
-        - 1.1.0-pre.11
-        - 1.1.0-pre.41
-        - 1.1.0-pre.69
-        - 1.2.0
-        - 1.3.1
-        - 1.3.2
-        - 1.4.0
-        - 1.4.1
-        - 1.4.2
-        - 1.4.3
-        - 1.5.2
-        - 1.6.0
-        - 1.7.0
-        - 1.7.1
-        - 1.8.1
-        - 1.8.2
-        - 1.9.0
-        - 1.10.1
-        - 1.11.0
-        - 1.12.0
-        - 1.12.1
-        - 1.12.2
-        - 1.12.4
-        - 1.12.5
-        verified: 1.0.1
-      dependencies:
-      - name: com.unity.modules.unitywebrequest
-        version: 1.0.0
-      resolvedDependencies:
-      - name: com.unity.modules.unitywebrequest
-        version: 1.0.0
-      keywords: []
+        - 4.0.2
+        verified: 4.0.2
+      dependencies: []
+      resolvedDependencies: []
+      keywords:
+      - 2d
+      - path
       registry:
         id: main
         name: 
@@ -3959,13 +4271,140 @@ m_PackageAssets:
       entitlements:
         isAllowed: 1
       isAssetStorePackage: 0
-      datePublishedTicks: 637604883250000000
+      datePublishedTicks: 637637511040000000
       documentationUrl: 
       hasRepository: 1
       repository:
         type: git
-        url: https://github.cds.internal.unity3d.com/unity/operate-services-sdk.git
-        revision: 4cd880d4fd5c60597629249bf4f324e4c8d7aa2e
+        url: https://github.cds.internal.unity3d.com/unity/2d.git
+        revision: 6f9c488e4d487ead34ee4d516f0a2f4a911a8b25
+        path: 
+    - packageId: com.unity.2d.common@4.0.4
+      testable: 0
+      isDirectDependency: 0
+      version: 4.0.4
+      source: 1
+      resolvedPath: /Users/teacher/Documents/GitHub/Strike-of-Gods/Library/PackageCache/com.unity.2d.common@4.0.4
+      assetPath: Packages/com.unity.2d.common
+      name: com.unity.2d.common
+      displayName: 2D Common
+      author:
+        name: 
+        email: 
+        url: 
+      category: 
+      type: asset
+      description: 2D Common is a package that contains shared functionalities that
+        are used by most of the other 2D packages.
+      status: 4
+      errors: []
+      versions:
+        all:
+        - 1.0.9-preview.1
+        - 1.0.9-preview.2
+        - 1.0.10-preview
+        - 1.0.11-preview.1
+        - 1.1.0-preview.1
+        - 1.1.0-preview.2
+        - 1.2.0-preview.1
+        - 2.0.1
+        - 2.0.2
+        - 2.1.0
+        - 2.1.1
+        - 2.1.2
+        - 3.0.0
+        - 3.0.1
+        - 4.0.0
+        - 4.0.1
+        - 4.0.2
+        - 4.0.3
+        - 4.0.4
+        - 4.1.0
+        - 4.2.0
+        - 4.2.1
+        - 5.0.0-pre.1
+        - 5.0.0-pre.2
+        - 5.0.0
+        - 6.0.0-pre.2
+        - 6.0.0-pre.3
+        - 6.0.0-pre.4
+        - 6.0.0
+        - 6.0.1
+        - 6.0.2
+        - 6.0.3
+        - 6.0.4
+        - 6.0.5
+        - 6.0.6
+        - 6.0.7
+        - 6.0.8
+        - 7.0.0-pre.3
+        - 7.0.0-pre.4
+        - 7.0.0
+        - 7.0.1
+        - 7.0.2
+        - 7.0.3
+        - 8.0.0-pre.1
+        - 8.0.0-pre.2
+        - 8.0.0
+        - 8.0.1
+        - 8.0.2
+        - 8.0.3
+        - 8.0.4
+        - 9.0.0-pre.1
+        - 9.0.0-pre.2
+        - 9.0.0
+        - 9.0.1
+        - 9.0.2
+        - 9.0.3
+        - 9.0.4
+        - 9.0.5
+        - 9.0.6
+        - 9.0.7
+        compatible:
+        - 4.0.4
+        - 4.1.0
+        - 4.2.0
+        - 4.2.1
+        verified: 4.0.4
+      dependencies:
+      - name: com.unity.2d.sprite
+        version: 1.0.0
+      - name: com.unity.modules.uielements
+        version: 1.0.0
+      resolvedDependencies:
+      - name: com.unity.2d.sprite
+        version: 1.0.0
+      - name: com.unity.modules.uielements
+        version: 1.0.0
+      - name: com.unity.modules.ui
+        version: 1.0.0
+      - name: com.unity.modules.imgui
+        version: 1.0.0
+      - name: com.unity.modules.jsonserialize
+        version: 1.0.0
+      - name: com.unity.modules.uielementsnative
+        version: 1.0.0
+      keywords:
+      - 2d
+      registry:
+        id: main
+        name: 
+        url: https://packages.unity.com
+        scopes: []
+        isDefault: 1
+        capabilities: 7
+      hasRegistry: 1
+      hideInEditor: 0
+      entitlements:
+        isAllowed: 1
+      isAssetStorePackage: 0
+      datePublishedTicks: 637750142160000000
+      documentationUrl: 
+      hasRepository: 1
+      repository:
+        type: git
+        url: https://github.cds.internal.unity3d.com/unity/2d.git
+        revision: 341b7316671d7e6703a7627f67c5fab262c4f1ac
         path: 
     - packageId: com.unity.mathematics@1.1.0
       testable: 0
@@ -4050,193 +4489,6 @@ m_PackageAssets:
         type: git
         url: git@github.com:Unity-Technologies/Unity.Mathematics.git
         revision: 0a3dfafaf606098ea681de4c4be60f3aac63b773
-        path: 
-    - packageId: com.unity.2d.common@4.0.4
-      testable: 0
-      isDirectDependency: 0
-      version: 4.0.4
-      source: 1
-      resolvedPath: /Users/teacher/Documents/GitHub/Strike-of-Gods/Library/PackageCache/com.unity.2d.common@4.0.4
-      assetPath: Packages/com.unity.2d.common
-      name: com.unity.2d.common
-      displayName: 2D Common
-      author:
-        name: 
-        email: 
-        url: 
-      category: 2D
-      type: asset
-      description: 2D Common is a package that contains shared functionalities that
-        are used by most of the other 2D packages.
-      status: 4
-      errors: []
-      versions:
-        all:
-        - 1.0.9-preview.1
-        - 1.0.9-preview.2
-        - 1.0.10-preview
-        - 1.0.11-preview.1
-        - 1.1.0-preview.1
-        - 1.1.0-preview.2
-        - 1.2.0-preview.1
-        - 2.0.1
-        - 2.0.2
-        - 2.1.0
-        - 2.1.1
-        - 2.1.2
-        - 3.0.0
-        - 3.0.1
-        - 4.0.0
-        - 4.0.1
-        - 4.0.2
-        - 4.0.3
-        - 4.0.4
-        - 4.1.0
-        - 4.2.0
-        - 4.2.1
-        - 5.0.0-pre.1
-        - 5.0.0-pre.2
-        - 5.0.0
-        - 6.0.0-pre.2
-        - 6.0.0-pre.3
-        - 6.0.0-pre.4
-        - 6.0.0
-        - 6.0.1
-        - 6.0.2
-        - 6.0.3
-        - 6.0.4
-        - 6.0.5
-        - 6.0.6
-        - 7.0.0-pre.3
-        - 7.0.0-pre.4
-        - 7.0.0
-        - 7.0.1
-        - 7.0.2
-        - 7.0.3
-        - 8.0.0-pre.1
-        - 8.0.0-pre.2
-        - 8.0.0
-        - 8.0.1
-        - 9.0.0-pre.1
-        - 9.0.0-pre.2
-        - 9.0.0
-        - 9.0.1
-        - 9.0.2
-        compatible:
-        - 4.0.4
-        - 4.1.0
-        - 4.2.0
-        - 4.2.1
-        verified: 4.0.4
-      dependencies:
-      - name: com.unity.2d.sprite
-        version: 1.0.0
-      - name: com.unity.modules.uielements
-        version: 1.0.0
-      resolvedDependencies:
-      - name: com.unity.2d.sprite
-        version: 1.0.0
-      - name: com.unity.modules.uielements
-        version: 1.0.0
-      - name: com.unity.modules.ui
-        version: 1.0.0
-      - name: com.unity.modules.imgui
-        version: 1.0.0
-      - name: com.unity.modules.jsonserialize
-        version: 1.0.0
-      - name: com.unity.modules.uielementsnative
-        version: 1.0.0
-      keywords:
-      - 2d
-      registry:
-        id: main
-        name: 
-        url: https://packages.unity.com
-        scopes: []
-        isDefault: 1
-        capabilities: 7
-      hasRegistry: 1
-      hideInEditor: 0
-      entitlements:
-        isAllowed: 1
-      isAssetStorePackage: 0
-      datePublishedTicks: 637750142160000000
-      documentationUrl: 
-      hasRepository: 1
-      repository:
-        type: git
-        url: https://github.cds.internal.unity3d.com/unity/2d.git
-        revision: 341b7316671d7e6703a7627f67c5fab262c4f1ac
-        path: 
-    - packageId: com.unity.2d.path@4.0.2
-      testable: 0
-      isDirectDependency: 0
-      version: 4.0.2
-      source: 1
-      resolvedPath: /Users/teacher/Documents/GitHub/Strike-of-Gods/Library/PackageCache/com.unity.2d.path@4.0.2
-      assetPath: Packages/com.unity.2d.path
-      name: com.unity.2d.path
-      displayName: 2D Path
-      author:
-        name: 
-        email: 
-        url: 
-      category: 2D
-      type: asset
-      description: "2D Path provides tooling to edit shapes (polygons and B\xE9zier
-        splines) in EditorWindows and the SceneView."
-      status: 4
-      errors: []
-      versions:
-        all:
-        - 1.0.0-preview.1
-        - 1.0.0-preview.4
-        - 2.0.1
-        - 2.0.2
-        - 2.0.3
-        - 2.0.4
-        - 2.0.5
-        - 2.0.6
-        - 2.1.0
-        - 2.1.1
-        - 3.0.0
-        - 3.0.1
-        - 3.0.2
-        - 4.0.0
-        - 4.0.1
-        - 4.0.2
-        - 5.0.0-pre.1
-        - 5.0.0-pre.2
-        - 5.0.0
-        - 5.0.1
-        - 5.0.2
-        compatible:
-        - 4.0.2
-        verified: 4.0.2
-      dependencies: []
-      resolvedDependencies: []
-      keywords:
-      - 2d
-      - path
-      registry:
-        id: main
-        name: 
-        url: https://packages.unity.com
-        scopes: []
-        isDefault: 1
-        capabilities: 7
-      hasRegistry: 1
-      hideInEditor: 0
-      entitlements:
-        isAllowed: 1
-      isAssetStorePackage: 0
-      datePublishedTicks: 637637511040000000
-      documentationUrl: 
-      hasRepository: 1
-      repository:
-        type: git
-        url: https://github.cds.internal.unity3d.com/unity/2d.git
-        revision: 6f9c488e4d487ead34ee4d516f0a2f4a911a8b25
         path: 
   m_LocalPackages:
     m_LocalFileStatus: []
