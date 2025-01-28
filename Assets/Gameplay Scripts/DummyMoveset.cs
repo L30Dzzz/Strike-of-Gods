@@ -27,9 +27,9 @@ public class DummyMoveset : MonoBehaviour
       if(context.started && Player.isCrouching == false && Player.isGrounded == true)
       {
         Debug.Log("Standing Light attack had been pressed");
-        Frames = 10;
+        Frames = 60;
 
-        SingleHitAttack(CrouchingLight,Frames, 6, 3);
+        SingleHitAttack(CrouchingLight,Frames, 60, 1);
       }
       
        if(context.started && Player.isCrouching == true )
@@ -84,6 +84,8 @@ public class DummyMoveset : MonoBehaviour
 
     public void SingleHitAttack( GameObject hitbox, int Frame, int AStart, int AEnd)
     {
+
+
       
        for(int s = Frame; s > 0 ; s--)
        {
@@ -92,6 +94,8 @@ public class DummyMoveset : MonoBehaviour
          {
            hitbox.SetActive(true);   
            Debug.Log("Active attack frame");
+           Debug.Log(s);
+           Debug.Log(Time.renderedFrameCount);
          }
          else
          {
