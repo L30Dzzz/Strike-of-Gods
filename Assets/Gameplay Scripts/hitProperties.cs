@@ -7,6 +7,7 @@ public class hitProperties : MonoBehaviour
    PlayerMovement Player;
    private LayerMask yourLayer_;
    private LayerMask opsLayer_;
+
    
     // Start is called before the first frame update
     void Start()
@@ -21,6 +22,10 @@ public class hitProperties : MonoBehaviour
     {
         
     }
-
+    
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        Debug.Log("I hit something");
+    }
     
 }

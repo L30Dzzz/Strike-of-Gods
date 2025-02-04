@@ -8,6 +8,7 @@ public class DummyMoveset : MonoBehaviour
     PlayerMovement Player;
     int Frames = 0;
     public GameObject CrouchingLight; 
+    bool isAttacking = false;
 
     // Start is called before the first frame update
     void Start()
@@ -19,6 +20,7 @@ public class DummyMoveset : MonoBehaviour
     void Update()
     {
         
+
     }
     
     public void LightAttack(InputAction.CallbackContext context)
@@ -85,30 +87,7 @@ public class DummyMoveset : MonoBehaviour
     public void SingleHitAttack( GameObject hitbox, int Frame, int AStart, int AEnd)
     {
 
-
-      
-       for(int s = Frame; s > 0 ; s--)
-       {
-         
-         if( s <= AStart && s > AEnd)
-         {
-           hitbox.SetActive(true);   
-           Debug.Log("Active attack frame");
-           Debug.Log(s);
-           Debug.Log(Time.renderedFrameCount);
-         }
-         else
-         {
-
-            hitbox.SetActive(false);
-            Debug.Log("Attack is not active");
-         }
-
-
-       }
-
-
-
+       
 
     }
 
