@@ -24,8 +24,8 @@ public class PlayerMovement : MonoBehaviour
    bool jumpSquat; 
    private CharacterController playerController; 
    public PlayerTemplate playerTemplate; 
-   private LayerMask yourLayer;
-   private LayerMask opsLayer;
+   public LayerMask yourLayer;
+   public LayerMask opsLayer;
   
   // String[] inputCommand; //work on this later
    //enum motionInput{}; 
