@@ -30,7 +30,8 @@ public class DummyMoveset : MonoBehaviour
       {
         Debug.Log("Standing Light attack had been pressed");
         Frames = 60;
-
+        
+        
         SingleHitAttack(CrouchingLight,Frames, 60, 1);
       }
       
@@ -86,7 +87,7 @@ public class DummyMoveset : MonoBehaviour
 
     public void SingleHitAttack( GameObject hitbox, int Frame, int AStart, int AEnd)
     {
-
+       
        
 
     }
