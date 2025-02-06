@@ -19,7 +19,7 @@ public class DummyMoveset : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+       
 
     }
     
@@ -30,9 +30,9 @@ public class DummyMoveset : MonoBehaviour
       {
         Debug.Log("Standing Light attack had been pressed");
         Frames = 60;
-        
-        
         SingleHitAttack(CrouchingLight,Frames, 60, 1);
+
+        //play animation in here or put it in the singleHitAttack method
       }
       
        if(context.started && Player.isCrouching == true )
@@ -87,9 +87,24 @@ public class DummyMoveset : MonoBehaviour
 
     public void SingleHitAttack( GameObject hitbox, int Frame, int AStart, int AEnd)
     {
-       
-       
+       //isAttacking = true; 
 
+      if( Frame <= AStart && Frame > AEnd)
+         {
+           hitbox.SetActive(true);   
+           Debug.Log("Active attack frame");
+           Debug.Log(Frame);
+           
+         }
+         else
+         {
+            hitbox.SetActive(false);
+            Debug.Log(Frame);
+            Debug.Log("Attack is not active");
+         }
+
+         Frame--; 
+         // going to replace this with a coroutine
     }
 
 }
