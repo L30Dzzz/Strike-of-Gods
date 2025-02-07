@@ -30,7 +30,7 @@ public class DummyMoveset : MonoBehaviour
       {
         Debug.Log("Standing Light attack had been pressed");
         Frames = 60;
-        SingleHitAttack(CrouchingLight,Frames, 60, 1);
+        StartCoroutine(SingleHitAttack(CrouchingLight,Frames, 60, 1));
 
         //play animation in here or put it in the singleHitAttack method
       }
@@ -85,25 +85,30 @@ public class DummyMoveset : MonoBehaviour
 
     ///////////// Frame data method ////////////
 
-    public void SingleHitAttack( GameObject hitbox, int Frame, int AStart, int AEnd)
+    public IEnumerator SingleHitAttack( GameObject hitbox, int Frame, int AStart, int AEnd)
     {
        //isAttacking = true; 
+       
+       
+
+       yield return new WaitForSeconds(0.01f);
 
       if( Frame <= AStart && Frame > AEnd)
          {
            hitbox.SetActive(true);   
            Debug.Log("Active attack frame");
            Debug.Log(Frame);
-           
+           Frame--;
          }
          else
          {
             hitbox.SetActive(false);
             Debug.Log(Frame);
             Debug.Log("Attack is not active");
+           Frame--;
          }
 
-         Frame--; 
+         
          // going to replace this with a coroutine
     }
 
