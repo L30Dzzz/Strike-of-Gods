@@ -8,6 +8,8 @@ public class GameManager : MonoBehaviour
 
     public static bool gameIsPaused;
     public GameObject PauseSystem;
+   // public TextMeshProGUI roundEndText;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -37,4 +39,9 @@ public class GameManager : MonoBehaviour
             PauseSystem.gameObject.SetActive(false);
         }
     }
+
+  //  void RoundEnd()
+   // {
+        
+   // }
 }
