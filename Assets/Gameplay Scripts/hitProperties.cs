@@ -7,11 +7,10 @@ public class hitProperties : MonoBehaviour
    PlayerMovement Player;
    private LayerMask yourLayer_;
    private LayerMask opsLayer_;
-   private int layerAsLayerMask;
 
    
     // Start is called before the first frame update
-    void Awake()
+    void Start()
     {
         Player = GetComponentInParent<PlayerMovement>();
         yourLayer_ = Player.yourLayer;
@@ -26,15 +25,7 @@ public class hitProperties : MonoBehaviour
     
     void OnTriggerEnter2D(Collider2D other)
     {
-        layerAsLayerMask = (1 << other.gameObject.layer);
-       
-      
-       if(layerAsLayerMask == opsLayer_.value)
-       {
-          
-
-
-
-       }
+        Debug.Log("I hit something");
     }
+    
 }
