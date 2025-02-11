@@ -30,8 +30,11 @@ public class hitProperties : MonoBehaviour
       
        if(layerAsLayerMask == opsLayer_.value)
        {
-          
-
+         PlayerMovement P2 = other.gameObject.GetComponent<PlayerMovement>();   
+         if(P2 != null)
+         {
+              Debug.Log("You work you piece of [REDACTATED]");
+         }
 
 
        }
