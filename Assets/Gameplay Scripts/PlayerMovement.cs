@@ -17,7 +17,9 @@ public class PlayerMovement : MonoBehaviour
    public int jsFrame; 
    public int jsFrameStart;
    public int doubleJumps;
-   int airMovementFrames;  
+   int airMovementFrames; 
+   public int basehp; 
+   private int layerAsLayerMask;
    public bool isFacingRight = true; 
    public bool isCrouching; 
    public bool isGrounded = false;
@@ -33,11 +35,19 @@ public class PlayerMovement : MonoBehaviour
 
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
 
        yourLayer = playerTemplate.yourLayer; 
        opsLayer = playerTemplate.opsLayer;
+       layerAsLayerMask = (1 << this.gameObject.layer);
+
+       if(yourLayer == layerAsLayerMask)
+       {
+        
+        Debug.Log(layerAsLayerMask);
+         
+       }
     }
 
     // Update is called once per frame

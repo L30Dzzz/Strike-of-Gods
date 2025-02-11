@@ -1267,11 +1267,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5026677237679111194, guid: b2c97f9afff824ce28b9634f86fef821, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 689
+      value: 690
       objectReference: {fileID: 0}
     - target: {fileID: 6602152422953655847, guid: b2c97f9afff824ce28b9634f86fef821, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 689
+      value: 690
       objectReference: {fileID: 0}
     - target: {fileID: 7915777858446240721, guid: b2c97f9afff824ce28b9634f86fef821, type: 3}
       propertyPath: m_Color.b

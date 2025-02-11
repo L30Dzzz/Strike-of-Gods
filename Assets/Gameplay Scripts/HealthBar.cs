@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class HealthBar : MonoBehaviour
 {
-    private int basehp; 
+    private int basehp;
+    public GameObject p1Health;
+    public GameObject p2Health; 
     
-
+    
     
     void Awake()
     {
