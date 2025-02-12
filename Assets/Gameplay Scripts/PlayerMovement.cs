@@ -18,7 +18,7 @@ public class PlayerMovement : MonoBehaviour
    public int jsFrameStart;
    public int doubleJumps;
    int airMovementFrames; 
-   public int basehp; 
+   public int basehp = 0; 
    private int layerAsLayerMask;
    public bool isFacingRight = true; 
    public bool isCrouching; 
@@ -42,11 +42,19 @@ public class PlayerMovement : MonoBehaviour
        opsLayer = playerTemplate.opsLayer;
        layerAsLayerMask = (1 << this.gameObject.layer);
 
-       if(yourLayer == layerAsLayerMask)
+
+       if(yourLayer.value == 64)
        {
         
-        Debug.Log(layerAsLayerMask);
+        basehp = 250;
+        Debug.Log("This is player one hp: " + basehp);
          
+       }
+       else
+       {
+        basehp = 450;
+         Debug.Log("This is player two hp: " + basehp);
+        
        }
     }
 

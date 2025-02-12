@@ -33,7 +33,11 @@ public class hitProperties : MonoBehaviour
          PlayerMovement P2 = other.gameObject.GetComponent<PlayerMovement>();   
          if(P2 != null)
          {
-              Debug.Log("You work you piece of [REDACTATED]");
+              P2.basehp -= 5;
+              Player.basehp += 5; 
+
+              Debug.Log(Player.basehp);
+              Debug.Log(P2.basehp);
          }
 
 
