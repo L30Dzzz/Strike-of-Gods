@@ -21,7 +21,7 @@ public class HealthBar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        GameCondition();
     }
 
     public void GameCondition()
