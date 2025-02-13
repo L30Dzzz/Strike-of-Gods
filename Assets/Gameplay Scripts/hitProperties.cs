@@ -8,7 +8,7 @@ public class hitProperties : MonoBehaviour
    private LayerMask yourLayer_;
    private LayerMask opsLayer_;
     private int layerAsLayerMask;
-   
+   public int dmg = 0; 
     // Start is called before the first frame update
     void Awake()
     {
@@ -33,8 +33,8 @@ public class hitProperties : MonoBehaviour
          PlayerMovement P2 = other.gameObject.GetComponent<PlayerMovement>();   
          if(P2 != null)
          {
-              P2.basehp -= 5;
-              Player.basehp += 5; 
+              P2.basehp -= dmg;
+              Player.basehp += dmg; 
 
               Debug.Log(Player.basehp);
               Debug.Log(P2.basehp);

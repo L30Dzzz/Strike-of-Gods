@@ -87,8 +87,7 @@ public class DummyMoveset : MonoBehaviour
 
     public IEnumerator SingleHitAttack( GameObject hitbox, int Frame, int AStart, int AEnd)
     {
-       //isAttacking = true; 
-       
+       isAttacking = true; 
        
 
        yield return new WaitForSeconds(0.01f);
@@ -108,6 +107,7 @@ public class DummyMoveset : MonoBehaviour
            Frame--;
          }
 
+         isAttacking = false;
          
          // going to replace this with a coroutine
     }

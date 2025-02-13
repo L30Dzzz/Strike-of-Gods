@@ -25,6 +25,7 @@ public class PlayerMovement : MonoBehaviour
    public bool isGrounded = false;
    bool jumpSquat; 
    private CharacterController playerController; 
+   private HealthBar hp; 
    public PlayerTemplate playerTemplate; 
    public LayerMask yourLayer;
    public LayerMask opsLayer;
@@ -45,16 +46,11 @@ public class PlayerMovement : MonoBehaviour
 
        if(yourLayer.value == 64)
        {
-        
-        basehp = 250;
-        Debug.Log("This is player one hp: " + basehp);
-         
+        //basehp = hp.p1Health.Width; 
        }
        else
        {
-        basehp = 450;
-         Debug.Log("This is player two hp: " + basehp);
-        
+        //basehp = hp.p2Health.Width;
        }
     }
 
