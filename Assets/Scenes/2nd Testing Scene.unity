@@ -684,6 +684,10 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1846319266995829880, guid: f82b15c2347f5404793963e3781955fd, type: 3}
+      propertyPath: m_LocalScale.x
+      value: -2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1846319266995829880, guid: f82b15c2347f5404793963e3781955fd, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4.61
       objectReference: {fileID: 0}
@@ -1230,6 +1234,10 @@ PrefabInstance:
     - target: {fileID: 4342898779252118177, guid: b2c97f9afff824ce28b9634f86fef821, type: 3}
       propertyPath: m_Name
       value: Health UI
+      objectReference: {fileID: 0}
+    - target: {fileID: 4342898779757433119, guid: b2c97f9afff824ce28b9634f86fef821, type: 3}
+      propertyPath: m_Name
+      value: Health Canvas
       objectReference: {fileID: 0}
     - target: {fileID: 4342898780499665252, guid: b2c97f9afff824ce28b9634f86fef821, type: 3}
       propertyPath: m_Color.b
