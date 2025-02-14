@@ -117,7 +117,7 @@ public class PlayerMovement : MonoBehaviour
       
       if (rightSideDetector.collider != null && rightSideDetector.collider.gameObject != this.gameObject)
     {
-        transform.localScale = new Vector3(2.5f, 3, 1); // Flip to face right
+        transform.localScale = new Vector3(-2.5f, 3, 1); // Flip to face right
         isFacingRight = true;
     }
     
