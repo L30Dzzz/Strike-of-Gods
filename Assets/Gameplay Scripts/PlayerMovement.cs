@@ -30,6 +30,10 @@ public class PlayerMovement : MonoBehaviour
    public PlayerTemplate playerTemplate; 
    public LayerMask yourLayer;
    public LayerMask opsLayer;
+
+
+
+
    
   
   // String[] inputCommand; //work on this later
@@ -114,17 +118,19 @@ public class PlayerMovement : MonoBehaviour
       RaycastHit2D leftSideDetector = Physics2D.BoxCast(rb.position + new Vector2(-2, 0), boxSize, 0, Vector2.left, distance, opsLayer);
       
       // Flip the GameObject based on the collision
-      
-      if (rightSideDetector.collider != null && rightSideDetector.collider.gameObject != this.gameObject)
+
+      if ((rightSideDetector.collider != null) && (rightSideDetector.collider.gameObject != this.gameObject) &&  this.transform.gameObject.layer != yourLayer )
     {
+        Debug.Log(gameObject.CompareTag("Hitbox"));
         transform.localScale = new Vector3(2.5f, 3, 1); // Flip to face right
         isFacingRight = true;
     }
     
-    else if (leftSideDetector.collider != null && leftSideDetector.collider.gameObject != this.gameObject)
+    else if (leftSideDetector.collider != null && leftSideDetector.collider.gameObject != this.gameObject && rightSideDetector.collider.gameObject != gameObject.CompareTag("Hitbox"))
       {
-        transform.localScale = new Vector3(-2.5f, 3, 1); // Flip to face left
         isFacingRight = false;
+        transform.localScale = new Vector3(-2.5f, 3, 1); // Flip to face left
+        
       }
     }
 

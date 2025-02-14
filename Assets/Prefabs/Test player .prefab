@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1226435403}
   - component: {fileID: 1226435402}
+  - component: {fileID: 1855547098}
+  - component: {fileID: 1855547099}
   m_Layer: 6
   m_Name: 2L hitbox
   m_TagString: Untagged
@@ -82,6 +84,45 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &1855547098
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1226435401}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!114 &1855547099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1226435401}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4544f560b0474152bac4a4ff0519a37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dmg: 20
 --- !u!1 &7390993351444511754
 GameObject:
   m_ObjectHideFlags: 0
@@ -196,7 +237,7 @@ Transform:
   m_GameObject: {fileID: 7390993351731573500}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -7.62, y: 0.27, z: 0}
-  m_LocalScale: {x: 2.5, y: 2, z: 1}
+  m_LocalScale: {x: 2.5, y: 3, z: 1}
   m_Children:
   - {fileID: 7390993351444511753}
   - {fileID: 1226435403}
@@ -400,10 +441,17 @@ MonoBehaviour:
   jsFrame: 5
   jsFrameStart: 5
   doubleJumps: 1
+  basehp: 0
   isFacingRight: 1
   isCrouching: 0
   isGrounded: 0
   playerTemplate: {fileID: 11400000, guid: c2e6fb0c6d30742dc98936af1c3ce8de, type: 2}
+  yourLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  opsLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!50 &7390993351731573479
 Rigidbody2D:
   serializedVersion: 4
