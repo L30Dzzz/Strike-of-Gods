@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem; 
+using UnityEngine.UI;
 
 [RequireComponent(typeof(CharacterController))] // auto adds a character controller to anything with this script
 public class PlayerMovement : MonoBehaviour
@@ -17,15 +18,19 @@ public class PlayerMovement : MonoBehaviour
    public int jsFrame; 
    public int jsFrameStart;
    public int doubleJumps;
-   int airMovementFrames;  
+   int airMovementFrames; 
+   public float basehp = 0; 
+   private int layerAsLayerMask;
    public bool isFacingRight = true; 
    public bool isCrouching; 
    public bool isGrounded = false;
    bool jumpSquat; 
    private CharacterController playerController; 
+   HealthBar hp; 
    public PlayerTemplate playerTemplate; 
-   private LayerMask yourLayer;
-   private LayerMask opsLayer;
+   public LayerMask yourLayer;
+   public LayerMask opsLayer;
+   
   
   // String[] inputCommand; //work on this later
    //enum motionInput{}; 
@@ -33,17 +38,39 @@ public class PlayerMovement : MonoBehaviour
 
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
 
        yourLayer = playerTemplate.yourLayer; 
        opsLayer = playerTemplate.opsLayer;
+       layerAsLayerMask = (1 << this.gameObject.layer);
+
+       hp = GameObject.Find("Health Canvas").GetComponent<HealthBar>();
+
+      if(hp != null)
+      {
+       if(yourLayer.value == 64)
+       {
+        basehp = hp.p1Health.GetComponent<Image>().rectTransform.rect.width;
+       }
+       else
+       {
+        basehp = hp.p2Health.GetComponent<Image>().rectTransform.rect.width;
+       }
+      }
+      else
+      {
+        Debug.Log("Damn it");
+      }
+       
     }
 
     // Update is called once per frame
     void Update()
     {
-      
+      //Debug.Log(basehp);      
+      Health();
+
     }
     
     void FixedUpdate()
@@ -169,6 +196,24 @@ public class PlayerMovement : MonoBehaviour
  
 
 ///////////////// Input History ///////////////////////////
+
+
+//////////////////Health checking///////////////////////////////////
+
+  public void Health()
+  {
+
+    if(yourLayer.value == 64)
+    {
+       hp.p1Health.GetComponent<Image>().rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, basehp);
+    }
+    else
+    {
+       hp.p2Health.GetComponent<Image>().rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, basehp);
+    }
+
+
+  }
 
  
 }
