@@ -281,7 +281,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0, b: 0.8503313, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -667,8 +667,9 @@ GameObject:
   - component: {fileID: 4342898779757433115}
   - component: {fileID: 4342898779757433112}
   - component: {fileID: 4342898779757433113}
+  - component: {fileID: 4342898780568802417}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: Health Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -755,6 +756,23 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &4342898780568802417
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4342898779757433119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ec80db8546dcf74aa78bdb3accde186, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  p1Health: {fileID: 6319886673129469021}
+  p2Health: {fileID: 6106897555361069396}
+  P1WinScreen: {fileID: 0}
+  P2WinScreen: {fileID: 0}
+  MenuScreen: {fileID: 0}
 --- !u!1 &4342898779899260378
 GameObject:
   m_ObjectHideFlags: 0
@@ -990,7 +1008,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
+  m_PresetInfoIsWorld: 0
 --- !u!114 &4113779434759142789
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1066,7 +1084,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0, b: 0.9591489, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1118,7 +1136,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 689.45514, y: -0.00022172928}
-  m_SizeDelta: {x: 689.46, y: 195.08}
+  m_SizeDelta: {x: 690, y: 195.08}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!222 &7207117438448579373
 CanvasRenderer:
@@ -1141,7 +1159,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.22863364, g: 1, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1193,7 +1211,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -689.44995, y: -0.00046921}
-  m_SizeDelta: {x: 689.45, y: 195.08}
+  m_SizeDelta: {x: 690, y: 195.08}
   m_Pivot: {x: 0.00000027567148, y: 0.5}
 --- !u!222 &5845217141700218343
 CanvasRenderer:
@@ -1216,7 +1234,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

@@ -8,6 +8,7 @@ public class DummyMoveset : MonoBehaviour
     PlayerMovement Player;
     int Frames = 0;
     public GameObject CrouchingLight; 
+    bool isAttacking = false;
 
     // Start is called before the first frame update
     void Start()
@@ -18,7 +19,8 @@ public class DummyMoveset : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+       
+
     }
     
     public void LightAttack(InputAction.CallbackContext context)
@@ -28,8 +30,9 @@ public class DummyMoveset : MonoBehaviour
       {
         Debug.Log("Standing Light attack had been pressed");
         Frames = 60;
+        StartCoroutine(SingleHitAttack(CrouchingLight,Frames, 60, 1));
 
-        SingleHitAttack(CrouchingLight,Frames, 60, 1);
+        //play animation in here or put it in the singleHitAttack method
       }
       
        if(context.started && Player.isCrouching == true )
@@ -82,34 +85,31 @@ public class DummyMoveset : MonoBehaviour
 
     ///////////// Frame data method ////////////
 
-    public void SingleHitAttack( GameObject hitbox, int Frame, int AStart, int AEnd)
+    public IEnumerator SingleHitAttack( GameObject hitbox, int Frame, int AStart, int AEnd)
     {
+       isAttacking = true; 
+       
 
+       yield return new WaitForSeconds(0.01f);
 
-      
-       for(int s = Frame; s > 0 ; s--)
-       {
-         
-         if( s <= AStart && s > AEnd)
+      if( Frame <= AStart && Frame > AEnd)
          {
            hitbox.SetActive(true);   
            Debug.Log("Active attack frame");
-           Debug.Log(s);
-           Debug.Log(Time.renderedFrameCount);
+           Debug.Log(Frame);
+           Frame--;
          }
          else
          {
-
             hitbox.SetActive(false);
+            Debug.Log(Frame);
             Debug.Log("Attack is not active");
+           Frame--;
          }
 
-
-       }
-
-
-
-
+         isAttacking = false;
+         
+         // going to replace this with a coroutine
     }
 
 }
