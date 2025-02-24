@@ -19,7 +19,8 @@ public class PlayerMovement : MonoBehaviour
    public int jsFrameStart;
    public int doubleJumps;
    int airMovementFrames; 
-   public float basehp = 0; 
+   public float basehp = 0;
+   public float Meter = 0; 
    private int layerAsLayerMask;
    public bool isFacingRight = true; 
    public bool isCrouching; 
@@ -56,10 +57,12 @@ public class PlayerMovement : MonoBehaviour
        if(yourLayer.value == 64)
        {
         basehp = hp.p1Health.GetComponent<Image>().rectTransform.rect.width;
+        Meter = hp.p1Meter.GetComponent<Image>().rectTransform.rect.width;
        }
        else
        {
         basehp = hp.p2Health.GetComponent<Image>().rectTransform.rect.width;
+        Meter = hp.p2Meter.GetComponent<Image>().rectTransform.rect.width;
        }
       }
       else
@@ -73,7 +76,7 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
       //Debug.Log(basehp);      
-      Health();
+      Health_n_Meter();
 
     }
     
@@ -204,18 +207,22 @@ public class PlayerMovement : MonoBehaviour
 ///////////////// Input History ///////////////////////////
 
 
-//////////////////Health checking///////////////////////////////////
+//////////////////Health & Meterchecking///////////////////////////////////
 
-  public void Health()
+  public void Health_n_Meter()
   {
 
     if(yourLayer.value == 64)
     {
        hp.p1Health.GetComponent<Image>().rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, basehp);
+
+       hp.p1Meter.GetComponent<Image>().rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, Meter);
     }
     else
     {
        hp.p2Health.GetComponent<Image>().rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, basehp);
+
+       hp.p2Meter.GetComponent<Image>().rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, Meter);
     }
 
 

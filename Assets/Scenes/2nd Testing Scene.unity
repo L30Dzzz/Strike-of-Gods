@@ -260,6 +260,11 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 1
   m_TargetDisplay: 0
+--- !u!1 &726502920 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2190464777693639174, guid: b2c97f9afff824ce28b9634f86fef821, type: 3}
+  m_PrefabInstance: {fileID: 4342898780568802413}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &797827152
 GameObject:
   m_ObjectHideFlags: 0
@@ -619,6 +624,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 440081990, guid: f82b15c2347f5404793963e3781955fd, type: 3}
+      propertyPath: meterGain
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 1256933938, guid: f82b15c2347f5404793963e3781955fd, type: 3}
       propertyPath: PauseSystem
       value: 
@@ -954,6 +963,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7390993351731573474, guid: 8088100a43153a84188246929b3dda1b, type: 3}
   m_PrefabInstance: {fileID: 2094637485}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1828397000 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5414316411145239863, guid: b2c97f9afff824ce28b9634f86fef821, type: 3}
+  m_PrefabInstance: {fileID: 4342898780568802413}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2094637485
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -965,6 +979,10 @@ PrefabInstance:
       propertyPath: PauseSystem
       value: 
       objectReference: {fileID: 401006193}
+    - target: {fileID: 1855547099, guid: 8088100a43153a84188246929b3dda1b, type: 3}
+      propertyPath: meterGain
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 7390993351731573474, guid: 8088100a43153a84188246929b3dda1b, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -1027,6 +1045,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 705720863}
     m_Modifications:
+    - target: {fileID: 1849938229667784154, guid: b2c97f9afff824ce28b9634f86fef821, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4342898779252118176, guid: b2c97f9afff824ce28b9634f86fef821, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1114,6 +1136,18 @@ PrefabInstance:
     - target: {fileID: 4342898779252118177, guid: b2c97f9afff824ce28b9634f86fef821, type: 3}
       propertyPath: m_Name
       value: Health UI
+      objectReference: {fileID: 0}
+    - target: {fileID: 4342898780568802417, guid: b2c97f9afff824ce28b9634f86fef821, type: 3}
+      propertyPath: p1Meter
+      value: 
+      objectReference: {fileID: 726502920}
+    - target: {fileID: 4342898780568802417, guid: b2c97f9afff824ce28b9634f86fef821, type: 3}
+      propertyPath: p2Meter
+      value: 
+      objectReference: {fileID: 1828397000}
+    - target: {fileID: 5681710985815126605, guid: b2c97f9afff824ce28b9634f86fef821, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b2c97f9afff824ce28b9634f86fef821, type: 3}

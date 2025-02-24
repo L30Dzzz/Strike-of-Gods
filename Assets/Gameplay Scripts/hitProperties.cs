@@ -8,7 +8,9 @@ public class hitProperties : MonoBehaviour
    private LayerMask yourLayer_;
    private LayerMask opsLayer_;
     private int layerAsLayerMask;
-   public int dmg = 0; 
+   public int dmg = 0;
+   public int meterGain = 0;
+   public int meterLost = 0; 
     // Start is called before the first frame update
     void Awake()
     {
@@ -35,9 +37,20 @@ public class hitProperties : MonoBehaviour
          {
               P2.basehp -= dmg;
               Player.basehp += dmg; 
+             
+             if(Player.Meter != 302)
+             {
+               
+               Player.Meter += meterGain;
 
+             }
+             
+             
+             
+             /*
               Debug.Log(Player.basehp);
               Debug.Log(P2.basehp);
+              */
          }
 
 
