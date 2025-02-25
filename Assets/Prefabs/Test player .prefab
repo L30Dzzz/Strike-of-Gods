@@ -123,6 +123,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dmg: 20
+  meterGain: 50
+  meterLost: 0
 --- !u!1 &7390993351444511754
 GameObject:
   m_ObjectHideFlags: 0
@@ -442,6 +444,7 @@ MonoBehaviour:
   jsFrameStart: 5
   doubleJumps: 1
   basehp: 0
+  Meter: 0
   isFacingRight: 1
   isCrouching: 0
   isGrounded: 0
