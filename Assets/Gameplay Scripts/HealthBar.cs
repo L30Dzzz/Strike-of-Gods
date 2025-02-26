@@ -9,6 +9,7 @@ public class HealthBar : MonoBehaviour
     public GameObject p2Health; 
     public GameObject p1Meter; 
     public GameObject p2Meter; 
+    public GameObject KoScreen;
     public GameObject P1WinScreen;
     public GameObject P2WinScreen;
     public GameObject MenuScreen;

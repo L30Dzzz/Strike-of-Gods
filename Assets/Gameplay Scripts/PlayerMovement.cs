@@ -50,7 +50,7 @@ public class PlayerMovement : MonoBehaviour
        opsLayer = playerTemplate.opsLayer;
        layerAsLayerMask = (1 << this.gameObject.layer);
 
-       hp = GameObject.Find("Health Canvas").GetComponent<HealthBar>();
+       hp = GameObject.Find("Canvas").GetComponent<HealthBar>();
 
       if(hp != null)
       {
