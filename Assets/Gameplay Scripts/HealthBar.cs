@@ -27,10 +27,13 @@ public class HealthBar : MonoBehaviour
         
     }
 
-    /*
-     private IEnumerator gameCondition()
+    
+     private IEnumerator gameCondition(GameObject WinScreen, GameObject Menu)
     {
        
+       
+
+       
+       return null;
     }
-*/
 }
