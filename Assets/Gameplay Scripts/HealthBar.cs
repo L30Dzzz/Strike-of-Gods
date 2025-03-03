@@ -7,6 +7,9 @@ public class HealthBar : MonoBehaviour
 {
     private int basehp;
     private int basehp2;
+
+    private int isRunning = 1; //I will turn this into a bool later
+
     public GameObject p1Health;
     public GameObject p2Health; 
     public GameObject p1Meter; 
@@ -22,13 +25,16 @@ public class HealthBar : MonoBehaviour
     {
         
         
-        basehp = (int)p1Health.GetComponent<Image>().rectTransform.rect.width;
-        basehp2 = (int)p2Health.GetComponent<Image>().rectTransform.rect.width;
+        
     }
 
     // Update is called once per frame
     void Update()
     {
+        basehp = (int)p1Health.GetComponent<Image>().rectTransform.rect.width;
+        basehp2 = (int)p2Health.GetComponent<Image>().rectTransform.rect.width;
+    
+    
         if(basehp <= 0)
         {
            StartCoroutine(gameCondition(KoScreen, P1WinScreen, MenuScreen));
@@ -45,6 +51,9 @@ public class HealthBar : MonoBehaviour
      private IEnumerator gameCondition(GameObject Ko, GameObject WinScreen, GameObject Menu)
     {
        
+       
+     if(isRunning >= 1)
+     {
        Ko.SetActive(true);
 
        yield return new WaitForSeconds(2);
@@ -56,5 +65,8 @@ public class HealthBar : MonoBehaviour
 
        WinScreen.SetActive(false);
        Menu.SetActive(true);
+
+       isRunning--;
+       }
     }
 }
