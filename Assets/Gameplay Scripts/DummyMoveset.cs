@@ -28,9 +28,12 @@ public class DummyMoveset : MonoBehaviour
       
       if(context.started && Player.isCrouching == false && Player.isGrounded == true)
       {
+        if(isAttacking == false)
+        {
+          StartCoroutine(SingleHitAttack(CrouchingLight, 30, 10));
+        }
         Debug.Log("Standing Light attack had been pressed");
-        Frames = 60;
-        StartCoroutine(SingleHitAttack(CrouchingLight,Frames, 60, 1));
+        
 
         //play animation in here or put it in the singleHitAttack method
       }
@@ -85,27 +88,24 @@ public class DummyMoveset : MonoBehaviour
 
     ///////////// Frame data method ////////////
 
-    public IEnumerator SingleHitAttack( GameObject hitbox, int Frame, int AStart, int AEnd)
+    public IEnumerator SingleHitAttack( GameObject hitbox, float AStart, float AEnd)
     {
        isAttacking = true; 
        
+      AStart = (AStart/60) * Time.timeScale;
+      AEnd = (AEnd/60) * Time.timeScale;
 
-       yield return new WaitForSeconds(0.01f);
-
-      if( Frame <= AStart && Frame > AEnd)
-         {
+       yield return new WaitForSeconds(AStart);     
            hitbox.SetActive(true);   
            Debug.Log("Active attack frame");
-           Debug.Log(Frame);
-           Frame--;
-         }
-         else
-         {
+           
+          
+       yield return new WaitForSeconds(AEnd);  
             hitbox.SetActive(false);
-            Debug.Log(Frame);
+            
             Debug.Log("Attack is not active");
-           Frame--;
-         }
+          
+         
 
          isAttacking = false;
          

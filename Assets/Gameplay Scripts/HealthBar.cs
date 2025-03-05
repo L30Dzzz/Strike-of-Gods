@@ -8,7 +8,7 @@ public class HealthBar : MonoBehaviour
     private int basehp;
     private int basehp2;
 
-    private int isRunning = 1; //I will turn this into a bool later
+    public int isRunning = 1; //I will turn this into a bool later
 
     public GameObject p1Health;
     public GameObject p2Health; 
@@ -37,11 +37,13 @@ public class HealthBar : MonoBehaviour
     
         if(basehp <= 0)
         {
-           StartCoroutine(gameCondition(KoScreen, P1WinScreen, MenuScreen));
+           StartCoroutine(gameCondition(KoScreen, P2WinScreen, MenuScreen));
+           isRunning--;
         }
         else if(basehp2 <= 0)
         {
-            StartCoroutine(gameCondition(KoScreen, P2WinScreen, MenuScreen));
+            StartCoroutine(gameCondition(KoScreen, P1WinScreen, MenuScreen));
+            isRunning--;
         }
 
 
@@ -66,7 +68,7 @@ public class HealthBar : MonoBehaviour
        WinScreen.SetActive(false);
        Menu.SetActive(true);
 
-       isRunning--;
+        
        }
     }
 }

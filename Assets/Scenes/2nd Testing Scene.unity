@@ -313,6 +313,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ec80db8546dcf74aa78bdb3accde186, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isRunning: 1
   p1Health: {fileID: 1542439920}
   p2Health: {fileID: 994721574}
   p1Meter: {fileID: 726502920}
@@ -1560,6 +1561,10 @@ PrefabInstance:
       propertyPath: PauseSystem
       value: 
       objectReference: {fileID: 401006193}
+    - target: {fileID: 1855547099, guid: 8088100a43153a84188246929b3dda1b, type: 3}
+      propertyPath: dmg
+      value: 200
+      objectReference: {fileID: 0}
     - target: {fileID: 7390993351731573474, guid: 8088100a43153a84188246929b3dda1b, type: 3}
       propertyPath: m_RootOrder
       value: 1
