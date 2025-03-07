@@ -6,8 +6,20 @@ using UnityEngine.InputSystem;
 public class DummyMoveset : MonoBehaviour
 {
     PlayerMovement Player;
-    int Frames = 0;
-    public GameObject CrouchingLight; 
+    
+    public GameObject StandLight; 
+    public GameObject CrouchLight; 
+    public GameObject JumpLight; 
+    public GameObject UniAnti;
+    
+    public GameObject StandMedium; 
+    public GameObject CrouchMedium; 
+    public GameObject JumpMedium; 
+
+    public GameObject StandHeavy; 
+    public GameObject CrouchHeavy; 
+    public GameObject Jumpheavy; 
+
     bool isAttacking = false;
 
     // Start is called before the first frame update
@@ -30,7 +42,7 @@ public class DummyMoveset : MonoBehaviour
       {
         if(isAttacking == false)
         {
-          StartCoroutine(SingleHitAttack(CrouchingLight, 4, 6));
+          StartCoroutine(SingleHitAttack(StandLight, 4, 6));
         }
         Debug.Log("Standing Light attack had been pressed");
         
@@ -40,41 +52,105 @@ public class DummyMoveset : MonoBehaviour
       
        if(context.started && Player.isCrouching == true )
       {
-        Debug.Log("Crouching Light attack had been pressed");
+        if(isAttacking == false)
+        {
+          StartCoroutine(SingleHitAttack(CrouchLight, 5, 5));
+        }
+      
+         Debug.Log("Crouching Light attack had been pressed");
       }
       
       if(context.started && Player.isGrounded == false)
       {
-        Debug.Log("Jumping Light attack had been pressed");
+        if(isAttacking == false)
+        {
+          StartCoroutine(SingleHitAttack(JumpLight, 6, 15));
+        }
+      
+         Debug.Log("Jumping Light attack had been pressed");
       }
 
       if(context.started && ((Player.Input.x < 0 &&  Player.isFacingRight == false) || (Player.Input.x > 0 &&  Player.isFacingRight == true)))
       {
-        Debug.Log("6L has been pressed");
+        if(isAttacking == false)
+        {
+          StartCoroutine(SingleHitAttack(UniAnti, 9, 6));
+        }
+      
+         Debug.Log("6L has been pressed");
       }
 
     }
 
     public void MediumAttack(InputAction.CallbackContext context)
     {
-      Debug.Log("Medium attack had been pressed");
+      if(context.started && Player.isCrouching == false && Player.isGrounded == true)
+      {
+        if(isAttacking == false)
+        {
+          StartCoroutine(SingleHitAttack(StandMedium, 6, 9));
+        }
+        Debug.Log("Standing Medium attack had been pressed");
+        
+
+        //play animation in here or put it in the singleHitAttack method
+      }
+      
+       if(context.started && Player.isCrouching == true )
+      {
+        if(isAttacking == false)
+        {
+          StartCoroutine(SingleHitAttack(CrouchMedium, 6, 9));
+        }
+      
+         Debug.Log("Crouching Medium attack had been pressed");
+      }
+      
+      if(context.started && Player.isGrounded == false)
+      {
+        if(isAttacking == false)
+        {
+          StartCoroutine(SingleHitAttack(JumpMedium, 8, 12));
+        }
+      
+         Debug.Log("Jumping Medium attack had been pressed");
+      }
+
+
     }
 
     public void HeavyAttack(InputAction.CallbackContext context)
     {
       if(context.started && Player.isCrouching == false && Player.isGrounded == true)
       {
+        if(isAttacking == false)
+        {
+          StartCoroutine(SingleHitAttack(StandHeavy, 10, 14));
+        }
         Debug.Log("Standing Heavy attack had been pressed");
+        
+
+        //play animation in here or put it in the singleHitAttack method
       }
       
        if(context.started && Player.isCrouching == true )
       {
-        Debug.Log("Crouching Heavy attack had been pressed");
+        if(isAttacking == false)
+        {
+          StartCoroutine(SingleHitAttack(CrouchHeavy, 9, 14));
+        }
+      
+         Debug.Log("Crouching Heavy attack had been pressed");
       }
       
       if(context.started && Player.isGrounded == false)
       {
-            Debug.Log("Jumping Heavy attack had been pressed");
+        if(isAttacking == false)
+        {
+          StartCoroutine(SingleHitAttack(Jumpheavy, 12, 19));
+        }
+      
+         Debug.Log("Jumping Heavy attack had been pressed");
       }
     }
 

@@ -10,7 +10,7 @@ public class hitProperties : MonoBehaviour
     private int layerAsLayerMask;
    public int dmg = 0;
    public int meterGain = 0;
-   public int meterLost = 0; 
+   //public int meterLost = 0; 
     // Start is called before the first frame update
     void Awake()
     {
