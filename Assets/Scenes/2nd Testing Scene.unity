@@ -1561,6 +1561,22 @@ PrefabInstance:
       propertyPath: PauseSystem
       value: 
       objectReference: {fileID: 401006193}
+    - target: {fileID: 1226435403, guid: 8088100a43153a84188246929b3dda1b, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.5228182
+      objectReference: {fileID: 0}
+    - target: {fileID: 1226435403, guid: 8088100a43153a84188246929b3dda1b, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.512331
+      objectReference: {fileID: 0}
+    - target: {fileID: 1226435403, guid: 8088100a43153a84188246929b3dda1b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.028
+      objectReference: {fileID: 0}
+    - target: {fileID: 1226435403, guid: 8088100a43153a84188246929b3dda1b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.1047
+      objectReference: {fileID: 0}
     - target: {fileID: 1855547099, guid: 8088100a43153a84188246929b3dda1b, type: 3}
       propertyPath: dmg
       value: 200

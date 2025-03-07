@@ -30,7 +30,7 @@ public class DummyMoveset : MonoBehaviour
       {
         if(isAttacking == false)
         {
-          StartCoroutine(SingleHitAttack(CrouchingLight, 30, 10));
+          StartCoroutine(SingleHitAttack(CrouchingLight, 4, 6));
         }
         Debug.Log("Standing Light attack had been pressed");
         

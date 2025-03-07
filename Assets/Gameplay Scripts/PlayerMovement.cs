@@ -129,7 +129,7 @@ public class PlayerMovement : MonoBehaviour
         isFacingRight = true;
     }
     
-    else if (leftSideDetector.collider != null && leftSideDetector.collider.gameObject != this.gameObject && rightSideDetector.collider.gameObject != gameObject.CompareTag("Hitbox"))
+    else if ((leftSideDetector.collider != null) && (leftSideDetector.collider.gameObject != this.gameObject) && rightSideDetector.collider.gameObject != gameObject.CompareTag("Hitbox"))
       {
         isFacingRight = false;
         transform.localScale = new Vector3(-2.5f, 3, 1); // Flip to face left
