@@ -18,13 +18,19 @@ public class PlayerMovement : MonoBehaviour
    public int jsFrame; 
    public int jsFrameStart;
    public int doubleJumps;
+   private int layerAsLayerMask;
    int airMovementFrames; 
    public float basehp = 0;
    public float Meter = 0; 
-   private int layerAsLayerMask;
+   
+   
    public bool isFacingRight = true; 
    public bool isCrouching; 
    public bool isGrounded = false;
+   public bool CrouchBlock = false;
+   public bool StandBlock = true; 
+   
+
    bool jumpSquat; 
    private CharacterController playerController; 
    HealthBar hp; 
@@ -82,6 +88,7 @@ public class PlayerMovement : MonoBehaviour
     
     void FixedUpdate()
     {
+      
       MovementFunction();
        
        /////////////////////////// JUMP FUNCTION START //////////////////////////

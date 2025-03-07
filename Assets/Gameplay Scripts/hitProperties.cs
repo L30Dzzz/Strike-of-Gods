@@ -7,7 +7,7 @@ public class hitProperties : MonoBehaviour
    PlayerMovement Player;
    private LayerMask yourLayer_;
    private LayerMask opsLayer_;
-    private int layerAsLayerMask;
+   private int layerAsLayerMask;
    public int dmg = 0;
    public int meterGain = 0;
    //public int meterLost = 0; 
