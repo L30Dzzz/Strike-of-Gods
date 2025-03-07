@@ -38,7 +38,7 @@ public class DummyMoveset : MonoBehaviour
     public void LightAttack(InputAction.CallbackContext context)
     {
       
-      if(context.started && Player.isCrouching == false && Player.isGrounded == true)
+      if(context.started && Player.isCrouching == false && Player.isGrounded == true && Player.Input.x == 0)
       {
         if(isAttacking == false)
         {
@@ -70,7 +70,7 @@ public class DummyMoveset : MonoBehaviour
          Debug.Log("Jumping Light attack had been pressed");
       }
 
-      if(context.started && ((Player.Input.x < 0 &&  Player.isFacingRight == false) || (Player.Input.x > 0 &&  Player.isFacingRight == true)))
+      if(context.started && ((Player.Input.x  < 0 &&  Player.isFacingRight == false) || (Player.Input.x > 0 &&  Player.isFacingRight == true)))
       {
         if(isAttacking == false)
         {

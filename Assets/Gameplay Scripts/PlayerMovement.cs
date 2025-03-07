@@ -163,16 +163,7 @@ public class PlayerMovement : MonoBehaviour
         transform.Translate(Vector2.right * Input.x * Time.deltaTime * speed);
         isCrouching = false; 
        }
-       /*
-       if(isCrouching == false && isGrounded == false && airMovementFrames > 0 && isFacingRight == true)
-       {
-         Input.x = 0;
-       }
-       else if(isCrouching == false && isGrounded == false && airMovementFrames > 0 && isFacingRight == false)
-       {
-         Input.x = 0;
-       }
-       */
+       
        
        // changes the speed of your character depending on what side you are facing 
        if((isFacingRight == true && Input.x < 0 && isGrounded == true) || (isFacingRight == false && Input.x > 0 && isGrounded ==true))

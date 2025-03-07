@@ -1711,6 +1711,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: 0.95
       objectReference: {fileID: 0}
+    - target: {fileID: 6473292822362748893, guid: 8088100a43153a84188246929b3dda1b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.23
+      objectReference: {fileID: 0}
     - target: {fileID: 7106073188389161746, guid: 8088100a43153a84188246929b3dda1b, type: 3}
       propertyPath: m_TagString
       value: Hitbox
