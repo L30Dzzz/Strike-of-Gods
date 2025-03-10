@@ -200,6 +200,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1568648523254174425, guid: f82b15c2347f5404793963e3781955fd, type: 3}
   m_PrefabInstance: {fileID: 1380079672}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &544512775 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1846319266995829859, guid: f82b15c2347f5404793963e3781955fd, type: 3}
+  m_PrefabInstance: {fileID: 1380079672}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &591034612 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8459822812780154923, guid: f82b15c2347f5404793963e3781955fd, type: 3}
@@ -209,6 +214,11 @@ GameObject:
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5960776629129568296, guid: f82b15c2347f5404793963e3781955fd, type: 3}
   m_PrefabInstance: {fileID: 1380079672}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &599767367 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7390993351731573500, guid: 8088100a43153a84188246929b3dda1b, type: 3}
+  m_PrefabInstance: {fileID: 2094637485}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &614751770 stripped
 Transform:
@@ -952,6 +962,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 814668900}
     - target: {fileID: 1256933938, guid: f82b15c2347f5404793963e3781955fd, type: 3}
+      propertyPath: player1
+      value: 
+      objectReference: {fileID: 599767367}
+    - target: {fileID: 1256933938, guid: f82b15c2347f5404793963e3781955fd, type: 3}
+      propertyPath: player2
+      value: 
+      objectReference: {fileID: 544512775}
+    - target: {fileID: 1256933938, guid: f82b15c2347f5404793963e3781955fd, type: 3}
       propertyPath: PauseSystem
       value: 
       objectReference: {fileID: 401006193}
@@ -1684,6 +1702,14 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 489578487, guid: 8088100a43153a84188246929b3dda1b, type: 3}
+      propertyPath: player1
+      value: 
+      objectReference: {fileID: 599767367}
+    - target: {fileID: 489578487, guid: 8088100a43153a84188246929b3dda1b, type: 3}
+      propertyPath: player2
+      value: 
+      objectReference: {fileID: 544512775}
+    - target: {fileID: 489578487, guid: 8088100a43153a84188246929b3dda1b, type: 3}
       propertyPath: PauseSystem
       value: 
       objectReference: {fileID: 401006193}
@@ -2031,6 +2057,30 @@ PrefabInstance:
       propertyPath: p2Meter
       value: 
       objectReference: {fileID: 1828397000}
+    - target: {fileID: 4710084878731082007, guid: b2c97f9afff824ce28b9634f86fef821, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4710084878731082007, guid: b2c97f9afff824ce28b9634f86fef821, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4710084878731082007, guid: b2c97f9afff824ce28b9634f86fef821, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4798560171366095401, guid: b2c97f9afff824ce28b9634f86fef821, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4798560171366095401, guid: b2c97f9afff824ce28b9634f86fef821, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4798560171366095401, guid: b2c97f9afff824ce28b9634f86fef821, type: 3}
+      propertyPath: m_Color.r
+      value: 0.20410347
+      objectReference: {fileID: 0}
     - target: {fileID: 5681710985815126605, guid: b2c97f9afff824ce28b9634f86fef821, type: 3}
       propertyPath: m_SizeDelta.x
       value: 0
