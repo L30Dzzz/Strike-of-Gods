@@ -28,7 +28,10 @@ public class PlayerMovement : MonoBehaviour
    public bool isCrouching; 
    public bool isGrounded = false;
    public bool CrouchBlock = false;
-   public bool StandBlock = true; 
+   public bool StandBlock = false; 
+
+  // Define the size and direction for the BoxCast
+   Vector2 boxSize = new Vector2(0.5f, 5);
    
 
    bool jumpSquat; 
@@ -83,6 +86,7 @@ public class PlayerMovement : MonoBehaviour
     {
       //Debug.Log(basehp);      
       Health_n_Meter();
+      isBlocking();
 
     }
     
@@ -112,12 +116,8 @@ public class PlayerMovement : MonoBehaviour
        }
         ////////////////////////// JUMP FUNCTION END ///////////////////
 
-      //////////////////////////CHARACTER FLIP FUNCTION///////////////////////////////////////
-       
-       // Define the size and direction for the BoxCast
-    
-       Vector2 boxSize = new Vector2(0.5f, 5);
-    
+      //////////////////////////CHARACTER FLIP FUNCTION////////////////////////////////////
+     
       float distance = 2f; // Small distance to check for collisions
       // Check for collisions on the right side
       
@@ -129,14 +129,14 @@ public class PlayerMovement : MonoBehaviour
       
       // Flip the GameObject based on the collision
 
-      if ((rightSideDetector.collider != null) && (rightSideDetector.collider.gameObject != this.gameObject) &&  this.transform.gameObject.layer != yourLayer && (rightSideDetector.collider.gameObject != gameObject.CompareTag("Hitbox")))
+      if ((rightSideDetector.collider != null) && (rightSideDetector.collider.gameObject != this.gameObject) &&  this.transform.gameObject.layer != yourLayer && (!rightSideDetector.collider.gameObject.CompareTag("Hitbox")))
     {
-        Debug.Log(gameObject.CompareTag("Hitbox"));
+        
         transform.localScale = new Vector3(2.5f, 3, 1); // Flip to face right
         isFacingRight = true;
     }
     
-    else if ((leftSideDetector.collider != null) && (leftSideDetector.collider.gameObject != this.gameObject) && (leftSideDetector.collider.gameObject != gameObject.CompareTag("Hitbox")) && this.transform.gameObject.layer != yourLayer)
+    else if ((leftSideDetector.collider != null) && (leftSideDetector.collider.gameObject != this.gameObject) && (!leftSideDetector.collider.gameObject.CompareTag("Hitbox")) && this.transform.gameObject.layer != yourLayer)
       {
         isFacingRight = false;
         transform.localScale = new Vector3(-2.5f, 3, 1); // Flip to face left
@@ -147,8 +147,8 @@ public class PlayerMovement : MonoBehaviour
     void OnDrawGizmos()
     {
         Gizmos.color = Color.blue; 
-        Gizmos.DrawCube(rb.position + new Vector2(2,0), new Vector2 (0.5f, 5));
-        Gizmos.DrawCube(rb.position + new Vector2(-2,0), new Vector2 (0.5f, 5));
+        Gizmos.DrawCube(rb.position + new Vector2(2,0), boxSize);
+        Gizmos.DrawCube(rb.position + new Vector2(-2,0), boxSize);
     }
 
  ////////////////////////////////   MOVEMENT     //////////////////////////////////////////////////////////////////////////////
@@ -226,5 +226,25 @@ public class PlayerMovement : MonoBehaviour
 
   }
 
+/////////////////////////////// BLOCKING////////////////////////////////
+  public void isBlocking()
+  {
+    if((isFacingRight == true && Input.x < 0 && isCrouching == false) || (isFacingRight == false && Input.x > 0 && isCrouching == false))
+    {
+      StandBlock = true;
+      CrouchBlock = false;
+    }
+    else if((isFacingRight == true && Input.x < 0 && isCrouching == true) || (isFacingRight == false && Input.x > 0 && isCrouching == true))
+    {
+      CrouchBlock = true;
+      StandBlock = false;
+    }
+    else
+    {
+      StandBlock = false;
+      CrouchBlock = false; 
+    }
+
+  }
  
 }
