@@ -78,7 +78,7 @@
                     "path": "<Keyboard>/w",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard",
+                    "groups": "Keyboard P1",
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -89,7 +89,7 @@
                     "path": "<Keyboard>/s",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard",
+                    "groups": "Keyboard P1",
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -100,7 +100,7 @@
                     "path": "<Keyboard>/a",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard",
+                    "groups": "Keyboard P1",
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -111,7 +111,7 @@
                     "path": "<Keyboard>/d",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard",
+                    "groups": "Keyboard P1",
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -139,12 +139,67 @@
                     "isPartOfComposite": false
                 },
                 {
+                    "name": "2D Vector",
+                    "id": "85f22223-63bb-434c-90d4-b423e5a77012",
+                    "path": "2DVector",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Movement",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "up",
+                    "id": "48a14f26-7842-43ba-af25-4bcbf69cd0f1",
+                    "path": "<Keyboard>/upArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard P2",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "4d07d11a-f99d-476a-a3b9-7e0bcbd4a2ef",
+                    "path": "<Keyboard>/downArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard P2",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "left",
+                    "id": "f15252b2-ff05-4d8a-9f96-d61f48d7b4e4",
+                    "path": "<Keyboard>/leftArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard P2",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "5119be03-a8fc-402a-aef6-cfe166e10d81",
+                    "path": "<Keyboard>/rightArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard P2",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
                     "name": "",
                     "id": "17934508-7a6c-49ab-814b-f97d4fe494cb",
                     "path": "<Keyboard>/j",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard",
+                    "groups": "Keyboard P1",
                     "action": "Light Attack",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -162,11 +217,22 @@
                 },
                 {
                     "name": "",
+                    "id": "9a5a5584-b4d4-4bba-ab70-f3e6eee20868",
+                    "path": "<Keyboard>/z",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard P2",
+                    "action": "Light Attack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "a0d866ec-833e-4edc-98fd-1228770338dd",
                     "path": "<Keyboard>/k",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard",
+                    "groups": "Keyboard P1",
                     "action": "Medium Attack",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -184,11 +250,22 @@
                 },
                 {
                     "name": "",
+                    "id": "52dd1dc7-92fa-4056-b675-db5fc4edff42",
+                    "path": "<Keyboard>/x",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard P2",
+                    "action": "Medium Attack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "8577885d-88f8-423c-bead-9fa06d944f95",
                     "path": "<Keyboard>/l",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard",
+                    "groups": "Keyboard P1",
                     "action": "Heavy Attack",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -206,11 +283,22 @@
                 },
                 {
                     "name": "",
+                    "id": "d02a9430-0e08-411c-a8d6-5c01fe9ff2f1",
+                    "path": "<Keyboard>/c",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard P2",
+                    "action": "Heavy Attack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "d4078d76-b96e-4fab-8d42-db812352e0c1",
                     "path": "<Keyboard>/i",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard",
+                    "groups": "Keyboard P1",
                     "action": "Special Attack",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -222,6 +310,17 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Controller",
+                    "action": "Special Attack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "fb0e92a6-456a-47c2-bb7f-1950fa106aaf",
+                    "path": "<Keyboard>/v",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard P2",
                     "action": "Special Attack",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -253,8 +352,8 @@
     ],
     "controlSchemes": [
         {
-            "name": "Keyboard",
-            "bindingGroup": "Keyboard",
+            "name": "Keyboard P1",
+            "bindingGroup": "Keyboard P1",
             "devices": [
                 {
                     "devicePath": "<Keyboard>",
@@ -273,6 +372,11 @@
                     "isOR": false
                 }
             ]
+        },
+        {
+            "name": "Keyboard P2",
+            "bindingGroup": "Keyboard P2",
+            "devices": []
         }
     ]
 }

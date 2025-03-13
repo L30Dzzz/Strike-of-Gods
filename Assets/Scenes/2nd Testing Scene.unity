@@ -985,6 +985,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Test player 2
       objectReference: {fileID: 0}
+    - target: {fileID: 1846319266995829862, guid: f82b15c2347f5404793963e3781955fd, type: 3}
+      propertyPath: m_DefaultControlScheme
+      value: Keyboard P2
+      objectReference: {fileID: 0}
     - target: {fileID: 1846319266995829880, guid: f82b15c2347f5404793963e3781955fd, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -1717,6 +1721,22 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Hitbox
       objectReference: {fileID: 0}
+    - target: {fileID: 1855547099, guid: 8088100a43153a84188246929b3dda1b, type: 3}
+      propertyPath: isMid
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 295107253397162097, guid: 8088100a43153a84188246929b3dda1b, type: 3}
+      propertyPath: isHigh
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 980790646939974910, guid: 8088100a43153a84188246929b3dda1b, type: 3}
+      propertyPath: isHigh
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1271729755577832540, guid: 8088100a43153a84188246929b3dda1b, type: 3}
+      propertyPath: isMid
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1431957513944108895, guid: 8088100a43153a84188246929b3dda1b, type: 3}
       propertyPath: m_TagString
       value: Hitbox
@@ -1733,13 +1753,33 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Hitbox
       objectReference: {fileID: 0}
+    - target: {fileID: 3870158567157136101, guid: 8088100a43153a84188246929b3dda1b, type: 3}
+      propertyPath: isLow
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3914983683274629293, guid: 8088100a43153a84188246929b3dda1b, type: 3}
+      propertyPath: isLow
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3976820967327151761, guid: 8088100a43153a84188246929b3dda1b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.95
       objectReference: {fileID: 0}
+    - target: {fileID: 5458222171147413386, guid: 8088100a43153a84188246929b3dda1b, type: 3}
+      propertyPath: isLow
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6227316280754517394, guid: 8088100a43153a84188246929b3dda1b, type: 3}
+      propertyPath: isMid
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6473292822362748893, guid: 8088100a43153a84188246929b3dda1b, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0.23
+      objectReference: {fileID: 0}
+    - target: {fileID: 6779874431023762900, guid: 8088100a43153a84188246929b3dda1b, type: 3}
+      propertyPath: isHigh
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7106073188389161746, guid: 8088100a43153a84188246929b3dda1b, type: 3}
       propertyPath: m_TagString
@@ -1793,9 +1833,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7390993351731573477, guid: 8088100a43153a84188246929b3dda1b, type: 3}
+      propertyPath: movespeed1
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7390993351731573477, guid: 8088100a43153a84188246929b3dda1b, type: 3}
+      propertyPath: movespeed2
+      value: 2.5
+      objectReference: {fileID: 0}
     - target: {fileID: 7390993351731573500, guid: 8088100a43153a84188246929b3dda1b, type: 3}
       propertyPath: m_Name
       value: 'Test player '
+      objectReference: {fileID: 0}
+    - target: {fileID: 7539814099438460772, guid: 8088100a43153a84188246929b3dda1b, type: 3}
+      propertyPath: isHigh
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7539932383105582296, guid: 8088100a43153a84188246929b3dda1b, type: 3}
       propertyPath: m_TagString
