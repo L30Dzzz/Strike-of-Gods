@@ -19,19 +19,28 @@ public class DummyMoveset : MonoBehaviour
     public GameObject StandHeavy; 
     public GameObject CrouchHeavy; 
     public GameObject Jumpheavy; 
-
+    
+    public bool isBlocking = false;
     bool isAttacking = false;
 
     // Start is called before the first frame update
     void Start()
     {
         Player = GetComponent<PlayerMovement>();
+         
     }
 
     // Update is called once per frame
     void Update()
     {
-       
+        if(Player.StandBlock == true || Player.CrouchBlock == true)
+        {
+          isBlocking = true;
+        }
+        else
+        {
+          isBlocking = false;
+        }       
 
     }
     
@@ -40,7 +49,7 @@ public class DummyMoveset : MonoBehaviour
       
       if(context.started && Player.isCrouching == false && Player.isGrounded == true && Player.Input.x == 0)
       {
-        if(isAttacking == false)
+        if(isAttacking == false && isBlocking == false)
         {
           StartCoroutine(SingleHitAttack(StandLight, 4, 6));
         }
@@ -52,7 +61,7 @@ public class DummyMoveset : MonoBehaviour
       
        if(context.started && Player.isCrouching == true )
       {
-        if(isAttacking == false)
+        if(isAttacking == false && isBlocking == false)
         {
           StartCoroutine(SingleHitAttack(CrouchLight, 5, 5));
         }
@@ -62,7 +71,7 @@ public class DummyMoveset : MonoBehaviour
       
       if(context.started && Player.isGrounded == false)
       {
-        if(isAttacking == false)
+        if(isAttacking == false && isBlocking == false)
         {
           StartCoroutine(SingleHitAttack(JumpLight, 6, 15));
         }
@@ -72,7 +81,7 @@ public class DummyMoveset : MonoBehaviour
 
       if(context.started && ((Player.Input.x  < 0 &&  Player.isFacingRight == false) || (Player.Input.x > 0 &&  Player.isFacingRight == true)))
       {
-        if(isAttacking == false)
+        if(isAttacking == false && isBlocking == false)
         {
           StartCoroutine(SingleHitAttack(UniAnti, 9, 6));
         }
@@ -86,7 +95,7 @@ public class DummyMoveset : MonoBehaviour
     {
       if(context.started && Player.isCrouching == false && Player.isGrounded == true)
       {
-        if(isAttacking == false)
+        if(isAttacking == false && isBlocking == false)
         {
           StartCoroutine(SingleHitAttack(StandMedium, 6, 9));
         }
@@ -98,7 +107,7 @@ public class DummyMoveset : MonoBehaviour
       
        if(context.started && Player.isCrouching == true )
       {
-        if(isAttacking == false)
+        if(isAttacking == false && isBlocking == false)
         {
           StartCoroutine(SingleHitAttack(CrouchMedium, 6, 9));
         }
@@ -108,7 +117,7 @@ public class DummyMoveset : MonoBehaviour
       
       if(context.started && Player.isGrounded == false)
       {
-        if(isAttacking == false)
+        if(isAttacking == false && isBlocking == false)
         {
           StartCoroutine(SingleHitAttack(JumpMedium, 8, 12));
         }
@@ -123,7 +132,7 @@ public class DummyMoveset : MonoBehaviour
     {
       if(context.started && Player.isCrouching == false && Player.isGrounded == true)
       {
-        if(isAttacking == false)
+        if(isAttacking == false && isBlocking == false)
         {
           StartCoroutine(SingleHitAttack(StandHeavy, 10, 14));
         }
@@ -135,7 +144,7 @@ public class DummyMoveset : MonoBehaviour
       
        if(context.started && Player.isCrouching == true )
       {
-        if(isAttacking == false)
+        if(isAttacking == false && isBlocking == false)
         {
           StartCoroutine(SingleHitAttack(CrouchHeavy, 9, 14));
         }
@@ -145,7 +154,7 @@ public class DummyMoveset : MonoBehaviour
       
       if(context.started && Player.isGrounded == false)
       {
-        if(isAttacking == false)
+        if(isAttacking == false && isBlocking == false)
         {
           StartCoroutine(SingleHitAttack(Jumpheavy, 12, 19));
         }
