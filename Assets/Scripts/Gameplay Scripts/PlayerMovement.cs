@@ -18,13 +18,22 @@ public class PlayerMovement : MonoBehaviour
    public int jsFrame; 
    public int jsFrameStart;
    public int doubleJumps;
+   private int layerAsLayerMask;
    int airMovementFrames; 
    public float basehp = 0;
    public float Meter = 0; 
-   private int layerAsLayerMask;
+   
+   
    public bool isFacingRight = true; 
    public bool isCrouching; 
    public bool isGrounded = false;
+   public bool CrouchBlock = false;
+   public bool StandBlock = false; 
+
+  // Define the size and direction for the BoxCast
+   Vector2 boxSize = new Vector2(0.5f, 5);
+   
+
    bool jumpSquat; 
    private CharacterController playerController; 
    HealthBar hp; 
@@ -50,7 +59,7 @@ public class PlayerMovement : MonoBehaviour
        opsLayer = playerTemplate.opsLayer;
        layerAsLayerMask = (1 << this.gameObject.layer);
 
-       hp = GameObject.Find("Health Canvas").GetComponent<HealthBar>();
+       hp = GameObject.Find("Canvas").GetComponent<HealthBar>();
 
       if(hp != null)
       {
@@ -76,12 +85,14 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
       //Debug.Log(basehp);      
-     // Health_n_Meter();
+      Health_n_Meter();
+      isBlocking();
 
     }
     
     void FixedUpdate()
     {
+      
       MovementFunction();
        
        /////////////////////////// JUMP FUNCTION START //////////////////////////
@@ -105,12 +116,8 @@ public class PlayerMovement : MonoBehaviour
        }
         ////////////////////////// JUMP FUNCTION END ///////////////////
 
-      //////////////////////////CHARACTER FLIP FUNCTION///////////////////////////////////////
-       
-       // Define the size and direction for the BoxCast
-    
-       Vector2 boxSize = new Vector2(0.5f, 5);
-    
+      //////////////////////////CHARACTER FLIP FUNCTION////////////////////////////////////
+     
       float distance = 2f; // Small distance to check for collisions
       // Check for collisions on the right side
       
@@ -122,14 +129,14 @@ public class PlayerMovement : MonoBehaviour
       
       // Flip the GameObject based on the collision
 
-      if ((rightSideDetector.collider != null) && (rightSideDetector.collider.gameObject != this.gameObject) &&  this.transform.gameObject.layer != yourLayer )
+      if ((rightSideDetector.collider != null) && (rightSideDetector.collider.gameObject != this.gameObject) &&  this.transform.gameObject.layer != yourLayer && (!rightSideDetector.collider.gameObject.CompareTag("Hitbox")))
     {
-        Debug.Log(gameObject.CompareTag("Hitbox"));
+        
         transform.localScale = new Vector3(2.5f, 3, 1); // Flip to face right
         isFacingRight = true;
     }
     
-    else if (leftSideDetector.collider != null && leftSideDetector.collider.gameObject != this.gameObject && rightSideDetector.collider.gameObject != gameObject.CompareTag("Hitbox"))
+    else if ((leftSideDetector.collider != null) && (leftSideDetector.collider.gameObject != this.gameObject) && (!leftSideDetector.collider.gameObject.CompareTag("Hitbox")) && this.transform.gameObject.layer != yourLayer)
       {
         isFacingRight = false;
         transform.localScale = new Vector3(-2.5f, 3, 1); // Flip to face left
@@ -140,8 +147,8 @@ public class PlayerMovement : MonoBehaviour
     void OnDrawGizmos()
     {
         Gizmos.color = Color.blue; 
-        Gizmos.DrawCube(rb.position + new Vector2(2,0), new Vector2 (0.5f, 5));
-        Gizmos.DrawCube(rb.position + new Vector2(-2,0), new Vector2 (0.5f, 5));
+        Gizmos.DrawCube(rb.position + new Vector2(2,0), boxSize);
+        Gizmos.DrawCube(rb.position + new Vector2(-2,0), boxSize);
     }
 
  ////////////////////////////////   MOVEMENT     //////////////////////////////////////////////////////////////////////////////
@@ -163,16 +170,7 @@ public class PlayerMovement : MonoBehaviour
         transform.Translate(Vector2.right * Input.x * Time.deltaTime * speed);
         isCrouching = false; 
        }
-       /*
-       if(isCrouching == false && isGrounded == false && airMovementFrames > 0 && isFacingRight == true)
-       {
-         Input.x = 0;
-       }
-       else if(isCrouching == false && isGrounded == false && airMovementFrames > 0 && isFacingRight == false)
-       {
-         Input.x = 0;
-       }
-       */
+       
        
        // changes the speed of your character depending on what side you are facing 
        if((isFacingRight == true && Input.x < 0 && isGrounded == true) || (isFacingRight == false && Input.x > 0 && isGrounded ==true))
@@ -228,5 +226,25 @@ public class PlayerMovement : MonoBehaviour
 
   }
 
+/////////////////////////////// BLOCKING////////////////////////////////
+  public void isBlocking()
+  {
+    if((isFacingRight == true && Input.x < 0 && isCrouching == false) || (isFacingRight == false && Input.x > 0 && isCrouching == false))
+    {
+      StandBlock = true;
+      CrouchBlock = false;
+    }
+    else if((isFacingRight == true && Input.x < 0 && isCrouching == true) || (isFacingRight == false && Input.x > 0 && isCrouching == true))
+    {
+      CrouchBlock = true;
+      StandBlock = false;
+    }
+    else
+    {
+      StandBlock = false;
+      CrouchBlock = false; 
+    }
+
+  }
  
 }
