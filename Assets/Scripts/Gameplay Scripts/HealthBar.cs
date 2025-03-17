@@ -2,11 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class HealthBar : MonoBehaviour
 {
     private int basehp;
     private int basehp2;
+
+    private int currentTime;
+    public int MaxTime;
 
     public int isRunning = 1; //I will turn this into a bool later
 
@@ -18,12 +22,14 @@ public class HealthBar : MonoBehaviour
     public GameObject P1WinScreen;
     public GameObject P2WinScreen;
     public GameObject MenuScreen;
+
+    public TextMeshProUGUI timerText;
     
     
     
     void Awake()
     {
-        
+        currentTime = MaxTime;
         
         
     }
@@ -70,5 +76,17 @@ public class HealthBar : MonoBehaviour
 
         
        }
+
+      
+    }
+
+    private IEnumerator gameTimer()
+    {
+        while(currentTime > 0)
+        {
+            
+            yield return new WaitForSeconds(1);
+            currentTime--;
+        }
     }
 }
