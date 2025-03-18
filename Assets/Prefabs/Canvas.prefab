@@ -132,7 +132,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: 1223
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -454,7 +454,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ec80db8546dcf74aa78bdb3accde186, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxTime: 0
+  MaxTime: 100
   isRunning: 1
   p1Health: {fileID: 3080566770990507503}
   p2Health: {fileID: 3005289228728199398}
@@ -464,7 +464,7 @@ MonoBehaviour:
   P1WinScreen: {fileID: 4697803307760288140}
   P2WinScreen: {fileID: 4697803307813209909}
   MenuScreen: {fileID: 4697803306136483896}
-  timerText: {fileID: 0}
+  timerText: {fileID: 4697803306177674354}
 --- !u!1 &4697803307091533461
 GameObject:
   m_ObjectHideFlags: 0

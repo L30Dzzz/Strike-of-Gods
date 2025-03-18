@@ -33,14 +33,8 @@ public class DummyMoveset : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Player.StandBlock == true || Player.CrouchBlock == true)
-        {
-          isBlocking = true;
-        }
-        else
-        {
-          isBlocking = false;
-        }       
+      playerCondition();
+
 
     }
     
@@ -195,6 +189,24 @@ public class DummyMoveset : MonoBehaviour
          isAttacking = false;
          
          // going to replace this with a coroutine
+    }
+
+    private void playerCondition()
+    {
+      
+     ////////////////////////////////////////////////// Blocking Check /////////////////////////////////////////////////
+      if(Player.StandBlock == true || Player.CrouchBlock == true)
+      {
+        isBlocking = true;
+      }
+      else
+      {
+        isBlocking = false;
+      }   
+      //////////////////////////////////////////// Attacking Check ///////////////////////////////////////
+
+    
+
     }
 
 }

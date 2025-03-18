@@ -6,10 +6,10 @@ using TMPro;
 
 public class HealthBar : MonoBehaviour
 {
-    private int basehp;
-    private int basehp2;
+    public int basehp;
+    public int basehp2;
 
-    private int currentTime;
+    public int currentTime;
     public int MaxTime;
 
     public int isRunning = 1; //I will turn this into a bool later
@@ -28,9 +28,12 @@ public class HealthBar : MonoBehaviour
     
     
     void Awake()
-    {
+    {   
+        //sets the time to the max time and start timer loop 
         currentTime = MaxTime;
-        
+        timerText.text = MaxTime.ToString();
+
+        StartCoroutine(gameTimer());
         
     }
 
@@ -43,12 +46,14 @@ public class HealthBar : MonoBehaviour
     
         if(basehp <= 0)
         {
-           StartCoroutine(gameCondition(KoScreen, P2WinScreen, MenuScreen));
-           isRunning--;
+            StartCoroutine(gameCondition(KoScreen, P2WinScreen, MenuScreen));
+            StopCoroutine(gameTimer());
+            isRunning--;
         }
         else if(basehp2 <= 0)
         {
             StartCoroutine(gameCondition(KoScreen, P1WinScreen, MenuScreen));
+            StopCoroutine(gameTimer());
             isRunning--;
         }
 
@@ -82,11 +87,20 @@ public class HealthBar : MonoBehaviour
 
     private IEnumerator gameTimer()
     {
-        while(currentTime > 0)
+        while(currentTime > 0 && ( basehp >= 0 && basehp2 >= 0))
         {
             
             yield return new WaitForSeconds(1);
+            timerText.text = currentTime.ToString();
             currentTime--;
         }
+
+        if(currentTime == 0)
+        {
+
+            Debug.Log("Times up");
+
+        }
+
     }
 }

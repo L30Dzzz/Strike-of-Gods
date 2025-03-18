@@ -52,7 +52,7 @@ public class hitProperties : MonoBehaviour
              
              
              
-             if(Player.Meter != 302)
+             if(Player.Meter != 302 && P2.basehp >= 0)
              {
                Player.Meter += meterGain;
              }
