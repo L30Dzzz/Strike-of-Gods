@@ -4,16 +4,19 @@ TextureImporter:
   internalIDToNameTable:
   - first:
       213: 3766813849867266506
-    second: Strike
+    second: menu ref_0
   - first:
       213: 5238096767101842088
-    second: Gallery
+    second: menu ref_1
   - first:
       213: -6785725642999500964
-    second: Settings
+    second: menu ref_2
   - first:
       213: 2458369218109426213
-    second: Credits
+    second: menu ref_3
+  - first:
+      213: -3079757989601783114
+    second: menu ref_4
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -103,7 +106,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Strike
+      name: menu ref_0
       rect:
         serializedVersion: 2
         x: 493
@@ -124,7 +127,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Gallery
+      name: menu ref_1
       rect:
         serializedVersion: 2
         x: 493
@@ -145,7 +148,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Settings
+      name: menu ref_2
       rect:
         serializedVersion: 2
         x: 493
@@ -166,7 +169,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Credits
+      name: menu ref_3
       rect:
         serializedVersion: 2
         x: 493

@@ -1,0 +1,264 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.InputSystem; 
+using UnityEngine.UI;
+
+[RequireComponent(typeof(CharacterController))] // auto adds a character controller to anything with this script
+public class PlayerMovement : MonoBehaviour
+{
+   [SerializeField] public Vector2 Input; // think of this as a horziontal and vertical input method mushed together
+   // Note that this type of way to get the x and y inputs for your player is good when using unity new input system as far as I know
+   public Rigidbody2D  rb; 
+   float speed; 
+   [SerializeField] float movespeed1; // normal movement speed
+   [SerializeField] float movespeed2; // moving back movement speed
+   float movespeed3; // running movment speed 
+   public float regJump; // How high the character will jump
+   public int jsFrame; 
+   public int jsFrameStart;
+   public int doubleJumps;
+   private int layerAsLayerMask;
+   int airMovementFrames; 
+   public float basehp = 0;
+   public float Meter = 0; 
+   
+   
+   public bool isFacingRight = true; 
+   public bool isCrouching; 
+   public bool isGrounded = false;
+   public bool CrouchBlock = false;
+   public bool StandBlock = false; 
+
+  // Define the size and direction for the BoxCast
+   Vector2 boxSize = new Vector2(0.5f, 5);
+   
+
+   bool jumpSquat; 
+   private CharacterController playerController; 
+   HealthBar hp; 
+   public PlayerTemplate playerTemplate; 
+   public LayerMask yourLayer;
+   public LayerMask opsLayer;
+
+
+
+
+   
+  
+  // String[] inputCommand; //work on this later
+   //enum motionInput{}; 
+   // public GameObject cube; 
+
+
+    // Start is called before the first frame update
+    void Awake()
+    {
+
+       yourLayer = playerTemplate.yourLayer; 
+       opsLayer = playerTemplate.opsLayer;
+       layerAsLayerMask = (1 << this.gameObject.layer);
+
+       hp = GameObject.Find("Canvas").GetComponent<HealthBar>();
+
+      if(hp != null)
+      {
+       if(yourLayer.value == 64)
+       {
+        basehp = hp.p1Health.GetComponent<Image>().rectTransform.rect.width;
+        Meter = hp.p1Meter.GetComponent<Image>().rectTransform.rect.width;
+       }
+       else
+       {
+        basehp = hp.p2Health.GetComponent<Image>().rectTransform.rect.width;
+        Meter = hp.p2Meter.GetComponent<Image>().rectTransform.rect.width;
+       }
+      }
+      else
+      {
+        Debug.Log("Damn it");
+      }
+       
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+      //Debug.Log(basehp);      
+      Health_n_Meter();
+      isBlocking();
+
+    }
+    
+    void FixedUpdate()
+    {
+      
+      MovementFunction();
+       
+       /////////////////////////// JUMP FUNCTION START //////////////////////////
+       if(Input.y > 0 && isGrounded == true)
+       {
+          jumpSquat = true;
+          
+       }
+
+       if(jumpSquat == true && jsFrame != 0)
+       {
+          jsFrame -= 1;
+       }
+       else if (jsFrame == 0) 
+       {
+         //animation.SetTrigger("jump");
+         rb.velocity = new Vector2(rb.velocity.x, regJump);
+         jumpSquat = false; 
+         jsFrame = jsFrameStart;
+         isGrounded = false; 
+       }
+        ////////////////////////// JUMP FUNCTION END ///////////////////
+
+      //////////////////////////CHARACTER FLIP FUNCTION////////////////////////////////////
+     
+      float distance = 2f; // Small distance to check for collisions
+      // Check for collisions on the right side
+      
+      RaycastHit2D rightSideDetector = Physics2D.BoxCast(rb.position + new Vector2(2, 0), boxSize, 0, Vector2.right, distance, opsLayer);
+      
+      // Check for collisions on the left side
+      
+      RaycastHit2D leftSideDetector = Physics2D.BoxCast(rb.position + new Vector2(-2, 0), boxSize, 0, Vector2.left, distance, opsLayer);
+      
+      // Flip the GameObject based on the collision
+
+      var playerLocalScale = transform.localScale;
+
+      if ((rightSideDetector.collider != null) && (rightSideDetector.collider.gameObject != this.gameObject) &&  this.transform.gameObject.layer != yourLayer && (!rightSideDetector.collider.gameObject.CompareTag("Hitbox")))
+    {
+        isFacingRight = true;
+        
+        if(playerLocalScale.x < 0)
+        {
+          playerLocalScale.x = -playerLocalScale.x; // Flip to face right
+        }
+        
+        transform.localScale = playerLocalScale;
+        
+    }
+    
+    else if ((leftSideDetector.collider != null) && (leftSideDetector.collider.gameObject != this.gameObject) && (!leftSideDetector.collider.gameObject.CompareTag("Hitbox")) && this.transform.gameObject.layer != yourLayer)
+      {
+        isFacingRight = false;
+        
+        if(playerLocalScale.x > 0)
+        {
+          playerLocalScale.x = -playerLocalScale.x; // Flip to face left
+        }
+        
+        transform.localScale = playerLocalScale;
+        
+      }
+    }
+
+    void OnDrawGizmos()
+    {
+        Gizmos.color = Color.blue; 
+        Gizmos.DrawCube(rb.position + new Vector2(2,0), boxSize);
+        Gizmos.DrawCube(rb.position + new Vector2(-2,0), boxSize);
+    }
+
+ ////////////////////////////////   MOVEMENT     //////////////////////////////////////////////////////////////////////////////
+    public void Move(InputAction.CallbackContext context)
+    {
+        Input.x = context.ReadValue<Vector2>().x;
+        Input.y = context.ReadValue<Vector2>().y; 
+    }
+
+    private void MovementFunction()
+    {
+       // allows the player to move left and right only if they not crouching 
+       if(Input.y < 0 && isGrounded == true)
+       {
+         isCrouching = true; 
+       }
+       else
+       {
+        transform.Translate(Vector2.right * Input.x * Time.deltaTime * speed);
+        isCrouching = false; 
+       }
+       
+       
+       // changes the speed of your character depending on what side you are facing 
+       if((isFacingRight == true && Input.x < 0 && isGrounded == true) || (isFacingRight == false && Input.x > 0 && isGrounded ==true))
+       {
+         speed = movespeed2; 
+       }
+       else if((isFacingRight == true && Input.x > 0 && isGrounded == true) || (isFacingRight == false && Input.x < 0 && isGrounded ==true)) 
+       {
+         speed = movespeed1; 
+       }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+       if (collision.gameObject.CompareTag("Ground"))
+        {
+          isGrounded = true;
+          airMovementFrames = 5;
+        }
+        else
+        {
+          airMovementFrames -= 1; 
+        }
+    }
+
+//////////////////ATTACKING/////////////////////////
+    
+    //Attacking will be done on the players respective character script. Like for example if they was playing oni then most of their attacking will come from the oni script inside of this script(if that makes sense)
+    
+ 
+
+///////////////// Input History ///////////////////////////
+
+
+//////////////////Health & Meterchecking///////////////////////////////////
+
+  public void Health_n_Meter()
+  {
+
+    if(yourLayer.value == 64)
+    {
+       hp.p1Health.GetComponent<Image>().rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, basehp);
+
+       hp.p1Meter.GetComponent<Image>().rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, Meter);
+    }
+    else
+    {
+       hp.p2Health.GetComponent<Image>().rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, basehp);
+
+       hp.p2Meter.GetComponent<Image>().rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, Meter);
+    }
+
+
+  }
+
+/////////////////////////////// BLOCKING////////////////////////////////
+  public void isBlocking()
+  {
+    if((isFacingRight == true && Input.x < 0 && isCrouching == false) || (isFacingRight == false && Input.x > 0 && isCrouching == false))
+    {
+      StandBlock = true;
+      CrouchBlock = false;
+    }
+    else if((isFacingRight == true && Input.x < 0 && isCrouching == true) || (isFacingRight == false && Input.x > 0 && isCrouching == true))
+    {
+      CrouchBlock = true;
+      StandBlock = false;
+    }
+    else
+    {
+      StandBlock = false;
+      CrouchBlock = false; 
+    }
+
+  }
+ 
+}
