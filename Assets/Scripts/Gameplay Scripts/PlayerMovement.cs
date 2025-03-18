@@ -129,17 +129,31 @@ public class PlayerMovement : MonoBehaviour
       
       // Flip the GameObject based on the collision
 
+      var playerLocalScale = transform.localScale;
+
       if ((rightSideDetector.collider != null) && (rightSideDetector.collider.gameObject != this.gameObject) &&  this.transform.gameObject.layer != yourLayer && (!rightSideDetector.collider.gameObject.CompareTag("Hitbox")))
     {
-        
-        transform.localScale = new Vector3(2.5f, 3, 1); // Flip to face right
         isFacingRight = true;
+        
+        if(playerLocalScale.x < 0)
+        {
+          playerLocalScale.x = -playerLocalScale.x; // Flip to face right
+        }
+        
+        transform.localScale = playerLocalScale;
+        
     }
     
     else if ((leftSideDetector.collider != null) && (leftSideDetector.collider.gameObject != this.gameObject) && (!leftSideDetector.collider.gameObject.CompareTag("Hitbox")) && this.transform.gameObject.layer != yourLayer)
       {
         isFacingRight = false;
-        transform.localScale = new Vector3(-2.5f, 3, 1); // Flip to face left
+        
+        if(playerLocalScale.x > 0)
+        {
+          playerLocalScale.x = -playerLocalScale.x; // Flip to face left
+        }
+        
+        transform.localScale = playerLocalScale;
         
       }
     }
