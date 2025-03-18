@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7308331049791188066}
   m_Layer: 6
   m_Name: 6P hitbox
-  m_TagString: Untagged
+  m_TagString: Hitbox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -47,7 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dmg: 20
   meterGain: 10
-  isHigh: 0
+  isHigh: 1
   isLow: 0
   isMid: 0
 --- !u!61 &157413551151070064
@@ -141,7 +141,7 @@ GameObject:
   - component: {fileID: 935012953070539729}
   m_Layer: 6
   m_Name: j.H hitbox
-  m_TagString: Untagged
+  m_TagString: Hitbox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -174,7 +174,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dmg: 60
   meterGain: 20
-  isHigh: 0
+  isHigh: 1
   isLow: 0
   isMid: 0
 --- !u!61 &4063771080216394603
@@ -466,7 +466,7 @@ MonoBehaviour:
     m_ActionId: 71168e8b-a615-4bc2-a7d1-c5f31aeab069
     m_ActionName: Battle Controls/Pause[/Keyboard/p]
   m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
+  m_DefaultControlScheme: Keyboard P1
   m_DefaultActionMap: Battle Controls
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
@@ -492,7 +492,7 @@ MonoBehaviour:
   doubleJumps: 1
   basehp: 0
   Meter: 0
-  isFacingRight: 1
+  isFacingRight: 0
   isCrouching: 0
   isGrounded: 0
   CrouchBlock: 0
@@ -555,7 +555,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PauseSystem: {fileID: 0}
   player1: {fileID: 0}
-  player2: {fileID: 0}
+  player2: {fileID: 1846319266995829859}
 --- !u!114 &614751771
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -568,16 +568,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: deb78a157071144ce8d8b2210778d52b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StandLight: {fileID: 0}
-  CrouchLight: {fileID: 0}
-  JumpLight: {fileID: 0}
-  UniAnti: {fileID: 0}
-  StandMedium: {fileID: 0}
-  CrouchMedium: {fileID: 0}
-  JumpMedium: {fileID: 0}
-  StandHeavy: {fileID: 0}
-  CrouchHeavy: {fileID: 0}
-  Jumpheavy: {fileID: 0}
+  StandLight: {fileID: 4473878098884086701}
+  CrouchLight: {fileID: 6380147932592865066}
+  JumpLight: {fileID: 2332953387280893305}
+  UniAnti: {fileID: 1568648523254174425}
+  StandMedium: {fileID: 5039049341864643463}
+  CrouchMedium: {fileID: 1872972040627090961}
+  JumpMedium: {fileID: 4025833531756186341}
+  StandHeavy: {fileID: 5960776629129568296}
+  CrouchHeavy: {fileID: 8459822812780154923}
+  Jumpheavy: {fileID: 1584260289578486618}
   isBlocking: 0
 --- !u!1 &1846319267140041486
 GameObject:
@@ -675,7 +675,7 @@ GameObject:
   - component: {fileID: 8817790951273199180}
   m_Layer: 6
   m_Name: '2M hitbox '
-  m_TagString: Untagged
+  m_TagString: Hitbox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -709,7 +709,7 @@ MonoBehaviour:
   dmg: 40
   meterGain: 10
   isHigh: 0
-  isLow: 0
+  isLow: 1
   isMid: 0
 --- !u!61 &3245420112336716099
 BoxCollider2D:
@@ -802,7 +802,7 @@ GameObject:
   - component: {fileID: 8434950980664576920}
   m_Layer: 6
   m_Name: j.L hitbox
-  m_TagString: Untagged
+  m_TagString: Hitbox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -835,7 +835,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dmg: 20
   meterGain: 5
-  isHigh: 0
+  isHigh: 1
   isLow: 0
   isMid: 0
 --- !u!61 &7923380194850119002
@@ -929,7 +929,7 @@ GameObject:
   - component: {fileID: 8662396495209161891}
   m_Layer: 6
   m_Name: 'j.M hitbox  '
-  m_TagString: Untagged
+  m_TagString: Hitbox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -962,7 +962,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dmg: 40
   meterGain: 10
-  isHigh: 0
+  isHigh: 1
   isLow: 0
   isMid: 0
 --- !u!61 &5229045945019117017
@@ -1056,7 +1056,7 @@ GameObject:
   - component: {fileID: 4875466102718668895}
   m_Layer: 6
   m_Name: 5L hitbox
-  m_TagString: Untagged
+  m_TagString: Hitbox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1168,7 +1168,7 @@ MonoBehaviour:
   meterGain: 5
   isHigh: 0
   isLow: 0
-  isMid: 0
+  isMid: 1
 --- !u!1 &5039049341864643463
 GameObject:
   m_ObjectHideFlags: 0
@@ -1183,7 +1183,7 @@ GameObject:
   - component: {fileID: 2595479983491727270}
   m_Layer: 6
   m_Name: 5M hitbox
-  m_TagString: Untagged
+  m_TagString: Hitbox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1218,7 +1218,7 @@ MonoBehaviour:
   meterGain: 10
   isHigh: 0
   isLow: 0
-  isMid: 0
+  isMid: 1
 --- !u!61 &8572973820672828200
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1310,7 +1310,7 @@ GameObject:
   - component: {fileID: 2181031676926552434}
   m_Layer: 6
   m_Name: '5H hitbox  '
-  m_TagString: Untagged
+  m_TagString: Hitbox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1345,7 +1345,7 @@ MonoBehaviour:
   meterGain: 20
   isHigh: 0
   isLow: 0
-  isMid: 0
+  isMid: 1
 --- !u!61 &5927174178392832810
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1477,7 +1477,7 @@ GameObject:
   - component: {fileID: 4029525880039918901}
   m_Layer: 6
   m_Name: 2L hitbox
-  m_TagString: Untagged
+  m_TagString: Hitbox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1511,7 +1511,7 @@ MonoBehaviour:
   dmg: 20
   meterGain: 5
   isHigh: 0
-  isLow: 0
+  isLow: 1
   isMid: 0
 --- !u!61 &3592792445963655943
 BoxCollider2D:
@@ -1604,7 +1604,7 @@ GameObject:
   - component: {fileID: 4106726042250172807}
   m_Layer: 6
   m_Name: 2H hitbox
-  m_TagString: Untagged
+  m_TagString: Hitbox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1638,7 +1638,7 @@ MonoBehaviour:
   dmg: 60
   meterGain: 20
   isHigh: 0
-  isLow: 0
+  isLow: 1
   isMid: 0
 --- !u!61 &3630925288092793242
 BoxCollider2D:
