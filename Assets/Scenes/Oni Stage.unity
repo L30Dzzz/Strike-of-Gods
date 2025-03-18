@@ -862,6 +862,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 495233241}
   parallaxEffect: 100
+--- !u!1 &321995732 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1568648523254174425, guid: f82b15c2347f5404793963e3781955fd, type: 3}
+  m_PrefabInstance: {fileID: 1133132503}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &336819529 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8459822812780154923, guid: f82b15c2347f5404793963e3781955fd, type: 3}
+  m_PrefabInstance: {fileID: 1133132503}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &351633166 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2332953387280893305, guid: f82b15c2347f5404793963e3781955fd, type: 3}
+  m_PrefabInstance: {fileID: 1133132503}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &351656750 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4473878098884086701, guid: f82b15c2347f5404793963e3781955fd, type: 3}
+  m_PrefabInstance: {fileID: 1133132503}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &385623779 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1846319266995829880, guid: f82b15c2347f5404793963e3781955fd, type: 3}
@@ -1077,6 +1097,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &487015353 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5960776629129568296, guid: f82b15c2347f5404793963e3781955fd, type: 3}
+  m_PrefabInstance: {fileID: 1133132503}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &495233241
 GameObject:
   m_ObjectHideFlags: 0
@@ -1343,6 +1368,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &698027120 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6380147932592865066, guid: f82b15c2347f5404793963e3781955fd, type: 3}
+  m_PrefabInstance: {fileID: 1133132503}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &726724401
 GameObject:
   m_ObjectHideFlags: 0
@@ -1570,6 +1600,11 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &755519832 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4025833531756186341, guid: f82b15c2347f5404793963e3781955fd, type: 3}
+  m_PrefabInstance: {fileID: 1133132503}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &777673774
 GameObject:
   m_ObjectHideFlags: 0
@@ -1901,6 +1936,46 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Hitbox
       objectReference: {fileID: 0}
+    - target: {fileID: 614751771, guid: f82b15c2347f5404793963e3781955fd, type: 3}
+      propertyPath: UniAnti
+      value: 
+      objectReference: {fileID: 321995732}
+    - target: {fileID: 614751771, guid: f82b15c2347f5404793963e3781955fd, type: 3}
+      propertyPath: JumpLight
+      value: 
+      objectReference: {fileID: 351633166}
+    - target: {fileID: 614751771, guid: f82b15c2347f5404793963e3781955fd, type: 3}
+      propertyPath: Jumpheavy
+      value: 
+      objectReference: {fileID: 2087143441}
+    - target: {fileID: 614751771, guid: f82b15c2347f5404793963e3781955fd, type: 3}
+      propertyPath: JumpMedium
+      value: 
+      objectReference: {fileID: 755519832}
+    - target: {fileID: 614751771, guid: f82b15c2347f5404793963e3781955fd, type: 3}
+      propertyPath: StandHeavy
+      value: 
+      objectReference: {fileID: 487015353}
+    - target: {fileID: 614751771, guid: f82b15c2347f5404793963e3781955fd, type: 3}
+      propertyPath: StandLight
+      value: 
+      objectReference: {fileID: 351656750}
+    - target: {fileID: 614751771, guid: f82b15c2347f5404793963e3781955fd, type: 3}
+      propertyPath: CrouchHeavy
+      value: 
+      objectReference: {fileID: 336819529}
+    - target: {fileID: 614751771, guid: f82b15c2347f5404793963e3781955fd, type: 3}
+      propertyPath: CrouchLight
+      value: 
+      objectReference: {fileID: 698027120}
+    - target: {fileID: 614751771, guid: f82b15c2347f5404793963e3781955fd, type: 3}
+      propertyPath: StandMedium
+      value: 
+      objectReference: {fileID: 1598646536}
+    - target: {fileID: 614751771, guid: f82b15c2347f5404793963e3781955fd, type: 3}
+      propertyPath: CrouchMedium
+      value: 
+      objectReference: {fileID: 1682267311}
     - target: {fileID: 1256933938, guid: f82b15c2347f5404793963e3781955fd, type: 3}
       propertyPath: PauseSystem
       value: 
@@ -2307,6 +2382,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1598646536 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5039049341864643463, guid: f82b15c2347f5404793963e3781955fd, type: 3}
+  m_PrefabInstance: {fileID: 1133132503}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1620468283
 GameObject:
   m_ObjectHideFlags: 0
@@ -2473,6 +2553,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1682267311 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1872972040627090961, guid: f82b15c2347f5404793963e3781955fd, type: 3}
+  m_PrefabInstance: {fileID: 1133132503}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1737312689
 GameObject:
   m_ObjectHideFlags: 0
@@ -2638,6 +2723,30 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1870411883 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7390993351731573500, guid: 8088100a43153a84188246929b3dda1b, type: 3}
+  m_PrefabInstance: {fileID: 502318266}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1870411884
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1870411883}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &1935149535
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2830,3 +2939,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 495233241}
   parallaxEffect: -5
+--- !u!1 &2087143441 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1584260289578486618, guid: f82b15c2347f5404793963e3781955fd, type: 3}
+  m_PrefabInstance: {fileID: 1133132503}
+  m_PrefabAsset: {fileID: 0}

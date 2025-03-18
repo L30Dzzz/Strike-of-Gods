@@ -9,8 +9,8 @@ public class RoundTracker : MonoBehaviour
     
     static public RoundTracker Instance { get; private set; }
 
-    int player1Wins;
-    int Player2Wins;
+    bool player1Wins;
+    bool Player2Wins;
     
 
     // Start is called before the first frame update
