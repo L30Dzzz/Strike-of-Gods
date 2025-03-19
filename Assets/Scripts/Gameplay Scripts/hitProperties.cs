@@ -10,6 +10,7 @@ public class hitProperties : MonoBehaviour
    private int layerAsLayerMask;
    public int dmg = 0;
    public int meterGain = 0;
+   public int stunTime = 0;
 
    public bool isHigh;
    public bool isLow;
@@ -46,8 +47,11 @@ public class hitProperties : MonoBehaviour
             {  
               if(P2.basehp >= 0)
               {
-              P2.basehp -= dmg;
-              Player.basehp += dmg; 
+                P2.basehp -= dmg;
+                Player.basehp += dmg; 
+                StartCoroutine(hitstun(stunTime, P2));
+                  
+
               }
              
              
@@ -67,6 +71,18 @@ public class hitProperties : MonoBehaviour
 
 
        }
+    }
+
+    public IEnumerator hitstun(int stun, PlayerMovement p2)
+    {
+      float stuned = stun/60;
+
+      p2.canRespond = false;
+      
+      yield return new WaitForSeconds(stuned);
+
+      p2.canRespond = true;
+      Debug.Log("You can attack now");
     }
     
 }

@@ -87,7 +87,7 @@ public class HealthBar : MonoBehaviour
 
     private IEnumerator gameTimer()
     {
-        while(currentTime > 0 && ( basehp >= 0 && basehp2 >= 0))
+        while(currentTime >= 0 && ( basehp >= 0 && basehp2 >= 0))
         {
             
             yield return new WaitForSeconds(1);
@@ -97,6 +97,16 @@ public class HealthBar : MonoBehaviour
 
         if(currentTime == 0)
         {
+            if(basehp > basehp2) // if player one wins 
+            {
+                StartCoroutine(gameCondition(KoScreen, P1WinScreen, MenuScreen));
+                Debug.Log("Player one wins ");
+            }
+            else if(basehp2 > basehp) // if player 2 wins 
+            {
+                StartCoroutine(gameCondition(KoScreen, P2WinScreen, MenuScreen));
+                Debug.Log("Player 2 wins");
+            }
 
             Debug.Log("Times up");
 

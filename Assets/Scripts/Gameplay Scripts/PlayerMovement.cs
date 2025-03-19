@@ -29,6 +29,7 @@ public class PlayerMovement : MonoBehaviour
    public bool isGrounded = false;
    public bool CrouchBlock = false;
    public bool StandBlock = false; 
+   public bool canRespond = true;
 
   // Define the size and direction for the BoxCast
    Vector2 boxSize = new Vector2(0.5f, 5);
@@ -93,10 +94,12 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate()
     {
       
+      if(canRespond == true)
+      {
       MovementFunction();
       Jumping();  
       characterFlipFunction();
-      
+      }
       
     }
 
@@ -185,7 +188,7 @@ public class PlayerMovement : MonoBehaviour
 //////////////////////////////////////////////////// BLOCKING     ////////////////////////////////
   public void isBlocking()
   {
-    if((isFacingRight == true && Input.x < 0 && isCrouching == false) || (isFacingRight == false && Input.x > 0 && isCrouching == false))
+    if((isFacingRight == true && Input.x < 0 && isCrouching == false && isGrounded == true) || (isFacingRight == false && Input.x > 0 && isCrouching == false && isGrounded == true))
     {
       StandBlock = true;
       CrouchBlock = false;
