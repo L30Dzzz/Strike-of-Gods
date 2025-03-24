@@ -66,12 +66,19 @@ public class hitProperties : MonoBehaviour
              else // of the character is blocking
              {
               // chip damage
-              /*
-              if(P2.Meter >= )
-              {
+              float reducedDmg = dmg * (1/4);
 
+
+              if(P2.Meter >= 0)
+              {
+                
+
+                 P2.Meter -= reducedDmg;
               }
-              */
+              else
+              {
+                P2.basehp -= reducedDmg;
+              }
 
 
 
