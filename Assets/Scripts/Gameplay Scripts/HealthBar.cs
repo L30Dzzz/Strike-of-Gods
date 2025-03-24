@@ -95,7 +95,7 @@ public class HealthBar : MonoBehaviour
             currentTime--;
         }
 
-        if(currentTime == 0)
+        if(currentTime < 1)
         {
             if(basehp > basehp2) // if player one wins 
             {

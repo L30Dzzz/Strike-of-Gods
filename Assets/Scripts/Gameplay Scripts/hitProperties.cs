@@ -45,6 +45,8 @@ public class hitProperties : MonoBehaviour
             //Checks if the player is blocking high or low and it fits the attack properties of the attack
             if((isHigh == true && P2.StandBlock == false) || (isLow == true && P2.CrouchBlock == false) || (isMid == true && (P2.StandBlock == false || P2.CrouchBlock == false)))
             {  
+              // If the player is not blocking 
+              
               if(P2.basehp >= 0)
               {
                 P2.basehp -= dmg;
@@ -53,9 +55,7 @@ public class hitProperties : MonoBehaviour
                   
 
               }
-             
-             
-             
+            
              if(Player.Meter != 302 && P2.basehp >= 0)
              {
                Player.Meter += meterGain;
@@ -63,6 +63,19 @@ public class hitProperties : MonoBehaviour
              
             }
              
+             else // of the character is blocking
+             {
+              // chip damage
+              /*
+              if(P2.Meter >= )
+              {
+
+              }
+              */
+
+
+
+             }
              /*
               Debug.Log(Player.basehp);
               Debug.Log(P2.basehp);

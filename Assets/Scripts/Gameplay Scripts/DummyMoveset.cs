@@ -219,7 +219,7 @@ public class DummyMoveset : MonoBehaviour
 
       Canvas = GameObject.Find("Canvas").GetComponent<HealthBar>();
 
-      if(Canvas.currentTime == 0)
+      if(Canvas.currentTime < 1)
       {
         Player.canRespond = false; 
       }
