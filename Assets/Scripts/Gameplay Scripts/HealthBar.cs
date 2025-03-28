@@ -22,6 +22,8 @@ public class HealthBar : MonoBehaviour
     public GameObject P1WinScreen;
     public GameObject P2WinScreen;
     public GameObject MenuScreen;
+    public GameObject[] P1Points;
+    public GameObject[] P2Points; 
 
     public TextMeshProUGUI timerText;
     
@@ -32,7 +34,6 @@ public class HealthBar : MonoBehaviour
         //sets the time to the max time and start timer loop 
         currentTime = MaxTime;
         timerText.text = MaxTime.ToString();
-
         StartCoroutine(gameTimer());
         
     }
@@ -78,8 +79,7 @@ public class HealthBar : MonoBehaviour
 
        WinScreen.SetActive(false);
        Menu.SetActive(true);
-
-        
+                
        }
 
       
