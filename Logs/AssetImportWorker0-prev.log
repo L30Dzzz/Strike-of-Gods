@@ -18,29 +18,45 @@ COMMAND LINE ARGUMENTS:
 -name
 AssetImportWorker0
 -projectPath
-/Users/game56/Documents/GitHub/Strike-of-Gods
+/Users/student/Documents/GitHub/Strike-of-Gods
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
+<<<<<<< Updated upstream
 57505
 Successfully changed project path to: /Users/game56/Documents/GitHub/Strike-of-Gods
 Could not lock editor preferences. Preferences updates for this instance of Unity will not be saved./Users/game56/Documents/GitHub/Strike-of-Gods
 Using Asset Import Pipeline V2.
 Refreshing native plugins compatible for Editor in 43.75 ms, found 3 plugins.
+=======
+50750
+Successfully changed project path to: /Users/student/Documents/GitHub/Strike-of-Gods
+/Users/student/Documents/GitHub/Strike-of-Gods
+Using Asset Import Pipeline V2.
+Refreshing native plugins compatible for Editor in 41.75 ms, found 3 plugins.
+>>>>>>> Stashed changes
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.3.27f1 (e759542391ea)
 [Subsystems] Discovering subsystems at path /Applications/2020.3.27f1/Unity.app/Contents/Resources/UnitySubsystems
-[Subsystems] Discovering subsystems at path /Users/game56/Documents/GitHub/Strike-of-Gods/Assets
+[Subsystems] Discovering subsystems at path /Users/student/Documents/GitHub/Strike-of-Gods/Assets
 GfxDevice: creating device client; threaded=0
+<<<<<<< Updated upstream
 2025-03-28 13:38:08.012 Unity[38063:2039192] iMac preferred device: AMD Radeon Pro 5500 XT (high power)
 2025-03-28 13:38:08.012 Unity[38063:2039192] Metal devices available: 1
 2025-03-28 13:38:08.012 Unity[38063:2039192] 0: AMD Radeon Pro 5500 XT (high power)
 2025-03-28 13:38:08.012 Unity[38063:2039192] Using device AMD Radeon Pro 5500 XT (high power)
+=======
+2025-03-14 13:42:30.834 Unity[5025:244944] iMac preferred device: AMD Radeon Pro 5500 XT (high power)
+2025-03-14 13:42:30.834 Unity[5025:244944] Metal devices available: 1
+2025-03-14 13:42:30.835 Unity[5025:244944] 0: AMD Radeon Pro 5500 XT (high power)
+2025-03-14 13:42:30.835 Unity[5025:244944] Using device AMD Radeon Pro 5500 XT (high power)
+>>>>>>> Stashed changes
 Initializing Metal device caps: AMD Radeon Pro 5500 XT
 Initialize mono
 Mono path[0] = '/Applications/2020.3.27f1/Unity.app/Contents/Managed'
 Mono path[1] = '/Applications/2020.3.27f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = '/Applications/2020.3.27f1/Unity.app/Contents/MonoBleedingEdge/etc'
+<<<<<<< Updated upstream
 Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56063
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
@@ -54,31 +70,62 @@ Mono: successfully reloaded assembly
 Domain Reload Profiling:
 	ReloadAssembly (580ms)
 		BeginReloadAssembly (38ms)
+=======
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56025
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: /Applications/2020.3.27f1/Unity.app/Contents/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll
+Registered in 0.000460 seconds.
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 41.82 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.534 seconds
+Domain Reload Profiling:
+	ReloadAssembly (534ms)
+		BeginReloadAssembly (37ms)
+>>>>>>> Stashed changes
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
+<<<<<<< Updated upstream
 		EndReloadAssembly (461ms)
 			LoadAssemblies (38ms)
+=======
+		EndReloadAssembly (431ms)
+			LoadAssemblies (37ms)
+>>>>>>> Stashed changes
 			RebuildTransferFunctionScriptingTraits (0ms)
 			SetupTypeCache (162ms)
 			ReleaseScriptCaches (0ms)
+<<<<<<< Updated upstream
 			RebuildScriptCaches (33ms)
 			SetupLoadedEditorAssemblies (189ms)
+=======
+			RebuildScriptCaches (32ms)
+			SetupLoadedEditorAssemblies (168ms)
+>>>>>>> Stashed changes
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (4ms)
 				SetLoadedEditorAssemblies (0ms)
 				RefreshPlugins (52ms)
 				BeforeProcessingInitializeOnLoad (7ms)
+<<<<<<< Updated upstream
 				ProcessInitializeOnLoadAttributes (98ms)
 				ProcessInitializeOnLoadMethodAttributes (28ms)
+=======
+				ProcessInitializeOnLoadAttributes (90ms)
+				ProcessInitializeOnLoadMethodAttributes (25ms)
+>>>>>>> Stashed changes
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
+<<<<<<< Updated upstream
 Registered in 0.002272 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for OSXStandalone target not found
@@ -89,10 +136,23 @@ Mono: successfully reloaded assembly
 Domain Reload Profiling:
 	ReloadAssembly (1124ms)
 		BeginReloadAssembly (140ms)
+=======
+Registered in 0.003620 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 39.91 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.099 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1100ms)
+		BeginReloadAssembly (131ms)
+>>>>>>> Stashed changes
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (4ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
+<<<<<<< Updated upstream
 			CreateAndSetChildDomain (26ms)
 		EndReloadAssembly (927ms)
 			LoadAssemblies (69ms)
@@ -107,15 +167,37 @@ Domain Reload Profiling:
 				RefreshPlugins (42ms)
 				BeforeProcessingInitializeOnLoad (55ms)
 				ProcessInitializeOnLoadAttributes (242ms)
+=======
+			CreateAndSetChildDomain (23ms)
+		EndReloadAssembly (914ms)
+			LoadAssemblies (95ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (318ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (52ms)
+			SetupLoadedEditorAssemblies (343ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (3ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (40ms)
+				BeforeProcessingInitializeOnLoad (51ms)
+				ProcessInitializeOnLoadAttributes (234ms)
+>>>>>>> Stashed changes
 				ProcessInitializeOnLoadMethodAttributes (14ms)
 				AfterProcessingInitializeOnLoad (1ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (6ms)
 Platform modules already initialized, skipping
+<<<<<<< Updated upstream
 Validating Project structure ... 0.003563 seconds.
 Shader import version has changed; will reimport all shaders...
 Upgrading shader files ...0.011780 seconds.
+=======
+Validating Project structure ... 0.002355 seconds.
+Shader import version has changed; will reimport all shaders...
+Upgrading shader files ...0.014444 seconds.
+>>>>>>> Stashed changes
 Application.AssetDatabase Initial Script Refresh Start
 RefreshInfo: InitialScriptRefreshV2(NoUpdateAssetOptions) scanfilter:  ... 1 filters
 RefreshProfiler: Total: 0.000ms
@@ -129,14 +211,23 @@ Launched and connected shader compiler UnityShaderCompiler after 0.01 seconds
 Initializing Unity extensions:
 ========================================================================
 Worker process is ready to serve import requests
+<<<<<<< Updated upstream
 Refreshing native plugins compatible for Editor in 0.32 ms, found 3 plugins.
+=======
+Refreshing native plugins compatible for Editor in 0.39 ms, found 3 plugins.
+>>>>>>> Stashed changes
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 2709 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 239.7 MB.
-System memory in use after: 238.8 MB.
+System memory in use before: 239.8 MB.
+System memory in use after: 238.9 MB.
 
+<<<<<<< Updated upstream
 Unloading 176 unused Assets to reduce memory usage. Loaded Objects now: 3178.
 Total: 3.105256 ms (FindLiveObjects: 0.182723 ms CreateObjectMapping: 0.105558 ms MarkObjects: 2.380231 ms  DeleteObjects: 0.436139 ms)
+=======
+Unloading 176 unused Assets to reduce memory usage. Loaded Objects now: 3176.
+Total: 3.187816 ms (FindLiveObjects: 0.185776 ms CreateObjectMapping: 0.117412 ms MarkObjects: 2.419922 ms  DeleteObjects: 0.463983 ms)
+>>>>>>> Stashed changes
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -150,6 +241,7 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
+<<<<<<< Updated upstream
   path: Assets/Scripts/Gameplay Scripts/HealthBar.cs
   artifactKey: Guid(5ec80db8546dcf74aa78bdb3accde186) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
 Start importing Assets/Scripts/Gameplay Scripts/HealthBar.cs using Guid(5ec80db8546dcf74aa78bdb3accde186) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8f9952e8a945a988cff9ab6c44ea09a2') in 0.257343 seconds 
@@ -506,5 +598,11 @@ Received Import Request.
   artifactKey: Guid(1f33c5d07000e4b2ebaad913f0e91b44) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
 Start importing Assets/Scenes/2nd Testing Scene.unity using Guid(1f33c5d07000e4b2ebaad913f0e91b44) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9af4a8a0abda45dca9c314b9e861a97d') in 0.010156 seconds 
   Import took 0.013656 seconds .
+=======
+  path: Assets/Audio/Menu selection sound effect.mp3
+  artifactKey: Guid(f7083f5bfcbf845e2a9490b25d62a75a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Audio/Menu selection sound effect.mp3 using Guid(f7083f5bfcbf845e2a9490b25d62a75a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9449f0c408ab02af2c2f41ed22b041b7') in 0.847480 seconds 
+  Import took 0.853736 seconds .
+>>>>>>> Stashed changes
 
 AssetImportWorkerClient::OnTransportError - code=2 error=End of file
