@@ -276,6 +276,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38caf26e250b24345a304b01b57f3b2e, type: 3}
+--- !u!1 &10875321 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4697803306154105774, guid: 38caf26e250b24345a304b01b57f3b2e, type: 3}
+  m_PrefabInstance: {fileID: 10875320}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &71865190
 GameObject:
   m_ObjectHideFlags: 0
@@ -1148,6 +1153,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8088100a43153a84188246929b3dda1b, type: 3}
+--- !u!1 &502318267 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7390993351731573500, guid: 8088100a43153a84188246929b3dda1b, type: 3}
+  m_PrefabInstance: {fileID: 502318266}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &555252152
 GameObject:
   m_ObjectHideFlags: 0
@@ -1690,9 +1700,13 @@ PrefabInstance:
       value: Hitbox
       objectReference: {fileID: 0}
     - target: {fileID: 1256933938, guid: f82b15c2347f5404793963e3781955fd, type: 3}
+      propertyPath: player1
+      value: 
+      objectReference: {fileID: 502318267}
+    - target: {fileID: 1256933938, guid: f82b15c2347f5404793963e3781955fd, type: 3}
       propertyPath: PauseSystem
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 10875321}
     - target: {fileID: 1846319266995829859, guid: f82b15c2347f5404793963e3781955fd, type: 3}
       propertyPath: m_Name
       value: Test player 2
