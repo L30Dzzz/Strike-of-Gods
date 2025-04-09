@@ -6,10 +6,10 @@ using TMPro;
 
 public class HealthBar : MonoBehaviour
 {
-    private int basehp;
-    private int basehp2;
+    public int basehp;
+    public int basehp2;
 
-    private int currentTime;
+    public int currentTime;
     public int MaxTime;
 
     public int isRunning = 1; //I will turn this into a bool later
@@ -22,15 +22,19 @@ public class HealthBar : MonoBehaviour
     public GameObject P1WinScreen;
     public GameObject P2WinScreen;
     public GameObject MenuScreen;
+    public GameObject[] P1Points;
+    public GameObject[] P2Points; 
 
     public TextMeshProUGUI timerText;
     
     
     
     void Awake()
-    {
+    {   
+        //sets the time to the max time and start timer loop 
         currentTime = MaxTime;
-        
+        timerText.text = MaxTime.ToString();
+        StartCoroutine(gameTimer());
         
     }
 
@@ -43,12 +47,14 @@ public class HealthBar : MonoBehaviour
     
         if(basehp <= 0)
         {
-           StartCoroutine(gameCondition(KoScreen, P2WinScreen, MenuScreen));
-           isRunning--;
+            StartCoroutine(gameCondition(KoScreen, P2WinScreen, MenuScreen));
+            StopCoroutine(gameTimer());
+            isRunning--;
         }
         else if(basehp2 <= 0)
         {
             StartCoroutine(gameCondition(KoScreen, P1WinScreen, MenuScreen));
+            StopCoroutine(gameTimer());
             isRunning--;
         }
 
@@ -73,8 +79,7 @@ public class HealthBar : MonoBehaviour
 
        WinScreen.SetActive(false);
        Menu.SetActive(true);
-
-        
+                
        }
 
       
@@ -82,11 +87,30 @@ public class HealthBar : MonoBehaviour
 
     private IEnumerator gameTimer()
     {
-        while(currentTime > 0)
+        while(currentTime >= 0 && ( basehp >= 0 && basehp2 >= 0))
         {
             
             yield return new WaitForSeconds(1);
+            timerText.text = currentTime.ToString();
             currentTime--;
         }
+
+        if(currentTime < 1)
+        {
+            if(basehp > basehp2) // if player one wins 
+            {
+                StartCoroutine(gameCondition(KoScreen, P1WinScreen, MenuScreen));
+                Debug.Log("Player one wins ");
+            }
+            else if(basehp2 > basehp) // if player 2 wins 
+            {
+                StartCoroutine(gameCondition(KoScreen, P2WinScreen, MenuScreen));
+                Debug.Log("Player 2 wins");
+            }
+
+            Debug.Log("Times up");
+
+        }
+
     }
 }

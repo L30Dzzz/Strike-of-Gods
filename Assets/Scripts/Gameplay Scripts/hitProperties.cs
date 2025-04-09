@@ -10,6 +10,7 @@ public class hitProperties : MonoBehaviour
    private int layerAsLayerMask;
    public int dmg = 0;
    public int meterGain = 0;
+   public int stunTime = 0;
 
    public bool isHigh;
    public bool isLow;
@@ -44,21 +45,44 @@ public class hitProperties : MonoBehaviour
             //Checks if the player is blocking high or low and it fits the attack properties of the attack
             if((isHigh == true && P2.StandBlock == false) || (isLow == true && P2.CrouchBlock == false) || (isMid == true && (P2.StandBlock == false || P2.CrouchBlock == false)))
             {  
+              // If the player is not blocking 
+              
               if(P2.basehp >= 0)
               {
-              P2.basehp -= dmg;
-              Player.basehp += dmg; 
+                P2.basehp -= dmg;
+                Player.basehp += dmg; 
+                StartCoroutine(hitstun(stunTime, P2));
+                  
+
               }
-             
-             
-             
-             if(Player.Meter != 302)
+            
+             if(Player.Meter != 302 && P2.basehp >= 0)
              {
                Player.Meter += meterGain;
              }
              
             }
              
+             else // of the character is blocking
+             {
+              // chip damage
+              float reducedDmg = dmg * (1/4);
+
+
+              if(P2.Meter >= 0)
+              {
+                
+
+                 P2.Meter -= reducedDmg;
+              }
+              else
+              {
+                P2.basehp -= reducedDmg;
+              }
+
+
+
+             }
              /*
               Debug.Log(Player.basehp);
               Debug.Log(P2.basehp);
@@ -67,6 +91,18 @@ public class hitProperties : MonoBehaviour
 
 
        }
+    }
+
+    public IEnumerator hitstun(int stun, PlayerMovement p2)
+    {
+      float stuned = stun/60;
+
+      p2.canRespond = false;
+      
+      yield return new WaitForSeconds(stuned);
+
+      p2.canRespond = true;
+      Debug.Log("You can attack now");
     }
     
 }

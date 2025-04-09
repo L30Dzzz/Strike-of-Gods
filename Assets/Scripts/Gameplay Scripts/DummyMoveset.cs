@@ -19,6 +19,10 @@ public class DummyMoveset : MonoBehaviour
     public GameObject StandHeavy; 
     public GameObject CrouchHeavy; 
     public GameObject Jumpheavy; 
+
+    HealthBar Canvas;
+
+    Animator animationRunner;
     
     public bool isBlocking = false;
     bool isAttacking = false;
@@ -27,20 +31,16 @@ public class DummyMoveset : MonoBehaviour
     void Start()
     {
         Player = GetComponent<PlayerMovement>();
+
+         animationRunner = GetComponent<Animator>();
          
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Player.StandBlock == true || Player.CrouchBlock == true)
-        {
-          isBlocking = true;
-        }
-        else
-        {
-          isBlocking = false;
-        }       
+      playerCondition();
+
 
     }
     
@@ -49,7 +49,7 @@ public class DummyMoveset : MonoBehaviour
       
       if(context.started && Player.isCrouching == false && Player.isGrounded == true && Player.Input.x == 0)
       {
-        if(isAttacking == false && isBlocking == false)
+        if(isAttacking == false && isBlocking == false && Player.canRespond == true) 
         {
           StartCoroutine(SingleHitAttack(StandLight, 4, 6));
         }
@@ -59,9 +59,9 @@ public class DummyMoveset : MonoBehaviour
         //play animation in here or put it in the singleHitAttack method
       }
       
-       if(context.started && Player.isCrouching == true )
+       if(context.started && Player.isCrouching == true)
       {
-        if(isAttacking == false && isBlocking == false)
+        if(isAttacking == false && isBlocking == false && Player.canRespond == true)
         {
           StartCoroutine(SingleHitAttack(CrouchLight, 5, 5));
         }
@@ -71,7 +71,7 @@ public class DummyMoveset : MonoBehaviour
       
       if(context.started && Player.isGrounded == false)
       {
-        if(isAttacking == false && isBlocking == false)
+        if(isAttacking == false && isBlocking == false && Player.canRespond == true)
         {
           StartCoroutine(SingleHitAttack(JumpLight, 6, 15));
         }
@@ -81,7 +81,7 @@ public class DummyMoveset : MonoBehaviour
 
       if(context.started && ((Player.Input.x  < 0 &&  Player.isFacingRight == false) || (Player.Input.x > 0 &&  Player.isFacingRight == true)))
       {
-        if(isAttacking == false && isBlocking == false)
+        if(isAttacking == false && isBlocking == false && Player.canRespond == true)
         {
           StartCoroutine(SingleHitAttack(UniAnti, 9, 6));
         }
@@ -95,7 +95,7 @@ public class DummyMoveset : MonoBehaviour
     {
       if(context.started && Player.isCrouching == false && Player.isGrounded == true)
       {
-        if(isAttacking == false && isBlocking == false)
+        if(isAttacking == false && isBlocking == false && Player.canRespond == true)
         {
           StartCoroutine(SingleHitAttack(StandMedium, 6, 9));
         }
@@ -107,7 +107,7 @@ public class DummyMoveset : MonoBehaviour
       
        if(context.started && Player.isCrouching == true )
       {
-        if(isAttacking == false && isBlocking == false)
+        if(isAttacking == false && isBlocking == false && Player.canRespond == true)
         {
           StartCoroutine(SingleHitAttack(CrouchMedium, 6, 9));
         }
@@ -117,7 +117,7 @@ public class DummyMoveset : MonoBehaviour
       
       if(context.started && Player.isGrounded == false)
       {
-        if(isAttacking == false && isBlocking == false)
+        if(isAttacking == false && isBlocking == false && Player.canRespond == true)
         {
           StartCoroutine(SingleHitAttack(JumpMedium, 8, 12));
         }
@@ -132,7 +132,7 @@ public class DummyMoveset : MonoBehaviour
     {
       if(context.started && Player.isCrouching == false && Player.isGrounded == true)
       {
-        if(isAttacking == false && isBlocking == false)
+        if(isAttacking == false && isBlocking == false && Player.canRespond == true)
         {
           StartCoroutine(SingleHitAttack(StandHeavy, 10, 14));
         }
@@ -144,7 +144,7 @@ public class DummyMoveset : MonoBehaviour
       
        if(context.started && Player.isCrouching == true )
       {
-        if(isAttacking == false && isBlocking == false)
+        if(isAttacking == false && isBlocking == false && Player.canRespond == true)
         {
           StartCoroutine(SingleHitAttack(CrouchHeavy, 9, 14));
         }
@@ -154,7 +154,7 @@ public class DummyMoveset : MonoBehaviour
       
       if(context.started && Player.isGrounded == false)
       {
-        if(isAttacking == false && isBlocking == false)
+        if(isAttacking == false && isBlocking == false && Player.canRespond == true)
         {
           StartCoroutine(SingleHitAttack(Jumpheavy, 12, 19));
         }
@@ -173,7 +173,7 @@ public class DummyMoveset : MonoBehaviour
 
     ///////////// Frame data method ////////////
 
-    public IEnumerator SingleHitAttack( GameObject hitbox, float AStart, float AEnd)
+    private IEnumerator SingleHitAttack( GameObject hitbox, float AStart, float AEnd)
     {
        isAttacking = true; 
        
@@ -195,6 +195,39 @@ public class DummyMoveset : MonoBehaviour
          isAttacking = false;
          
          // going to replace this with a coroutine
+    }
+
+    private void playerCondition()
+    {
+      
+     ////////////////////////////////////////////////// Blocking Check /////////////////////////////////////////////////
+      if(Player.StandBlock == true || Player.CrouchBlock == true)
+      {
+        isBlocking = true;
+      }
+      else
+      {
+        isBlocking = false;
+      }   
+      //////////////////////////////////////////// Attacking Check ///////////////////////////////////////
+
+    
+      /////////////////////////////////////////  HEALTH CHECK /////////////////////////////////////////////////
+
+      if(Player.basehp <= 0)
+      {
+        Player.canRespond = false; 
+      }
+
+      /////////////////////////////////// TIMER CHECK /////////////////////////////////////////////
+
+      Canvas = GameObject.Find("Canvas").GetComponent<HealthBar>();
+
+      if(Canvas.currentTime < 1)
+      {
+        Player.canRespond = false; 
+      }
+
     }
 
 }

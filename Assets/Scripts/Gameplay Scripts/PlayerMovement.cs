@@ -29,6 +29,7 @@ public class PlayerMovement : MonoBehaviour
    public bool isGrounded = false;
    public bool CrouchBlock = false;
    public bool StandBlock = false; 
+   public bool canRespond = true;
 
   // Define the size and direction for the BoxCast
    Vector2 boxSize = new Vector2(0.5f, 5);
@@ -93,69 +94,13 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate()
     {
       
-      MovementFunction();
-       
-       /////////////////////////// JUMP FUNCTION START //////////////////////////
-       if(Input.y > 0 && isGrounded == true)
-       {
-          jumpSquat = true;
-          
-       }
-
-       if(jumpSquat == true && jsFrame != 0)
-       {
-          jsFrame -= 1;
-       }
-       else if (jsFrame == 0) 
-       {
-         //animation.SetTrigger("jump");
-         rb.velocity = new Vector2(rb.velocity.x, regJump);
-         jumpSquat = false; 
-         jsFrame = jsFrameStart;
-         isGrounded = false; 
-       }
-        ////////////////////////// JUMP FUNCTION END ///////////////////
-
-      //////////////////////////CHARACTER FLIP FUNCTION////////////////////////////////////
-     
-      float distance = 2f; // Small distance to check for collisions
-      // Check for collisions on the right side
-      
-      RaycastHit2D rightSideDetector = Physics2D.BoxCast(rb.position + new Vector2(2, 0), boxSize, 0, Vector2.right, distance, opsLayer);
-      
-      // Check for collisions on the left side
-      
-      RaycastHit2D leftSideDetector = Physics2D.BoxCast(rb.position + new Vector2(-2, 0), boxSize, 0, Vector2.left, distance, opsLayer);
-      
-      // Flip the GameObject based on the collision
-
-      var playerLocalScale = transform.localScale;
-
-      if ((rightSideDetector.collider != null) && (rightSideDetector.collider.gameObject != this.gameObject) &&  this.transform.gameObject.layer != yourLayer && (!rightSideDetector.collider.gameObject.CompareTag("Hitbox")))
-    {
-        isFacingRight = true;
-        
-        if(playerLocalScale.x < 0)
-        {
-          playerLocalScale.x = -playerLocalScale.x; // Flip to face right
-        }
-        
-        transform.localScale = playerLocalScale;
-        
-    }
-    
-    else if ((leftSideDetector.collider != null) && (leftSideDetector.collider.gameObject != this.gameObject) && (!leftSideDetector.collider.gameObject.CompareTag("Hitbox")) && this.transform.gameObject.layer != yourLayer)
+      if(canRespond == true)
       {
-        isFacingRight = false;
-        
-        if(playerLocalScale.x > 0)
-        {
-          playerLocalScale.x = -playerLocalScale.x; // Flip to face left
-        }
-        
-        transform.localScale = playerLocalScale;
-        
+      MovementFunction();
+      Jumping();  
+      characterFlipFunction();
       }
+      
     }
 
     void OnDrawGizmos()
@@ -219,7 +164,7 @@ public class PlayerMovement : MonoBehaviour
 ///////////////// Input History ///////////////////////////
 
 
-//////////////////Health & Meterchecking///////////////////////////////////
+//////////////////////////////////////////////////////  Health & Meterchecking    //////////////////////////
 
   public void Health_n_Meter()
   {
@@ -240,10 +185,10 @@ public class PlayerMovement : MonoBehaviour
 
   }
 
-/////////////////////////////// BLOCKING////////////////////////////////
+//////////////////////////////////////////////////// BLOCKING     ////////////////////////////////
   public void isBlocking()
   {
-    if((isFacingRight == true && Input.x < 0 && isCrouching == false) || (isFacingRight == false && Input.x > 0 && isCrouching == false))
+    if((isFacingRight == true && Input.x < 0 && isCrouching == false && isGrounded == true) || (isFacingRight == false && Input.x > 0 && isCrouching == false && isGrounded == true))
     {
       StandBlock = true;
       CrouchBlock = false;
@@ -258,6 +203,72 @@ public class PlayerMovement : MonoBehaviour
       StandBlock = false;
       CrouchBlock = false; 
     }
+
+  }
+
+//////////////////////////////////////////////////  CHARACTER FLIP FUNCTION   ////////////////////////////////////////////////////
+  public void characterFlipFunction()
+  {
+     float distance = 2f; // Small distance to check for collisions
+      // Check for collisions on the right side
+      
+      RaycastHit2D rightSideDetector = Physics2D.BoxCast(rb.position + new Vector2(2, 0), boxSize, 0, Vector2.right, distance, opsLayer);
+      
+      // Check for collisions on the left side
+      
+      RaycastHit2D leftSideDetector = Physics2D.BoxCast(rb.position + new Vector2(-2, 0), boxSize, 0, Vector2.left, distance, opsLayer);
+      
+      // Flip the GameObject based on the collision
+
+      var playerLocalScale = transform.localScale;
+
+      if ((rightSideDetector.collider != null) && (rightSideDetector.collider.gameObject != this.gameObject) &&  this.transform.gameObject.layer != yourLayer && (!rightSideDetector.collider.gameObject.CompareTag("Hitbox")))
+    {
+        isFacingRight = true;
+        
+        if(playerLocalScale.x < 0)
+        {
+          playerLocalScale.x = -playerLocalScale.x; // Flip to face right
+        }
+        
+        transform.localScale = playerLocalScale;
+        
+    }
+    
+    else if ((leftSideDetector.collider != null) && (leftSideDetector.collider.gameObject != this.gameObject) && (!leftSideDetector.collider.gameObject.CompareTag("Hitbox")) && this.transform.gameObject.layer != yourLayer)
+      {
+        isFacingRight = false;
+        
+        if(playerLocalScale.x > 0)
+        {
+          playerLocalScale.x = -playerLocalScale.x; // Flip to face left
+        }
+        
+        transform.localScale = playerLocalScale;
+        
+      }
+  }
+/////////////////////////////////////////////// JUMP FUNCTION START ////////////////////////////////
+  public void Jumping()
+  {
+    if(Input.y > 0 && isGrounded == true)
+      {
+        jumpSquat = true;
+              
+      }
+
+    if(jumpSquat == true && jsFrame != 0)
+        {
+          jsFrame -= 1;
+        }
+      else if (jsFrame == 0) 
+        {
+          //animation.SetTrigger("jump");
+          rb.velocity = new Vector2(rb.velocity.x, regJump);
+          jumpSquat = false; 
+          jsFrame = jsFrameStart;
+          isGrounded = false; 
+        }
 
   }
  
