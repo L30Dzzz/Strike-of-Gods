@@ -7,16 +7,15 @@ using UnityEngine.InputSystem;
 public class GameManager : MonoBehaviour
 {
 
-    public static bool gameIsPaused;
+    public bool gameIsPaused;
     public GameObject PauseSystem;
-    public GameObject player1;
-    public GameObject player2;
+    HealthBar hp; 
    // public TextMeshProGUI roundEndText;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        
+        hp = GameObject.Find("Canvas").GetComponent<HealthBar>();
     }
 
      void Update()
@@ -26,7 +25,17 @@ public class GameManager : MonoBehaviour
 
     public void Paused(InputAction.CallbackContext context)
     {
-       gameIsPaused = !gameIsPaused; 
+       if(hp.basehp >= 0 && hp.basehp2 >= 0)
+       {
+        gameIsPaused = !gameIsPaused; 
+       }
+
+       
+    }
+
+    public void UnPause()
+    {
+        gameIsPaused = !gameIsPaused;
     }
     
     void PauseGame ()
