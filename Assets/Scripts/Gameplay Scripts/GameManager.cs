@@ -27,10 +27,15 @@ public class GameManager : MonoBehaviour
     {
        if(hp.basehp >= 0 && hp.basehp2 >= 0)
        {
-       gameIsPaused = !gameIsPaused; 
+        gameIsPaused = !gameIsPaused; 
        }
 
        
+    }
+
+    public void UnPause()
+    {
+        gameIsPaused = !gameIsPaused;
     }
     
     void PauseGame ()

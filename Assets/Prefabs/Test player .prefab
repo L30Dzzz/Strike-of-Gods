@@ -124,6 +124,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dmg: 20
   meterGain: 5
+  stunTime: 3
   isHigh: 0
   isLow: 0
   isMid: 1
@@ -174,6 +175,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dmg: 40
   meterGain: 10
+  stunTime: 6
   isHigh: 1
   isLow: 0
   isMid: 0
@@ -301,6 +303,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dmg: 60
   meterGain: 20
+  stunTime: 9
   isHigh: 0
   isLow: 0
   isMid: 1
@@ -428,6 +431,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dmg: 20
   meterGain: 10
+  stunTime: 6
   isHigh: 1
   isLow: 0
   isMid: 0
@@ -555,6 +559,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dmg: 20
   meterGain: 5
+  stunTime: 3
   isHigh: 1
   isLow: 0
   isMid: 0
@@ -722,6 +727,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dmg: 60
   meterGain: 20
+  stunTime: 9
   isHigh: 1
   isLow: 0
   isMid: 0
@@ -849,6 +855,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dmg: 40
   meterGain: 10
+  stunTime: 6
   isHigh: 0
   isLow: 1
   isMid: 0
@@ -1025,7 +1032,6 @@ GameObject:
   - component: {fileID: 7390993351731573477}
   - component: {fileID: 7390993351731573479}
   - component: {fileID: 7390993351731573472}
-  - component: {fileID: 489578487}
   - component: {fileID: 1808849244}
   m_Layer: 6
   m_Name: 'Test player '
@@ -1208,7 +1214,7 @@ MonoBehaviour:
     m_ActionName: Battle Controls/Special Attack[/Keyboard/i]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 489578487}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
         m_MethodName: Paused
         m_Mode: 0
@@ -1223,7 +1229,7 @@ MonoBehaviour:
     m_ActionId: 71168e8b-a615-4bc2-a7d1-c5f31aeab069
     m_ActionName: Battle Controls/Pause[/Keyboard/p]
   m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: Controller
+  m_DefaultControlScheme: 
   m_DefaultActionMap: Battle Controls
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
@@ -1254,6 +1260,7 @@ MonoBehaviour:
   isGrounded: 0
   CrouchBlock: 0
   StandBlock: 0
+  canRespond: 1
   playerTemplate: {fileID: 11400000, guid: c2e6fb0c6d30742dc98936af1c3ce8de, type: 2}
   yourLayer:
     serializedVersion: 2
@@ -1298,21 +1305,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1, y: 2}
   m_Direction: 0
---- !u!114 &489578487
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7390993351731573500}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ae4b605d98244f9aadac2876a62ed69, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  PauseSystem: {fileID: 0}
-  player1: {fileID: 7390993351731573500}
-  player2: {fileID: 0}
 --- !u!114 &1808849244
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1383,6 +1375,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dmg: 20
   meterGain: 5
+  stunTime: 3
   isHigh: 0
   isLow: 1
   isMid: 0
@@ -1510,6 +1503,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dmg: 40
   meterGain: 10
+  stunTime: 6
   isHigh: 0
   isLow: 0
   isMid: 1
@@ -1637,6 +1631,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dmg: 60
   meterGain: 20
+  stunTime: 9
   isHigh: 0
   isLow: 1
   isMid: 0
