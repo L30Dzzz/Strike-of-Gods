@@ -7,11 +7,8 @@ using UnityEngine.InputSystem;
 public class GameManager : MonoBehaviour
 {
 
-    public static bool gameIsPaused;
+    public bool gameIsPaused;
     public GameObject PauseSystem;
-    public GameObject player1;
-    public GameObject player2;
-
     HealthBar hp; 
    // public TextMeshProGUI roundEndText;
 
