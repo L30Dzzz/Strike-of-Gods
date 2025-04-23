@@ -132,11 +132,11 @@ public class PlayerMovement : MonoBehaviour
        
        
        // changes the speed of your character depending on what side you are facing 
-       if((isFacingRight == true && Input.x < 0 && isGrounded == true) || (isFacingRight == false && Input.x > 0 && isGrounded ==true))
+       if((isFacingRight == true && Input.x < 0) || (isFacingRight == false && Input.x > 0))
        {
          speed = movespeed2; 
        }
-       else if((isFacingRight == true && Input.x > 0 && isGrounded == true) || (isFacingRight == false && Input.x < 0 && isGrounded ==true)) 
+       else if((isFacingRight == true && Input.x > 0) || (isFacingRight == false && Input.x < 0)) 
        {
          speed = movespeed1; 
        }
