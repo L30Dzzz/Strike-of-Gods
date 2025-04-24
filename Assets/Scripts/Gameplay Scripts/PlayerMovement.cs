@@ -126,7 +126,11 @@ public class PlayerMovement : MonoBehaviour
        }
        else
        {
-        transform.Translate(Vector2.right * Input.x * Time.deltaTime * speed);
+        if(isGrounded == true)
+        {
+          transform.Translate(Vector2.right * Input.x * Time.deltaTime * speed); // this makes the player actually move 
+        }
+        
         isCrouching = false; 
        }
        
@@ -268,6 +272,18 @@ public class PlayerMovement : MonoBehaviour
           jumpSquat = false; 
           jsFrame = jsFrameStart;
           isGrounded = false; 
+
+          if((isFacingRight == true && Input.x > 0) || (isFacingRight == false && Input.x < 0))
+          {
+              transform.Translate(Vector2.right * Time.deltaTime * speed);
+            
+          }
+          else if((isFacingRight == true && Input.x < 0) || (isFacingRight == false && Input.x > 0))
+          {
+
+              transform.Translate(Vector2.left * Time.deltaTime * speed);
+              
+          }
         }
 
   }
