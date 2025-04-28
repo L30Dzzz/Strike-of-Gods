@@ -32,7 +32,7 @@ public class PlayerMovement : MonoBehaviour
    public bool canRespond = true;
 
   // Define the size and direction for the BoxCast
-   Vector2 boxSize = new Vector2(0.5f, 5);
+   public Vector2 boxSize = new Vector2(0.5f, 6);
    
 
    bool jumpSquat; 
@@ -273,15 +273,31 @@ public class PlayerMovement : MonoBehaviour
           jsFrame = jsFrameStart;
           isGrounded = false; 
 
+          ////////Forward jumping////////
           if((isFacingRight == true && Input.x > 0) || (isFacingRight == false && Input.x < 0))
           {
-              transform.Translate(Vector2.right * Time.deltaTime * speed);
+            if(transform.localScale.x > 0)
+            {
+              rb.AddForce(Vector2.right * (regJump/2), ForceMode2D.Impulse);
+            }
+            else
+            {
+              rb.AddForce(-Vector2.right * (regJump/2), ForceMode2D.Impulse);
+            }
+              
             
           }
+          ////////backwards jumping///////////
           else if((isFacingRight == true && Input.x < 0) || (isFacingRight == false && Input.x > 0))
           {
-
-              transform.Translate(Vector2.left * Time.deltaTime * speed);
+            if(transform.localScale.x < 0)
+            {
+              rb.AddForce(Vector2.right * (regJump/2), ForceMode2D.Impulse);
+            }
+            else
+            {
+              rb.AddForce(-Vector2.right * (regJump/2), ForceMode2D.Impulse);
+            }
               
           }
         }
