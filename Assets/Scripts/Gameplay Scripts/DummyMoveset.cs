@@ -21,6 +21,8 @@ public class DummyMoveset : MonoBehaviour
     public GameObject Jumpheavy; 
 
     HealthBar Canvas;
+
+    Animator animationRunner;
     
     public bool isBlocking = false;
     bool isAttacking = false;
@@ -29,6 +31,8 @@ public class DummyMoveset : MonoBehaviour
     void Start()
     {
         Player = GetComponent<PlayerMovement>();
+
+         animationRunner = GetComponent<Animator>();
          
     }
 

@@ -43,7 +43,7 @@ public class hitProperties : MonoBehaviour
          if(P2 != null)
          {
             //Checks if the player is blocking high or low and it fits the attack properties of the attack
-            if((isHigh == true && P2.StandBlock == false) || (isLow == true && P2.CrouchBlock == false) || (isMid == true && (P2.StandBlock == false || P2.CrouchBlock == false)))
+            if((isHigh == true && P2.StandBlock == false) || (isLow == true && P2.CrouchBlock == false) || (isMid == true && (P2.StandBlock == false && P2.CrouchBlock == false)))
             {  
               // If the player is not blocking 
               
@@ -62,7 +62,6 @@ public class hitProperties : MonoBehaviour
              }
              
             }
-             
              else // of the character is blocking
              {
               // chip damage
