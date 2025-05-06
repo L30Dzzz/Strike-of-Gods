@@ -87,7 +87,7 @@ public class PlayerMovement : MonoBehaviour
     {
       //Debug.Log(basehp);      
       Health_n_Meter();
-      isBlocking();
+      
 
     }
     
@@ -99,6 +99,7 @@ public class PlayerMovement : MonoBehaviour
       MovementFunction();
       Jumping();  
       characterFlipFunction();
+      isBlocking();
       }
       
     }
@@ -303,5 +304,36 @@ public class PlayerMovement : MonoBehaviour
         }
 
   }
- 
+/*
+   private IEnumerator ForwardDash()
+   {
+    private int numCount = 0;
+
+    if((isFacingRight == true && Input.x > 0) || (isFacingRight == false && Input.x < 0))
+    {
+       numCount = 1; 
+       yield return new WaitForSeconds(3/60); //# frames to press the forward again
+       if(Input.x == 0)
+       {
+        yield return new WaitForSeconds(3/60);
+        if((isFacingRight == true && Input.x > 0.5) || (isFacingRight == false && Input.x < -0.5))
+        {
+          Debug.Log("Forward Dash");
+        }
+        else
+        {
+          Debug.Log("You didn't dash :(");
+        }
+       }
+       
+    }
+
+   }
+
+   private IEnumerator BackwardsDash()
+   {
+
+
+   }
+ */
 }
