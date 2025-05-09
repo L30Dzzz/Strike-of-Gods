@@ -37,7 +37,9 @@ public class PlayerMovement : MonoBehaviour
 
    bool jumpSquat; 
    private CharacterController playerController; 
-   HealthBar hp; 
+   public HealthBar hp; 
+   Animator Animator;
+
    public PlayerTemplate playerTemplate; 
    public LayerMask yourLayer;
    public LayerMask opsLayer;
@@ -60,25 +62,9 @@ public class PlayerMovement : MonoBehaviour
        opsLayer = playerTemplate.opsLayer;
        layerAsLayerMask = (1 << this.gameObject.layer);
 
-       hp = GameObject.Find("Canvas").GetComponent<HealthBar>();
+      Animator = GetComponent<Animator>();
 
-      if(hp != null)
-      {
-       if(yourLayer.value == 64)
-       {
-        basehp = hp.p1Health.GetComponent<Image>().rectTransform.rect.width;
-        Meter = hp.p1Meter.GetComponent<Image>().rectTransform.rect.width;
-       }
-       else
-       {
-        basehp = hp.p2Health.GetComponent<Image>().rectTransform.rect.width;
-        Meter = hp.p2Meter.GetComponent<Image>().rectTransform.rect.width;
-       }
-      }
-      else
-      {
-        Debug.Log("Damn it");
-      }
+      GetHealt_N_Meter();
        
     }
 
@@ -160,6 +146,72 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+  /*
+   public IEnumerator ForwardDash()
+   {
+    private int numCount = 0;
+
+    
+     yield return new WaitForSeconds(5);
+  }
+   */ 
+
+/////////////////////////////////////////////// JUMP FUNCTION START ////////////////////////////////
+  public void Jumping()
+  {
+    if(Input.y > 0 && isGrounded == true)
+      {
+        jumpSquat = true;
+              
+      }
+
+    if(jumpSquat == true && jsFrame != 0)
+        {
+          jsFrame -= 1;
+        }
+      else if (jsFrame == 0) 
+        {
+          //animation.SetTrigger("jump");
+          rb.velocity = new Vector2(rb.velocity.x, regJump);
+          jumpSquat = false; 
+          jsFrame = jsFrameStart;
+          isGrounded = false; 
+
+          ////////Forward jumping////////
+          if((isFacingRight == true && Input.x > 0) || (isFacingRight == false && Input.x < 0))
+          {
+            if(transform.localScale.x > 0)
+            {
+              rb.AddForce(Vector2.right * (regJump/2), ForceMode2D.Impulse);
+            }
+            else
+            {
+              rb.AddForce(-Vector2.right * (regJump/2), ForceMode2D.Impulse);
+            }
+              
+            
+          }
+          ////////backwards jumping///////////
+          else if((isFacingRight == true && Input.x < 0) || (isFacingRight == false && Input.x > 0))
+          {
+            if(transform.localScale.x < 0)
+            {
+              rb.AddForce(Vector2.right * (regJump/2), ForceMode2D.Impulse);
+            }
+            else
+            {
+              rb.AddForce(-Vector2.right * (regJump/2), ForceMode2D.Impulse);
+            }
+              
+          }
+        }
+
+  }
+   
+/////////////////////////////////////////////// JUMP FUNCTION END ////////////////////////////////
+
+
+
 //////////////////ATTACKING/////////////////////////
     
     //Attacking will be done on the players respective character script. Like for example if they was playing oni then most of their attacking will come from the oni script inside of this script(if that makes sense)
@@ -170,6 +222,31 @@ public class PlayerMovement : MonoBehaviour
 
 
 //////////////////////////////////////////////////////  Health & Meterchecking    //////////////////////////
+
+  public void GetHealt_N_Meter()
+  {
+      hp = GameObject.Find("Canvas").GetComponent<HealthBar>();
+
+      if(hp != null)
+      {
+       if(yourLayer.value == 64)
+       {
+        basehp = hp.p1Health.GetComponent<Image>().rectTransform.rect.width;
+        Meter = hp.p1Meter.GetComponent<Image>().rectTransform.rect.width;
+       }
+       else
+       {
+        basehp = hp.p2Health.GetComponent<Image>().rectTransform.rect.width;
+        Meter = hp.p2Meter.GetComponent<Image>().rectTransform.rect.width;
+       }
+      }
+      else
+      {
+        Debug.Log("Damn it");
+      }
+  }
+
+
 
   public void Health_n_Meter()
   {
@@ -253,87 +330,6 @@ public class PlayerMovement : MonoBehaviour
         
       }
   }
-/////////////////////////////////////////////// JUMP FUNCTION START ////////////////////////////////
-  public void Jumping()
-  {
-    if(Input.y > 0 && isGrounded == true)
-      {
-        jumpSquat = true;
-              
-      }
 
-    if(jumpSquat == true && jsFrame != 0)
-        {
-          jsFrame -= 1;
-        }
-      else if (jsFrame == 0) 
-        {
-          //animation.SetTrigger("jump");
-          rb.velocity = new Vector2(rb.velocity.x, regJump);
-          jumpSquat = false; 
-          jsFrame = jsFrameStart;
-          isGrounded = false; 
-
-          ////////Forward jumping////////
-          if((isFacingRight == true && Input.x > 0) || (isFacingRight == false && Input.x < 0))
-          {
-            if(transform.localScale.x > 0)
-            {
-              rb.AddForce(Vector2.right * (regJump/2), ForceMode2D.Impulse);
-            }
-            else
-            {
-              rb.AddForce(-Vector2.right * (regJump/2), ForceMode2D.Impulse);
-            }
-              
-            
-          }
-          ////////backwards jumping///////////
-          else if((isFacingRight == true && Input.x < 0) || (isFacingRight == false && Input.x > 0))
-          {
-            if(transform.localScale.x < 0)
-            {
-              rb.AddForce(Vector2.right * (regJump/2), ForceMode2D.Impulse);
-            }
-            else
-            {
-              rb.AddForce(-Vector2.right * (regJump/2), ForceMode2D.Impulse);
-            }
-              
-          }
-        }
-
-  }
-/*
-   private IEnumerator ForwardDash()
-   {
-    private int numCount = 0;
-
-    if((isFacingRight == true && Input.x > 0) || (isFacingRight == false && Input.x < 0))
-    {
-       numCount = 1; 
-       yield return new WaitForSeconds(3/60); //# frames to press the forward again
-       if(Input.x == 0)
-       {
-        yield return new WaitForSeconds(3/60);
-        if((isFacingRight == true && Input.x > 0.5) || (isFacingRight == false && Input.x < -0.5))
-        {
-          Debug.Log("Forward Dash");
-        }
-        else
-        {
-          Debug.Log("You didn't dash :(");
-        }
-       }
-       
-    }
-
-   }
-
-   private IEnumerator BackwardsDash()
-   {
-
-
-   }
- */
 }
+

@@ -1261,6 +1261,7 @@ MonoBehaviour:
   CrouchBlock: 0
   StandBlock: 0
   canRespond: 1
+  boxSize: {x: 0.5, y: 10}
   playerTemplate: {fileID: 11400000, guid: c2e6fb0c6d30742dc98936af1c3ce8de, type: 2}
   yourLayer:
     serializedVersion: 2
