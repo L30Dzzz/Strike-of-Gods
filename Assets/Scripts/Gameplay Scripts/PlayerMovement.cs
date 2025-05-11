@@ -107,7 +107,7 @@ public class PlayerMovement : MonoBehaviour
     private void MovementFunction()
     {
        // allows the player to move left and right only if they not crouching 
-       if(Input.y < 0 && isGrounded == true)
+       if(Input.y < -0.4 && isGrounded == true)
        {
          isCrouching = true; 
        }
@@ -159,7 +159,7 @@ public class PlayerMovement : MonoBehaviour
 /////////////////////////////////////////////// JUMP FUNCTION START ////////////////////////////////
   public void Jumping()
   {
-    if(Input.y > 0 && isGrounded == true)
+    if(Input.y > 0.4 && isGrounded == true)
       {
         jumpSquat = true;
               

@@ -15,12 +15,19 @@ public class HealthBar : MonoBehaviour
     public int isRunning = 1; //I will turn this into a bool later
 
     public GameObject p1Health;
-    public GameObject p2Health; 
     public GameObject p1Meter; 
-    public GameObject p2Meter; 
-    public GameObject KoScreen;
     public GameObject P1WinScreen;
+    public GameObject P1Icon;
+    public Image P1PlayerIcon;
+    
+    public GameObject p2Health; 
+    public GameObject p2Meter; 
     public GameObject P2WinScreen;
+    public GameObject P2Icon;
+    public Image P2PlayerIcon;
+    
+    public GameObject KoScreen;
+    
     public GameObject MenuScreen;
     public GameObject[] P1Points;
     public GameObject[] P2Points; 
