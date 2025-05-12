@@ -26,6 +26,7 @@ public class HealthBar : MonoBehaviour
     public GameObject P2Icon;
     public Image P2PlayerIcon;
     
+    public Sprite pointIcon;
     public GameObject KoScreen;
     
     public GameObject MenuScreen;

@@ -577,20 +577,36 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 321124684360620535, guid: 82020cf63dc37844cb342b68ee076381, type: 3}
     - target: {fileID: 614751771, guid: f82b15c2347f5404793963e3781955fd, type: 3}
-      propertyPath: HpColor.g
+      propertyPath: HpColor.a
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 614751771, guid: f82b15c2347f5404793963e3781955fd, type: 3}
+      propertyPath: HpColor.b
+      value: 0.7139201
+      objectReference: {fileID: 0}
+    - target: {fileID: 614751771, guid: f82b15c2347f5404793963e3781955fd, type: 3}
+      propertyPath: HpColor.g
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 614751771, guid: f82b15c2347f5404793963e3781955fd, type: 3}
       propertyPath: HpColor.r
-      value: 0.34117648
-      objectReference: {fileID: 0}
-    - target: {fileID: 614751771, guid: f82b15c2347f5404793963e3781955fd, type: 3}
-      propertyPath: IconColor.g
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 614751771, guid: f82b15c2347f5404793963e3781955fd, type: 3}
+      propertyPath: IconColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 614751771, guid: f82b15c2347f5404793963e3781955fd, type: 3}
+      propertyPath: IconColor.b
+      value: 0.7137255
+      objectReference: {fileID: 0}
+    - target: {fileID: 614751771, guid: f82b15c2347f5404793963e3781955fd, type: 3}
+      propertyPath: IconColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 614751771, guid: f82b15c2347f5404793963e3781955fd, type: 3}
       propertyPath: IconColor.r
-      value: 0.34117648
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1846319266995829859, guid: f82b15c2347f5404793963e3781955fd, type: 3}
       propertyPath: m_Name
@@ -1318,6 +1334,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 4697803306994382844, guid: 38caf26e250b24345a304b01b57f3b2e, type: 3}
+      propertyPath: pointIcon
+      value: 
+      objectReference: {fileID: -323318130542040394, guid: 1a8b7b6fb81da8a4f95501b865d98e97, type: 3}
     - target: {fileID: 4697803306994382844, guid: 38caf26e250b24345a304b01b57f3b2e, type: 3}
       propertyPath: P1PlayerIcon
       value: 
