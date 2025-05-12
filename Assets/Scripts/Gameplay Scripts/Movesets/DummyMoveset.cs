@@ -8,6 +8,17 @@ public class DummyMoveset : MonoBehaviour
 {
     PlayerMovement Player;
     
+    public Color HpColor; 
+    Image HealthBar;
+    Image Icon;
+    Image IconBg; 
+
+    private Image PlayerIconBg;
+    public Color IconColor;
+    public Sprite Netural;
+    public Sprite LowHp;
+    public Sprite Winning; 
+    
     public GameObject StandLight; 
     public GameObject CrouchLight; 
     public GameObject JumpLight; 
@@ -19,8 +30,9 @@ public class DummyMoveset : MonoBehaviour
 
     public GameObject StandHeavy; 
     public GameObject CrouchHeavy; 
-    public GameObject Jumpheavy; 
+    public GameObject Jumpheavy;
 
+    
     HealthBar Canvas;
 
     Animator animationRunner;
@@ -33,18 +45,69 @@ public class DummyMoveset : MonoBehaviour
     {
         Player = GetComponent<PlayerMovement>();
 
+        if(Player != null)
+        {
+         StartCoroutine(FindHp());
+        }
+
         animationRunner = GetComponent<Animator>();
          
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
       playerCondition();
-
+      IconChanger();
 
     }
+
+//////////////////////////////////////// VISUALS /////////////////////////////////////////////
+
+  IEnumerator FindHp()
+    {
+        yield return new WaitForSeconds(1/60); 
+        
+        if(Player.yourLayer.value == 64)
+        {
+            HealthBar = Player.hp.p1Health.GetComponent<Image>();
+            Icon = Player.hp.P1PlayerIcon;
+            IconBg = Player.hp.P1Icon.GetComponent<Image>();
+            //Debug.Log("Found Player 1 hp");
+        }
+        else
+        {
+            HealthBar = Player.hp.p2Health.GetComponent<Image>();
+            Icon = Player.hp.P2PlayerIcon;
+            IconBg = Player.hp.P2Icon.GetComponent<Image>();
+            Debug.Log("Find Player 2 hp");
+        }
+        HealthBar.color = HpColor;
+        IconBg.color = IconColor; 
+
+        //Debug.Log("Loop is done");
+
+        StopCoroutine(FindHp());
+    }
     
+    public void IconChanger()
+    {
+        if(Player.basehp > 241 && Player.basehp < 1137.9f)
+        {
+          Icon.sprite = Netural;
+          
+        }
+        else if(Player.basehp <= 241)
+        {
+         Icon.sprite = LowHp;
+        }
+        else if(Player.basehp >= 1137.9f)
+        {
+          Icon.sprite = Winning;
+        }
+    }
+
+/////////////////////////////////////// ATTACKS /////////////////////////////////////////////////////////
     public void LightAttack(InputAction.CallbackContext context)
     {
       
@@ -172,7 +235,7 @@ public class DummyMoveset : MonoBehaviour
 
 
 
-    ///////////// Frame data method ////////////
+//////////////////////////////////////////////////// Frame data method ////////////////////////////////
 
     private IEnumerator SingleHitAttack( GameObject hitbox, float AStart, float AEnd)
     {
