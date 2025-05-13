@@ -1324,8 +1324,8 @@ MonoBehaviour:
     m_ActionName: Battle Controls/Movement[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: DummyMoveset, Assembly-CSharp
+      - m_Target: {fileID: 3071589977027050339}
+        m_TargetAssemblyTypeName: WuKongMoveSet, Assembly-CSharp
         m_MethodName: LightAttack
         m_Mode: 0
         m_Arguments:
@@ -1340,8 +1340,8 @@ MonoBehaviour:
     m_ActionName: Battle Controls/Light Attack[/Keyboard/j]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: DummyMoveset, Assembly-CSharp
+      - m_Target: {fileID: 3071589977027050339}
+        m_TargetAssemblyTypeName: WuKongMoveSet, Assembly-CSharp
         m_MethodName: MediumAttack
         m_Mode: 0
         m_Arguments:
@@ -1356,8 +1356,8 @@ MonoBehaviour:
     m_ActionName: Battle Controls/Medium Attack[/Keyboard/k]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: DummyMoveset, Assembly-CSharp
+      - m_Target: {fileID: 3071589977027050339}
+        m_TargetAssemblyTypeName: WuKongMoveSet, Assembly-CSharp
         m_MethodName: HeavyAttack
         m_Mode: 0
         m_Arguments:
@@ -1372,9 +1372,9 @@ MonoBehaviour:
     m_ActionName: Battle Controls/Heavy Attack[/Keyboard/l]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 3071589977027050339}
         m_TargetAssemblyTypeName: DummyMoveset, Assembly-CSharp
-        m_MethodName: SpecialAttack
+        m_MethodName: 
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1424,6 +1424,17 @@ MonoBehaviour:
   Netural: {fileID: 1339898921588852694, guid: f93d388773899904ca963928f1739e42, type: 3}
   LowHp: {fileID: -7962133677275962862, guid: f64b3006b86f54b4aa51bb8b00c001d0, type: 3}
   Winning: {fileID: -7445971565315056740, guid: 28a22382ee0e9ea4fb86e5cc424e5254, type: 3}
+  StandLight: {fileID: 3135046622182230341}
+  CrouchLight: {fileID: 4837662902944343764}
+  JumpLight: {fileID: 266000800054614382}
+  UniAnti: {fileID: 3879325937954873439}
+  StandMedium: {fileID: 5133126288816942260}
+  CrouchMedium: {fileID: 5272468423829424251}
+  JumpMedium: {fileID: 4061887937975627091}
+  StandHeavy: {fileID: 4369469856385936738}
+  CrouchHeavy: {fileID: 5827855733311783314}
+  Jumpheavy: {fileID: 5268151226418145566}
+  isBlocking: 0
 --- !u!114 &5554056552317964521
 MonoBehaviour:
   m_ObjectHideFlags: 0

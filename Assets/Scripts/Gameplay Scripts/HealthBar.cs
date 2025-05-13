@@ -46,7 +46,7 @@ public class HealthBar : MonoBehaviour
         currentTime = MaxTime;
         timerText.text = MaxTime.ToString();
         StartCoroutine(gameTimer());
-
+        getPoints();
         
     }
 
@@ -73,13 +73,17 @@ public class HealthBar : MonoBehaviour
 
     }
 
-     private void getPoints(int rounds)
+     private void getPoints()
      {
         int points = rounds--;
-        P1Points = new GameObject[points];
-        P2Points = new GameObject[points];
         P1Score = points;
         P2Score = points;
+
+        for(int x = 0; x < points; x++)
+        {
+            P1Points[x].SetActive(true);
+            P2Points[x].SetActive(true);
+        }
 
         
      }
