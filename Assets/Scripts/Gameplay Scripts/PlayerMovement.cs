@@ -178,7 +178,7 @@ public class PlayerMovement : MonoBehaviour
           isGrounded = false; 
 
           ////////Forward jumping////////
-          if((isFacingRight == true && Input.x > 0) || (isFacingRight == false && Input.x < 0))
+          if((isFacingRight == true && Input.x > 0.5) || (isFacingRight == false && Input.x < -0.5))
           {
             if(transform.localScale.x > 0)
             {
@@ -192,7 +192,7 @@ public class PlayerMovement : MonoBehaviour
             
           }
           ////////backwards jumping///////////
-          else if((isFacingRight == true && Input.x < 0) || (isFacingRight == false && Input.x > 0))
+          else if((isFacingRight == true && Input.x < -0.5) || (isFacingRight == false && Input.x > 0.5))
           {
             if(transform.localScale.x < 0)
             {

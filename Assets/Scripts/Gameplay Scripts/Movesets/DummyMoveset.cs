@@ -86,8 +86,11 @@ public class DummyMoveset : MonoBehaviour
         IconBg.color = IconColor; 
 
         //Debug.Log("Loop is done");
-
-        StopCoroutine(FindHp());
+        if(Icon != null)
+        {
+            StopCoroutine(FindHp());
+        }
+        
     }
     
     public void IconChanger()

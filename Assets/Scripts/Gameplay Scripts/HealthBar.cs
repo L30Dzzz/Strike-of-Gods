@@ -13,18 +13,21 @@ public class HealthBar : MonoBehaviour
     public int MaxTime;
 
     public int isRunning = 1; //I will turn this into a bool later
+    public int rounds; 
 
     public GameObject p1Health;
     public GameObject p1Meter; 
     public GameObject P1WinScreen;
     public GameObject P1Icon;
     public Image P1PlayerIcon;
+    private int P1Score;
     
     public GameObject p2Health; 
     public GameObject p2Meter; 
     public GameObject P2WinScreen;
     public GameObject P2Icon;
     public Image P2PlayerIcon;
+    private int P2Score;
     
     public Sprite pointIcon;
     public GameObject KoScreen;
@@ -43,6 +46,7 @@ public class HealthBar : MonoBehaviour
         currentTime = MaxTime;
         timerText.text = MaxTime.ToString();
         StartCoroutine(gameTimer());
+
         
     }
 
@@ -69,7 +73,18 @@ public class HealthBar : MonoBehaviour
 
     }
 
-    
+     private void getPoints(int rounds)
+     {
+        int points = rounds--;
+        P1Points = new GameObject[points];
+        P2Points = new GameObject[points];
+        P1Score = points;
+        P2Score = points;
+
+        
+     }
+
+     
      private IEnumerator gameCondition(GameObject Ko, GameObject WinScreen, GameObject Menu)
     {
        
