@@ -543,7 +543,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1846319266995829880, guid: f82b15c2347f5404793963e3781955fd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.61
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1846319266995829880, guid: f82b15c2347f5404793963e3781955fd, type: 3}
       propertyPath: m_LocalPosition.y
@@ -772,7 +772,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1546709989}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.42, y: 1.22, z: -10}
+  m_LocalPosition: {x: 0, y: 1.22, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -985,7 +985,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5554056552317964526, guid: 35c87eb1276914a088221c71895c4830, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -13.73
+      value: -5
       objectReference: {fileID: 0}
     - target: {fileID: 5554056552317964526, guid: 35c87eb1276914a088221c71895c4830, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1143,6 +1143,22 @@ PrefabInstance:
     - target: {fileID: 4697803306994382844, guid: 38caf26e250b24345a304b01b57f3b2e, type: 3}
       propertyPath: rounds
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4697803306994382844, guid: 38caf26e250b24345a304b01b57f3b2e, type: 3}
+      propertyPath: winColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4697803306994382844, guid: 38caf26e250b24345a304b01b57f3b2e, type: 3}
+      propertyPath: winColor.b
+      value: 0.033018887
+      objectReference: {fileID: 0}
+    - target: {fileID: 4697803306994382844, guid: 38caf26e250b24345a304b01b57f3b2e, type: 3}
+      propertyPath: winColor.g
+      value: 0.033018887
+      objectReference: {fileID: 0}
+    - target: {fileID: 4697803306994382844, guid: 38caf26e250b24345a304b01b57f3b2e, type: 3}
+      propertyPath: winColor.r
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5276916648659440245, guid: 38caf26e250b24345a304b01b57f3b2e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
