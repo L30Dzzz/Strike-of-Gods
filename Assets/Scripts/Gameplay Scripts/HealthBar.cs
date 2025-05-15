@@ -54,16 +54,19 @@ public class HealthBar : MonoBehaviour
         
         p1HealthBar = p1Health.GetComponent<Image>();
         p2HealthBar = p2Health.GetComponent<Image>();
+
+        
      }
     
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-    
+        if(isRunning == true)
+        {
         basehp = (int)p1HealthBar.rectTransform.rect.width;
         basehp2 = (int)p2HealthBar.rectTransform.rect.width;
-        
+        }
     
         if(basehp <= 0)
         {
@@ -96,7 +99,13 @@ public class HealthBar : MonoBehaviour
 
      private void RestartRound()
      {
-        
+        basehp = 689;
+        basehp2 = 689;
+            
+        p1HealthBar.rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, (float)basehp);
+        p2HealthBar.rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, (float)basehp2);
+
+        isRunning = true;
      }
 
      
@@ -116,27 +125,44 @@ public class HealthBar : MonoBehaviour
        yield return new WaitForSeconds(2);
 
        Image Pimage = Point[Score].GetComponent<Image>();
+       Debug.Log(Score);
 
-        if(Score != rounds)
-        {
+        WinScreen.SetActive(false);
+        
+            if(Score < rounds)
+            {
+            
             Pimage.color = winColor; 
-            Score++;
-
+            
             yield return new WaitForSeconds(2);
 
-            RestartRound();
-        }
-        else
-        {
-            Menu.SetActive(true);
-        }
-       
-       WinScreen.SetActive(false);
-       
-                
+                if(basehp <= 0)
+                {
+                P2Score++;
+                }
+                else if(basehp2 <= 0)
+                {
+                P1Score++;
+                }
+
+                Debug.Log(Score);
+
+                RestartRound();
+            
+            yield return new WaitForSeconds(1);
+
+                isRunning = true;
+
+            }
+            else
+            {
+            
+                Pimage.color = winColor; 
+                Menu.SetActive(true);
+            }
+            
        }
 
-      
     }
 
     private IEnumerator gameTimer()

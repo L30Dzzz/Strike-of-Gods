@@ -62,23 +62,17 @@ public class PlayerMovement : MonoBehaviour
        opsLayer = playerTemplate.opsLayer;
        layerAsLayerMask = (1 << this.gameObject.layer);
 
-      Animator = GetComponent<Animator>();
+        GetHealt_N_Meter();
+        
+        Animator = GetComponent<Animator>();
 
-      GetHealt_N_Meter();
-       
     }
 
     // Update is called once per frame
-    void Update()
-    {
-      //Debug.Log(basehp);      
-      Health_n_Meter();
-      
-
-    }
-    
     void FixedUpdate()
     {
+      
+      Health_n_Meter();
       
       if(canRespond == true)
       {
@@ -231,6 +225,7 @@ public class PlayerMovement : MonoBehaviour
       {
        if(yourLayer.value == 64)
        {
+        
         basehp = hp.p1Health.GetComponent<Image>().rectTransform.rect.width;
         Meter = hp.p1Meter.GetComponent<Image>().rectTransform.rect.width;
        }
@@ -253,14 +248,31 @@ public class PlayerMovement : MonoBehaviour
 
     if(yourLayer.value == 64)
     {
-       hp.p1Health.GetComponent<Image>().rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, basehp);
+       if(hp.isRunning == true)
+       {
+        hp.p1Health.GetComponent<Image>().rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, basehp);
+       }
+       else
+       {
+        
+        basehp = hp.basehp;
+        hp.p1Health.GetComponent<Image>().rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, hp.basehp);
+       }
 
        hp.p1Meter.GetComponent<Image>().rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, Meter);
     }
     else
     {
+       if(hp.isRunning == true)
+       {
        hp.p2Health.GetComponent<Image>().rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, basehp);
-
+       }
+       else
+       {
+        basehp = hp.basehp2;
+        hp.p2Health.GetComponent<Image>().rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, hp.basehp2);
+       }
+       
        hp.p2Meter.GetComponent<Image>().rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, Meter);
     }
 
