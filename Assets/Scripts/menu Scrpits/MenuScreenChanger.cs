@@ -12,7 +12,7 @@ public class MenuScreenChanger : MonoBehaviour
     public TextMeshProUGUI ScreenDuo;
     public bool isButtonWorking = true;
     private AudioSource buttonSound;
-    public AudioClip errorSound;
+   // public AudioClip errorSound;
     public AudioClip selectSound;
 
     
@@ -52,7 +52,7 @@ public class MenuScreenChanger : MonoBehaviour
         
         else
         {
-           buttonSound.PlayOneShot(errorSound, 3.0f); 
+           Debug.Log("Not Working"); 
         }
         
     }
