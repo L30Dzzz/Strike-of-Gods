@@ -108,13 +108,14 @@ public class HealthBar : MonoBehaviour
         Debug.Log(basehp);
         Debug.Log(basehp2);
         */
-        StartCoroutine(startRound());
+        
      }
 
      private IEnumerator startRound() // add 2 GameObject coroutines in here
      {
         currentTime = MaxTime;
-        yield return new WaitForSeconds(5);
+        timerText.text = currentTime.ToString();
+        yield return new WaitForSeconds(2);
         StartCoroutine(gameTimer());
         isRunning = true;
      }
@@ -157,7 +158,8 @@ public class HealthBar : MonoBehaviour
                 }
 
                 RestartRound();
-            
+
+                StartCoroutine(startRound());
             }
             else
             {
