@@ -21,7 +21,7 @@ public class HealthBar : MonoBehaviour
     public GameObject P1Icon;
     public Image P1PlayerIcon;
     public int P1Score;
-    private Image p1HealthBar; 
+    public Image p1HealthBar; 
 
     public GameObject p2Health; 
     public GameObject p2Meter; 
@@ -29,7 +29,7 @@ public class HealthBar : MonoBehaviour
     public GameObject P2Icon;
     public Image P2PlayerIcon;
     public int P2Score;
-    private Image p2HealthBar; 
+    public Image p2HealthBar; 
     
     public Sprite pointIcon;
     public GameObject KoScreen;
@@ -102,9 +102,20 @@ public class HealthBar : MonoBehaviour
         basehp = 689;
         basehp2 = 689;
             
-        p1HealthBar.rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, (float)basehp);
-        p2HealthBar.rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, (float)basehp2);
+        p1HealthBar.rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, basehp);
+        p2HealthBar.rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, basehp2);
+        /*
+        Debug.Log(basehp);
+        Debug.Log(basehp2);
+        */
+        StartCoroutine(startRound());
+     }
 
+     private IEnumerator startRound() // add 2 GameObject coroutines in here
+     {
+        currentTime = MaxTime;
+        yield return new WaitForSeconds(5);
+        StartCoroutine(gameTimer());
         isRunning = true;
      }
 
@@ -125,7 +136,7 @@ public class HealthBar : MonoBehaviour
        yield return new WaitForSeconds(2);
 
        Image Pimage = Point[Score].GetComponent<Image>();
-       Debug.Log(Score);
+
 
         WinScreen.SetActive(false);
         
@@ -145,14 +156,8 @@ public class HealthBar : MonoBehaviour
                 P1Score++;
                 }
 
-                Debug.Log(Score);
-
                 RestartRound();
             
-            yield return new WaitForSeconds(1);
-
-                isRunning = true;
-
             }
             else
             {

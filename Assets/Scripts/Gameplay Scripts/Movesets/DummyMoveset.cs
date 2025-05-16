@@ -260,6 +260,7 @@ public class DummyMoveset : MonoBehaviour
          
 
          isAttacking = false;
+         Player.canRespond = true;
          
          // going to replace this with a coroutine
     }
@@ -279,12 +280,7 @@ public class DummyMoveset : MonoBehaviour
       //////////////////////////////////////////// Attacking Check ///////////////////////////////////////
 
     
-      /////////////////////////////////////////  HEALTH CHECK /////////////////////////////////////////////////
-
-      if(Player.basehp <= 0)
-      {
-        Player.canRespond = false; 
-      }
+      
 
       /////////////////////////////////// TIMER CHECK /////////////////////////////////////////////
 
@@ -295,6 +291,21 @@ public class DummyMoveset : MonoBehaviour
         Player.canRespond = false; 
       }
 
+      /////////////////////////////////////////  HEALTH CHECK /////////////////////////////////////////////////
+
+      if(Player.basehp <= 0)
+      {
+        Player.canRespond = false; 
+      }
+      else if(isAttacking == true)
+      {
+        Player.canRespond = false; 
+      }
+      
+      if(Canvas.currentTime == Canvas.MaxTime)
+      {
+        Player.canRespond = true;
+      }
     }
 
 

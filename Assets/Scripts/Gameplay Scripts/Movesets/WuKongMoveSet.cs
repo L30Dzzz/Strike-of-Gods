@@ -113,7 +113,7 @@ public class WuKongMoveSet : MonoBehaviour
       
       if(context.started && Player.isCrouching == false && Player.isGrounded == true && Player.Input.x == 0)
       {
-        if(isAttacking == false && isBlocking == false && Player.canRespond == true) 
+        if(isAttacking == false && Player.canRespond == true) 
         {
           StartCoroutine(SingleHitAttack(StandLight, 4, 6));
         }
@@ -257,6 +257,7 @@ public class WuKongMoveSet : MonoBehaviour
          
 
          isAttacking = false;
+         Player.canRespond = true;
          
          // going to replace this with a coroutine
     }
@@ -276,12 +277,7 @@ public class WuKongMoveSet : MonoBehaviour
       //////////////////////////////////////////// Attacking Check ///////////////////////////////////////
 
     
-      /////////////////////////////////////////  HEALTH CHECK /////////////////////////////////////////////////
-
-      if(Player.basehp <= 0)
-      {
-        Player.canRespond = false; 
-      }
+   
 
       /////////////////////////////////// TIMER CHECK /////////////////////////////////////////////
 
@@ -290,6 +286,22 @@ public class WuKongMoveSet : MonoBehaviour
       if(Canvas.currentTime < 1)
       {
         Player.canRespond = false; 
+      }
+
+      /////////////////////////////////////////  HEALTH CHECK /////////////////////////////////////////////////
+
+      if(Player.basehp <= 0)
+      {
+        Player.canRespond = false; 
+      }
+      else if(isAttacking == true)
+      {
+        Player.canRespond = false; 
+      }
+      
+      if(Canvas.currentTime == Canvas.MaxTime)
+      {
+        Player.canRespond = true;
       }
 
     }

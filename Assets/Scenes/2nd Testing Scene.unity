@@ -989,7 +989,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3135046621603382487, guid: 35c87eb1276914a088221c71895c4830, type: 3}
       propertyPath: dmg
-      value: 2000
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 5554056552317964522, guid: 35c87eb1276914a088221c71895c4830, type: 3}
       propertyPath: m_ActionEvents.Array.data[5].m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -1064,10 +1064,18 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1535969131}
+    - target: {fileID: 2804457238028783509, guid: 38caf26e250b24345a304b01b57f3b2e, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 689
+      objectReference: {fileID: 0}
     - target: {fileID: 3578871366874075365, guid: 38caf26e250b24345a304b01b57f3b2e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1535969132}
+    - target: {fileID: 4086656061874777512, guid: 38caf26e250b24345a304b01b57f3b2e, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 689
+      objectReference: {fileID: 0}
     - target: {fileID: 4697803306994382784, guid: 38caf26e250b24345a304b01b57f3b2e, type: 3}
       propertyPath: m_Pivot.x
       value: 0

@@ -71,7 +71,6 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-      
       Health_n_Meter();
       
       if(canRespond == true)
@@ -224,8 +223,7 @@ public class PlayerMovement : MonoBehaviour
       if(hp != null)
       {
        if(yourLayer.value == 64)
-       {
-        
+       {       
         basehp = hp.p1Health.GetComponent<Image>().rectTransform.rect.width;
         Meter = hp.p1Meter.GetComponent<Image>().rectTransform.rect.width;
        }
@@ -250,29 +248,26 @@ public class PlayerMovement : MonoBehaviour
     {
        if(hp.isRunning == true)
        {
-        hp.p1Health.GetComponent<Image>().rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, basehp);
+         hp.p1HealthBar.rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, basehp);
        }
        else
        {
-        
-        basehp = hp.basehp;
-        hp.p1Health.GetComponent<Image>().rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, hp.basehp);
+        basehp = hp.basehp; 
+        hp.p1HealthBar.rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, hp.basehp);
        }
-
        hp.p1Meter.GetComponent<Image>().rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, Meter);
     }
     else
     {
        if(hp.isRunning == true)
        {
-       hp.p2Health.GetComponent<Image>().rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, basehp);
+         hp.p2HealthBar.rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, basehp);
        }
        else
        {
         basehp = hp.basehp2;
-        hp.p2Health.GetComponent<Image>().rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, hp.basehp2);
+        hp.p2HealthBar.rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, hp.basehp2);
        }
-       
        hp.p2Meter.GetComponent<Image>().rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, Meter);
     }
 
