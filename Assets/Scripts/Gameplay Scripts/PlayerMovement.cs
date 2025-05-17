@@ -32,12 +32,14 @@ public class PlayerMovement : MonoBehaviour
    public bool canRespond = true;
 
   // Define the size and direction for the BoxCast
-   Vector2 boxSize = new Vector2(0.5f, 5);
+   public Vector2 boxSize = new Vector2(0.5f, 6);
    
 
    bool jumpSquat; 
    private CharacterController playerController; 
-   HealthBar hp; 
+   public HealthBar hp; 
+   Animator Animator;
+
    public PlayerTemplate playerTemplate; 
    public LayerMask yourLayer;
    public LayerMask opsLayer;
@@ -60,45 +62,23 @@ public class PlayerMovement : MonoBehaviour
        opsLayer = playerTemplate.opsLayer;
        layerAsLayerMask = (1 << this.gameObject.layer);
 
-       hp = GameObject.Find("Canvas").GetComponent<HealthBar>();
+        GetHealt_N_Meter();
+        
+        Animator = GetComponent<Animator>();
 
-      if(hp != null)
-      {
-       if(yourLayer.value == 64)
-       {
-        basehp = hp.p1Health.GetComponent<Image>().rectTransform.rect.width;
-        Meter = hp.p1Meter.GetComponent<Image>().rectTransform.rect.width;
-       }
-       else
-       {
-        basehp = hp.p2Health.GetComponent<Image>().rectTransform.rect.width;
-        Meter = hp.p2Meter.GetComponent<Image>().rectTransform.rect.width;
-       }
-      }
-      else
-      {
-        Debug.Log("Damn it");
-      }
-       
     }
 
     // Update is called once per frame
-    void Update()
-    {
-      //Debug.Log(basehp);      
-      Health_n_Meter();
-      isBlocking();
-
-    }
-    
     void FixedUpdate()
     {
+      Health_n_Meter();
       
       if(canRespond == true)
       {
       MovementFunction();
       Jumping();  
       characterFlipFunction();
+      isBlocking();
       }
       
     }
@@ -120,23 +100,27 @@ public class PlayerMovement : MonoBehaviour
     private void MovementFunction()
     {
        // allows the player to move left and right only if they not crouching 
-       if(Input.y < 0 && isGrounded == true)
+       if(Input.y < -0.4 && isGrounded == true)
        {
          isCrouching = true; 
        }
        else
        {
-        transform.Translate(Vector2.right * Input.x * Time.deltaTime * speed);
+        if(isGrounded == true)
+        {
+          transform.Translate(Vector2.right * Input.x * Time.deltaTime * speed); // this makes the player actually move 
+        }
+        
         isCrouching = false; 
        }
        
        
        // changes the speed of your character depending on what side you are facing 
-       if((isFacingRight == true && Input.x < 0 && isGrounded == true) || (isFacingRight == false && Input.x > 0 && isGrounded ==true))
+       if((isFacingRight == true && Input.x < 0) || (isFacingRight == false && Input.x > 0))
        {
          speed = movespeed2; 
        }
-       else if((isFacingRight == true && Input.x > 0 && isGrounded == true) || (isFacingRight == false && Input.x < 0 && isGrounded ==true)) 
+       else if((isFacingRight == true && Input.x > 0) || (isFacingRight == false && Input.x < 0)) 
        {
          speed = movespeed1; 
        }
@@ -155,6 +139,72 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+  /*
+   public IEnumerator ForwardDash()
+   {
+    private int numCount = 0;
+
+    
+     yield return new WaitForSeconds(5);
+  }
+   */ 
+
+/////////////////////////////////////////////// JUMP FUNCTION START ////////////////////////////////
+  public void Jumping()
+  {
+    if(Input.y > 0.4 && isGrounded == true)
+      {
+        jumpSquat = true;
+              
+      }
+
+    if(jumpSquat == true && jsFrame != 0)
+        {
+          jsFrame -= 1;
+        }
+      else if (jsFrame == 0) 
+        {
+          //animation.SetTrigger("jump");
+          rb.velocity = new Vector2(rb.velocity.x, regJump);
+          jumpSquat = false; 
+          jsFrame = jsFrameStart;
+          isGrounded = false; 
+
+          ////////Forward jumping////////
+          if((isFacingRight == true && Input.x > 0.5) || (isFacingRight == false && Input.x < -0.5))
+          {
+            if(transform.localScale.x > 0)
+            {
+              rb.AddForce(Vector2.right * (regJump/2), ForceMode2D.Impulse);
+            }
+            else
+            {
+              rb.AddForce(-Vector2.right * (regJump/2), ForceMode2D.Impulse);
+            }
+              
+            
+          }
+          ////////backwards jumping///////////
+          else if((isFacingRight == true && Input.x < -0.5) || (isFacingRight == false && Input.x > 0.5))
+          {
+            if(transform.localScale.x < 0)
+            {
+              rb.AddForce(Vector2.right * (regJump/2), ForceMode2D.Impulse);
+            }
+            else
+            {
+              rb.AddForce(-Vector2.right * (regJump/2), ForceMode2D.Impulse);
+            }
+              
+          }
+        }
+
+  }
+   
+/////////////////////////////////////////////// JUMP FUNCTION END ////////////////////////////////
+
+
+
 //////////////////ATTACKING/////////////////////////
     
     //Attacking will be done on the players respective character script. Like for example if they was playing oni then most of their attacking will come from the oni script inside of this script(if that makes sense)
@@ -166,19 +216,58 @@ public class PlayerMovement : MonoBehaviour
 
 //////////////////////////////////////////////////////  Health & Meterchecking    //////////////////////////
 
+  public void GetHealt_N_Meter()
+  {
+      hp = GameObject.Find("Canvas").GetComponent<HealthBar>();
+
+      if(hp != null)
+      {
+       if(yourLayer.value == 64)
+       {       
+        basehp = hp.p1Health.GetComponent<Image>().rectTransform.rect.width;
+        Meter = hp.p1Meter.GetComponent<Image>().rectTransform.rect.width;
+       }
+       else
+       {
+        basehp = hp.p2Health.GetComponent<Image>().rectTransform.rect.width;
+        Meter = hp.p2Meter.GetComponent<Image>().rectTransform.rect.width;
+       }
+      }
+      else
+      {
+        Debug.Log("Damn it");
+      }
+  }
+
+
+
   public void Health_n_Meter()
   {
 
     if(yourLayer.value == 64)
     {
-       hp.p1Health.GetComponent<Image>().rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, basehp);
-
+       if(hp.isRunning == true)
+       {
+         hp.p1HealthBar.rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, basehp);
+       }
+       else
+       {
+        basehp = hp.basehp; 
+        hp.p1HealthBar.rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, hp.basehp);
+       }
        hp.p1Meter.GetComponent<Image>().rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, Meter);
     }
     else
     {
-       hp.p2Health.GetComponent<Image>().rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, basehp);
-
+       if(hp.isRunning == true)
+       {
+         hp.p2HealthBar.rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, basehp);
+       }
+       else
+       {
+        basehp = hp.basehp2;
+        hp.p2HealthBar.rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, hp.basehp2);
+       }
        hp.p2Meter.GetComponent<Image>().rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, Meter);
     }
 
@@ -248,28 +337,6 @@ public class PlayerMovement : MonoBehaviour
         
       }
   }
-/////////////////////////////////////////////// JUMP FUNCTION START ////////////////////////////////
-  public void Jumping()
-  {
-    if(Input.y > 0 && isGrounded == true)
-      {
-        jumpSquat = true;
-              
-      }
 
-    if(jumpSquat == true && jsFrame != 0)
-        {
-          jsFrame -= 1;
-        }
-      else if (jsFrame == 0) 
-        {
-          //animation.SetTrigger("jump");
-          rb.velocity = new Vector2(rb.velocity.x, regJump);
-          jumpSquat = false; 
-          jsFrame = jsFrameStart;
-          isGrounded = false; 
-        }
-
-  }
- 
 }
+
