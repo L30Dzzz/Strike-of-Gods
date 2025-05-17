@@ -1419,8 +1419,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c27ba5833c4b41959a526184f809d2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HpColor: {r: 1, g: 0.895299, b: 0, a: 1}
-  IconColor: {r: 1, g: 0.89008415, b: 0, a: 1}
+  HpColor: {r: 0.94509804, g: 0.7764706, b: 0.52156866, a: 1}
+  IconColor: {r: 0.94509804, g: 0.7764706, b: 0.52156866, a: 1}
   Netural: {fileID: 1339898921588852694, guid: f93d388773899904ca963928f1739e42, type: 3}
   LowHp: {fileID: -7962133677275962862, guid: f64b3006b86f54b4aa51bb8b00c001d0, type: 3}
   Winning: {fileID: -7445971565315056740, guid: 28a22382ee0e9ea4fb86e5cc424e5254, type: 3}

@@ -1120,22 +1120,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ec80db8546dcf74aa78bdb3accde186, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  basehp: 0
-  basehp2: 0
+  basehp: 100
+  basehp2: 100
   currentTime: 0
   MaxTime: 100
   isRunning: 1
-  rounds: 3
+  rounds: 2
   p1Health: {fileID: 3080566770990507503}
   p1Meter: {fileID: 7139041338333766580}
   P1WinScreen: {fileID: 4697803307760288140}
   P1Icon: {fileID: 4697803307824408576}
   P1PlayerIcon: {fileID: 8496045952412460330}
+  P1Score: 0
+  p1HealthBar: {fileID: 0}
   p2Health: {fileID: 3005289228728199398}
   p2Meter: {fileID: 3915708691566341253}
   P2WinScreen: {fileID: 4697803307813209909}
   P2Icon: {fileID: 4697803306363351256}
   P2PlayerIcon: {fileID: 7014291758207682936}
+  P2Score: 0
+  p2HealthBar: {fileID: 0}
   pointIcon: {fileID: -323318130542040394, guid: 1a8b7b6fb81da8a4f95501b865d98e97, type: 3}
   KoScreen: {fileID: 4697803307420515297}
   MenuScreen: {fileID: 6594740375398472662}
@@ -1148,6 +1152,7 @@ MonoBehaviour:
   - {fileID: 1934128220}
   - {fileID: 1335368145}
   timerText: {fileID: 4697803306177674354}
+  winColor: {r: 1, g: 0.033018887, b: 0.033018887, a: 1}
 --- !u!1 &4697803307091533461
 GameObject:
   m_ObjectHideFlags: 0
@@ -2950,6 +2955,14 @@ PrefabInstance:
     - target: {fileID: 4342898779252118177, guid: b2c97f9afff824ce28b9634f86fef821, type: 3}
       propertyPath: m_Name
       value: Health UI
+      objectReference: {fileID: 0}
+    - target: {fileID: 5026677237679111194, guid: b2c97f9afff824ce28b9634f86fef821, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 689
+      objectReference: {fileID: 0}
+    - target: {fileID: 6602152422953655847, guid: b2c97f9afff824ce28b9634f86fef821, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 689
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b2c97f9afff824ce28b9634f86fef821, type: 3}
