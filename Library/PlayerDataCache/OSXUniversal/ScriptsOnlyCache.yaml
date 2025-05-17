@@ -10,16 +10,19 @@ ScriptsOnlyBuild:
     - PlayerMovement
     - PlayerTemplate
     - SceneChanger
+    - TrailerTransition
+    - WuKongMoveSet
     - hitProperties
+    Cinemachine.dll:
+    - Cinemachine.CinemachineBrain
+    - Cinemachine.CinemachinePipeline
+    - Cinemachine.CinemachineVirtualCamera
     Unity.2D.Animation.Editor.dll:
     - UnityEditor.U2D.Animation.BoneGizmo
     Unity.2D.IK.Editor.dll:
     - UnityEditor.U2D.IK.IKEditorManager
-    - UnityEditor.U2D.IK.IKGizmos
     Unity.2D.Tilemap.Editor.dll:
     - UnityEditor.Tilemaps.GridPaintingState
-    - UnityEditor.Tilemaps.GridPaletteBrushes
-    - UnityEditor.Tilemaps.GridPalettes
     - UnityEditor.Tilemaps.SceneViewGridManager
     - UnityEditor.Tilemaps.SceneViewOpenTilePaletteHelper
     - UnityEditor.Tilemaps.TileDragAndDropManager
@@ -40,10 +43,13 @@ ScriptsOnlyBuild:
     - TMPro.TMP_SpriteAsset
     - TMPro.TMP_StyleSheet
     - TMPro.TextMeshProUGUI
-    Unity.Timeline.Editor.dll:
-    - TimelinePreferences
-    - UnityEditor.Timeline.SequenceHierarchy
-    - UnityEditor.Timeline.TimelineWindow
+    Unity.Timeline.dll:
+    - UnityEngine.Timeline.ActivationPlayableAsset
+    - UnityEngine.Timeline.ActivationTrack
+    - UnityEngine.Timeline.AnimationTrack
+    - UnityEngine.Timeline.AudioTrack
+    - UnityEngine.Timeline.MarkerTrack
+    - UnityEngine.Timeline.TimelineAsset
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
@@ -83,11 +89,17 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 70
       Script: {instanceID: 0}
+    - Class: 74
+      Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
     - Class: 82
       Script: {instanceID: 0}
     - Class: 83
+      Script: {instanceID: 0}
+    - Class: 91
+      Script: {instanceID: 0}
+    - Class: 95
       Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
@@ -130,7 +142,9 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 4964}
     - Class: 114
-      Script: {instanceID: 6802}
+      Script: {instanceID: 5256}
+    - Class: 114
+      Script: {instanceID: 6804}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -162,8 +176,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 48
       Script: {instanceID: 0}
-    - Class: 49
-      Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
     - Class: 82
@@ -176,8 +188,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 1576}
     - Class: 114
       Script: {instanceID: 1976}
-    - Class: 114
-      Script: {instanceID: 2454}
     - Class: 114
       Script: {instanceID: 2978}
     - Class: 114
@@ -197,11 +207,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 4964}
     - Class: 114
-      Script: {instanceID: 5438}
-    - Class: 114
-      Script: {instanceID: 5668}
-    - Class: 114
-      Script: {instanceID: 6146}
+      Script: {instanceID: 5440}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -292,9 +298,11 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 4964}
     - Class: 114
-      Script: {instanceID: 5438}
+      Script: {instanceID: 5256}
     - Class: 114
-      Script: {instanceID: 6802}
+      Script: {instanceID: 5440}
+    - Class: 114
+      Script: {instanceID: 6804}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -312,6 +320,77 @@ ScriptsOnlyBuild:
     - Class: 223
       Script: {instanceID: 0}
     - Class: 224
+      Script: {instanceID: 0}
+    Assets/Scenes/Trailer.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 49
+      Script: {instanceID: 0}
+    - Class: 74
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
+    - Class: 91
+      Script: {instanceID: 0}
+    - Class: 95
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 1976}
+    - Class: 114
+      Script: {instanceID: 2454}
+    - Class: 114
+      Script: {instanceID: 2822}
+    - Class: 114
+      Script: {instanceID: 2920}
+    - Class: 114
+      Script: {instanceID: 3088}
+    - Class: 114
+      Script: {instanceID: 3228}
+    - Class: 114
+      Script: {instanceID: 3232}
+    - Class: 114
+      Script: {instanceID: 3310}
+    - Class: 114
+      Script: {instanceID: 3828}
+    - Class: 114
+      Script: {instanceID: 4676}
+    - Class: 114
+      Script: {instanceID: 5004}
+    - Class: 114
+      Script: {instanceID: 5670}
+    - Class: 114
+      Script: {instanceID: 6148}
+    - Class: 114
+      Script: {instanceID: 6686}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    - Class: 212
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 320
       Script: {instanceID: 0}
   scriptHashData:
   - hash:
@@ -562,13 +641,13 @@ ScriptsOnlyBuild:
     className: IKManager2D
   - hash:
       serializedVersion: 2
-      Hash: 64df1f582127c48ee8fddb52fbff2e05
+      Hash: 47143e6c65b7eec2021e40eed7bb39a3
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: HealthBar
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: d91fcd9ac7bd86d3d771dd6171620fad
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: TrailerTransition
@@ -670,7 +749,7 @@ ScriptsOnlyBuild:
     className: CinemachineHardLookAt
   - hash:
       serializedVersion: 2
-      Hash: cd12dc2de1d5b16ca15acc01c0354956
+      Hash: 4c7be4a6e9ae7af372e99d06fb3083e8
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: DummyMoveset
@@ -730,7 +809,7 @@ ScriptsOnlyBuild:
     className: CinemachineInputProvider
   - hash:
       serializedVersion: 2
-      Hash: dd29ca138ce9cf522af88de45276f468
+      Hash: 9a742fd6eecdd350be07a1d477bbfd38
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerMovement
@@ -1066,6 +1145,12 @@ ScriptsOnlyBuild:
     className: InputActionDebuggerWindow
   - hash:
       serializedVersion: 2
+      Hash: 4c7be4a6e9ae7af372e99d06fb3083e8
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: WuKongMoveSet
+  - hash:
+      serializedVersion: 2
       Hash: 523ce309f50d9eee6a8fc0e2f86c9c97
     assemblyName: Unity.2D.SpriteShape.Runtime.dll
     namespaceName: 
@@ -1366,8 +1451,8 @@ ScriptsOnlyBuild:
     className: hitProperties
   platform: 2
   scenePathNames:
+  - Assets/Scenes/Trailer.unity
   - Assets/Scenes/Main Menu.unity
   - Assets/Scenes/Oni Stage.unity
   - Assets/Scenes/2nd Testing Scene.unity
-  playerPath: /Users/game56/Documents/GitHub/Strike-of-Gods/Build folder/Pre alpha
-    V2.app
+  playerPath: /Users/rutherfordgame1/Documents/Strike of Gods V0.5.app
