@@ -101,6 +101,26 @@ public class HealthBar : MonoBehaviour
      {
         basehp = 689;
         basehp2 = 689;
+
+        PlayerMovement[] players = FindObjectsOfType<PlayerMovement>();
+        if(players[0].yourLayer.value == 64)
+        {
+            players[0].transform.position = new Vector3(-11,1,0);
+            players[1].transform.position = new Vector3(-1,1,0);
+            
+            players[0].isFacingRight = true;
+            players[1].isFacingRight = false;
+        }
+        else
+        {
+            players[0].transform.position = new Vector3(-1,1,0);
+            players[1].transform.position = new Vector3(-11,1,0);
+
+            players[0].isFacingRight = false;
+            players[1].isFacingRight = true;
+        }
+        
+
             
         p1HealthBar.rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, basehp);
         p2HealthBar.rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, basehp2);
