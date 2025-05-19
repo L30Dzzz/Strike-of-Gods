@@ -140,15 +140,15 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-  /*
+  
    public IEnumerator ForwardDash()
    {
-    private int numCount = 0;
+    int numCount = 0;
 
     
      yield return new WaitForSeconds(5);
   }
-   */ 
+   
 
 /////////////////////////////////////////////// JUMP FUNCTION START ////////////////////////////////
   public void Jumping()
