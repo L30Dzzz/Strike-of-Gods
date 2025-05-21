@@ -73,7 +73,8 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate()
     {
       Health_n_Meter();
-      
+      AniCheck();
+
       if(canRespond == true)
       {
       MovementFunction();
@@ -147,6 +148,19 @@ public class PlayerMovement : MonoBehaviour
 
     
      yield return new WaitForSeconds(5);
+  }
+  ////////////////////////////////////////////MOVEMENT ANIMATION CHECKING///////////////////////////////////////////////////////////////
+
+  public void AniCheck()
+  {
+        if(isFacingRight == true)
+        {
+            Animator.SetFloat("Movement", Input.x);
+        }
+        else
+        {
+            Animator.SetFloat("Movement", -Input.x);
+        }
   }
    
 

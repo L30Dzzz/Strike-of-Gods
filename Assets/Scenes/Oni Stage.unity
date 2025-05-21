@@ -1948,6 +1948,10 @@ PrefabInstance:
       value: Test player 2
       objectReference: {fileID: 0}
     - target: {fileID: 1846319266995829862, guid: f82b15c2347f5404793963e3781955fd, type: 3}
+      propertyPath: m_DefaultControlScheme
+      value: Keyboard P2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1846319266995829862, guid: f82b15c2347f5404793963e3781955fd, type: 3}
       propertyPath: m_ActionEvents.Array.data[5].m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1525673519}
