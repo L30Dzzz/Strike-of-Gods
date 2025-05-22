@@ -18,7 +18,7 @@ public class PlayerMovement : MonoBehaviour
    public float regJump; // How high the character will jump
    public int jsFrame; 
    public int jsFrameStart;
-   public int doubleJumps;
+   public float Dash;
    private int layerAsLayerMask;
    int airMovementFrames; 
    public float basehp = 0;
@@ -142,13 +142,58 @@ public class PlayerMovement : MonoBehaviour
     }
 
   
-   public IEnumerator ForwardDash()
+   public IEnumerator ForwardDash(float dashPow)
    {
-    int numCount = 0;
+    
+    Dash = dashPow; 
+    
+    if(canRespond == true)
+    {
+      canRespond = false; 
+
+      if(transform.localScale.x > 0)
+      {
+        rb.AddForce(Vector2.right * Dash, ForceMode2D.Impulse);
+      }
+      else if(transform.localScale.x < 0)
+      {
+        rb.AddForce(-Vector2.right * Dash, ForceMode2D.Impulse);
+      }
+
+      yield return new WaitForSeconds(5);
+
+      canRespond = true;
+    }
 
     
-     yield return new WaitForSeconds(5);
+     
   }
+
+  public IEnumerator BackwardsDash(float dashPow)
+   {
+    
+    Dash = dashPow; 
+    
+    if(canRespond == true)
+    {
+      canRespond = false; 
+
+      if(transform.localScale.x > 0)
+      {
+        rb.AddForce(Vector2.left * Dash, ForceMode2D.Impulse);
+      }
+      else if(transform.localScale.x < 0)
+      {
+        rb.AddForce(-Vector2.left * Dash, ForceMode2D.Impulse);
+      }
+
+      yield return new WaitForSeconds(5);
+
+      canRespond = true;
+    }
+
+   }
+   
   ////////////////////////////////////////////MOVEMENT ANIMATION CHECKING///////////////////////////////////////////////////////////////
 
   public void AniCheck()

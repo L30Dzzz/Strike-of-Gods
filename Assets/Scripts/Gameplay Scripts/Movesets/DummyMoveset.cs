@@ -200,6 +200,8 @@ public class DummyMoveset : MonoBehaviour
       {
        //Dash Forward
 
+       StartCoroutine(Player.ForwardDash(20f));
+
       }
       else if(((Player.isFacingRight == true && Player.Input.x < -0.2f) || (Player.isFacingRight == false && Player.Input.x > 0.2f)) && Player.canRespond == true)
       {
