@@ -32,6 +32,9 @@ public class DummyMoveset : MonoBehaviour
     public GameObject CrouchHeavy; 
     public GameObject Jumpheavy;
 
+    public float fDashPow;
+    public float bDashPow;
+
     
     HealthBar Canvas;
 
@@ -200,12 +203,14 @@ public class DummyMoveset : MonoBehaviour
       {
        //Dash Forward
 
-       StartCoroutine(Player.ForwardDash(20f));
+       StartCoroutine(Player.ForwardDash(fDashPow));
 
       }
       else if(((Player.isFacingRight == true && Player.Input.x < -0.2f) || (Player.isFacingRight == false && Player.Input.x > 0.2f)) && Player.canRespond == true)
       {
         //Dash Backwards
+
+        StartCoroutine(Player.BackwardsDash(bDashPow));
       }
       
     }

@@ -153,14 +153,14 @@ public class PlayerMovement : MonoBehaviour
 
       if(transform.localScale.x > 0)
       {
-        rb.AddForce(Vector2.right * Dash, ForceMode2D.Impulse);
+        rb.velocity = Vector2.right * Dash;
       }
       else if(transform.localScale.x < 0)
       {
-        rb.AddForce(-Vector2.right * Dash, ForceMode2D.Impulse);
+        rb.velocity = -Vector2.right * Dash;
       }
 
-      yield return new WaitForSeconds(5);
+      yield return new WaitForSeconds(1);
 
       canRespond = true;
     }
@@ -180,14 +180,14 @@ public class PlayerMovement : MonoBehaviour
 
       if(transform.localScale.x > 0)
       {
-        rb.AddForce(Vector2.left * Dash, ForceMode2D.Impulse);
+        rb.velocity = Vector2.left * Dash;
       }
       else if(transform.localScale.x < 0)
       {
-        rb.AddForce(-Vector2.left * Dash, ForceMode2D.Impulse);
+        rb.velocity = -Vector2.left * Dash;
       }
 
-      yield return new WaitForSeconds(5);
+      yield return new WaitForSeconds(0.5f);
 
       canRespond = true;
     }
@@ -237,7 +237,7 @@ public class PlayerMovement : MonoBehaviour
             {
               rb.AddForce(Vector2.right * (regJump/2), ForceMode2D.Impulse);
             }
-            else
+            else if(transform.localScale.x > 0)
             {
               rb.AddForce(-Vector2.right * (regJump/2), ForceMode2D.Impulse);
             }
@@ -251,7 +251,7 @@ public class PlayerMovement : MonoBehaviour
             {
               rb.AddForce(Vector2.right * (regJump/2), ForceMode2D.Impulse);
             }
-            else
+            else if(transform.localScale.x > 0)
             {
               rb.AddForce(-Vector2.right * (regJump/2), ForceMode2D.Impulse);
             }

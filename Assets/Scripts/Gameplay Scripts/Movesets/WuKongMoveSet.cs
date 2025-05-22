@@ -32,6 +32,9 @@ public class WuKongMoveSet : MonoBehaviour
     public GameObject CrouchHeavy; 
     public GameObject Jumpheavy;
 
+    public float fDashPow;
+    public float bDashPow;
+
     
     HealthBar Canvas;
 
@@ -194,14 +197,18 @@ public class WuKongMoveSet : MonoBehaviour
 
     public void Dash(InputAction.CallbackContext context)
     {
-      if(((Player.isFacingRight == true && (Player.Input.x == 0 || Player.Input.x > 0.2f)) || (Player.isFacingRight == false && (Player.Input.x == 0 || Player.Input.x < -0.2f))) && Player.canRespond == true)
+      if(((Player.isFacingRight == true && (Player.Input.x == 0 || Player.Input.x > 0.2f)) || (Player.isFacingRight == false && (Player.Input.x == 0 || Player.Input.x < -0.2f))) && Player.canRespond == true && Player.isGrounded == true)
       {
        Debug.Log("Forward dash");
+       StartCoroutine(Player.ForwardDash(fDashPow));
+
 
       }
-      else if(((Player.isFacingRight == true && Player.Input.x < -0.2f) || (Player.isFacingRight == false && Player.Input.x > 0.2f)) && Player.canRespond == true)
+      else if(((Player.isFacingRight == true && Player.Input.x < -0.2f) || (Player.isFacingRight == false && Player.Input.x > 0.2f)) && Player.canRespond == true && Player.isGrounded == true)
       {
         Debug.Log("Backwards dash");
+        StartCoroutine(Player.BackwardsDash(bDashPow));
+
       }
       
 
