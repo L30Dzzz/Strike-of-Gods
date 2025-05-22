@@ -8,9 +8,13 @@ public class hitProperties : MonoBehaviour
    private LayerMask yourLayer_;
    private LayerMask opsLayer_;
    private int layerAsLayerMask;
+   
    public int dmg = 0;
    public int meterGain = 0;
    public int stunTime = 0;
+
+   public Vector2 KBackDirect; //Knock Back Direction
+   public float KBackForce;  // Knock Back Force
 
    public bool isHigh;
    public bool isLow;
@@ -39,9 +43,12 @@ public class hitProperties : MonoBehaviour
       
        if(layerAsLayerMask == opsLayer_.value)
        {
-         PlayerMovement P2 = other.gameObject.GetComponent<PlayerMovement>();   
+         PlayerMovement P2 = other.gameObject.GetComponent<PlayerMovement>();
          if(P2 != null)
          {
+
+            Rigidbody2D P2Rb = P2.rb;  
+
             //Checks if the player is blocking high or low and it fits the attack properties of the attack
             if((isHigh == true && P2.StandBlock == false) || (isLow == true && P2.CrouchBlock == false) || (isMid == true && (P2.StandBlock == false && P2.CrouchBlock == false)))
             {  
@@ -50,10 +57,18 @@ public class hitProperties : MonoBehaviour
               if(P2.basehp >= 0)
               {
                 P2.basehp -= dmg;
-                Player.basehp += dmg; 
+                Player.basehp += dmg;
+                
+                if(P2.isFacingRight == true)
+                {
+                 P2Rb.AddForce(new Vector2(-KBackDirect.x,KBackDirect.y) * KBackForce,ForceMode2D.Impulse);
+                }
+                else
+                {
+                  P2Rb.AddForce(KBackDirect * KBackForce,ForceMode2D.Impulse);
+                }
                 StartCoroutine(hitstun(stunTime, P2));
-                  
-
+                
               }
             
              if(Player.Meter != 302 && P2.basehp >= 0)
@@ -67,11 +82,17 @@ public class hitProperties : MonoBehaviour
               // chip damage
               float reducedDmg = dmg * (1/4);
 
+              if(P2.isFacingRight == true)
+                {
+                 P2Rb.AddForce(new Vector2(-KBackDirect.x,KBackDirect.y) * (KBackForce * 0.75f),ForceMode2D.Impulse);
+                }
+                else
+                {
+                  P2Rb.AddForce(KBackDirect * (KBackForce * 0.75f),ForceMode2D.Impulse);
+                }
 
               if(P2.Meter >= 0)
               {
-                
-
                  P2.Meter -= reducedDmg;
               }
               else

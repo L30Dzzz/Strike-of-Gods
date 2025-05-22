@@ -231,6 +231,8 @@ MonoBehaviour:
   dmg: 20
   meterGain: 10
   stunTime: 0
+  KBackDirect: {x: 0, y: 0}
+  KBackForce: 0
   isHigh: 1
   isLow: 0
   isMid: 0
@@ -359,6 +361,8 @@ MonoBehaviour:
   dmg: 60
   meterGain: 20
   stunTime: 0
+  KBackDirect: {x: 0, y: 0}
+  KBackForce: 0
   isHigh: 1
   isLow: 0
   isMid: 0
@@ -652,7 +656,7 @@ MonoBehaviour:
     m_ActionId: 71168e8b-a615-4bc2-a7d1-c5f31aeab069
     m_ActionName: Battle Controls/Pause[/Keyboard/p]
   m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
+  m_DefaultControlScheme: Keyboard P2
   m_DefaultActionMap: Battle Controls
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
@@ -670,12 +674,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Input: {x: 0, y: 0}
   rb: {fileID: 1846319266995829858}
+  weight: 0
   movespeed1: 5
   movespeed2: 2.5
   regJump: 22
   jsFrame: 5
   jsFrameStart: 5
-  doubleJumps: 1
+  Dash: 0
   basehp: 0
   Meter: 0
   isFacingRight: 0
@@ -757,6 +762,8 @@ MonoBehaviour:
   StandHeavy: {fileID: 5960776629129568296}
   CrouchHeavy: {fileID: 8459822812780154923}
   Jumpheavy: {fileID: 1584260289578486618}
+  fDashPow: 20
+  bDashPow: 10
   isBlocking: 0
 --- !u!95 &298435011
 Animator:
@@ -907,6 +914,8 @@ MonoBehaviour:
   dmg: 40
   meterGain: 10
   stunTime: 0
+  KBackDirect: {x: 0, y: 0}
+  KBackForce: 0
   isHigh: 0
   isLow: 1
   isMid: 0
@@ -1035,6 +1044,8 @@ MonoBehaviour:
   dmg: 20
   meterGain: 5
   stunTime: 0
+  KBackDirect: {x: 0, y: 0}
+  KBackForce: 0
   isHigh: 1
   isLow: 0
   isMid: 0
@@ -1163,6 +1174,8 @@ MonoBehaviour:
   dmg: 40
   meterGain: 10
   stunTime: 0
+  KBackDirect: {x: 0, y: 0}
+  KBackForce: 0
   isHigh: 1
   isLow: 0
   isMid: 0
@@ -1368,6 +1381,8 @@ MonoBehaviour:
   dmg: 20
   meterGain: 5
   stunTime: 0
+  KBackDirect: {x: 1, y: 0}
+  KBackForce: 5
   isHigh: 0
   isLow: 0
   isMid: 1
@@ -1419,6 +1434,8 @@ MonoBehaviour:
   dmg: 40
   meterGain: 10
   stunTime: 0
+  KBackDirect: {x: 0, y: 0}
+  KBackForce: 0
   isHigh: 0
   isLow: 0
   isMid: 1
@@ -1547,6 +1564,8 @@ MonoBehaviour:
   dmg: 60
   meterGain: 20
   stunTime: 0
+  KBackDirect: {x: 0, y: 0}
+  KBackForce: 0
   isHigh: 0
   isLow: 0
   isMid: 1
@@ -1715,6 +1734,8 @@ MonoBehaviour:
   dmg: 20
   meterGain: 5
   stunTime: 0
+  KBackDirect: {x: 0, y: 0}
+  KBackForce: 0
   isHigh: 0
   isLow: 1
   isMid: 0
@@ -1843,6 +1864,8 @@ MonoBehaviour:
   dmg: 60
   meterGain: 20
   stunTime: 0
+  KBackDirect: {x: 0, y: 0}
+  KBackForce: 0
   isHigh: 0
   isLow: 1
   isMid: 0

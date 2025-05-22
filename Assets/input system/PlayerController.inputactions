@@ -24,15 +24,6 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Medium Attack",
-                    "type": "Button",
-                    "id": "d235eb1d-b61d-4f9f-afd8-67baf8467279",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
                     "name": "Heavy Attack",
                     "type": "Button",
                     "id": "60a3260f-714d-490a-8e81-d25c1493d68b",
@@ -45,6 +36,15 @@
                     "name": "Special Attack",
                     "type": "Button",
                     "id": "4b1c5b20-ec8c-439e-b8af-574923886b08",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Dash Button",
+                    "type": "Button",
+                    "id": "d235eb1d-b61d-4f9f-afd8-67baf8467279",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -233,7 +233,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard P1",
-                    "action": "Medium Attack",
+                    "action": "Dash Button",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -244,7 +244,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Controller",
-                    "action": "Medium Attack",
+                    "action": "Dash Button",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -255,7 +255,29 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard P2",
-                    "action": "Medium Attack",
+                    "action": "Dash Button",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2672ec5a-2157-46a8-94b5-24b84175c622",
+                    "path": "<Gamepad>/start",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Pause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "53a266c8-d1f3-46f5-a98f-af148abbf0d1",
+                    "path": "<Keyboard>/p",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Pause",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -322,28 +344,6 @@
                     "processors": "",
                     "groups": "Keyboard P2",
                     "action": "Special Attack",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "2672ec5a-2157-46a8-94b5-24b84175c622",
-                    "path": "<Gamepad>/start",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Pause",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "53a266c8-d1f3-46f5-a98f-af148abbf0d1",
-                    "path": "<Keyboard>/p",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Pause",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

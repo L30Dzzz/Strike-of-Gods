@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour
    [SerializeField] public Vector2 Input; // think of this as a horziontal and vertical input method mushed together
    // Note that this type of way to get the x and y inputs for your player is good when using unity new input system as far as I know
    public Rigidbody2D  rb; 
+   public float weight; 
    float speed; 
    [SerializeField] float movespeed1; // normal movement speed
    [SerializeField] float movespeed2; // moving back movement speed
@@ -17,7 +18,7 @@ public class PlayerMovement : MonoBehaviour
    public float regJump; // How high the character will jump
    public int jsFrame; 
    public int jsFrameStart;
-   public int doubleJumps;
+   public float Dash;
    private int layerAsLayerMask;
    int airMovementFrames; 
    public float basehp = 0;
@@ -72,7 +73,8 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate()
     {
       Health_n_Meter();
-      
+      AniCheck();
+
       if(canRespond == true)
       {
       MovementFunction();
@@ -139,15 +141,73 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-  /*
-   public IEnumerator ForwardDash()
+  
+   public IEnumerator ForwardDash(float dashPow)
    {
-    private int numCount = 0;
+    
+    Dash = dashPow; 
+    
+    if(canRespond == true)
+    {
+      canRespond = false; 
+
+      if(transform.localScale.x > 0)
+      {
+        rb.velocity = Vector2.right * Dash;
+      }
+      else if(transform.localScale.x < 0)
+      {
+        rb.velocity = -Vector2.right * Dash;
+      }
+
+      yield return new WaitForSeconds(1);
+
+      canRespond = true;
+    }
 
     
-     yield return new WaitForSeconds(5);
+     
   }
-   */ 
+
+  public IEnumerator BackwardsDash(float dashPow)
+   {
+    
+    Dash = dashPow; 
+    
+    if(canRespond == true)
+    {
+      canRespond = false; 
+
+      if(transform.localScale.x > 0)
+      {
+        rb.velocity = Vector2.left * Dash;
+      }
+      else if(transform.localScale.x < 0)
+      {
+        rb.velocity = -Vector2.left * Dash;
+      }
+
+      yield return new WaitForSeconds(0.5f);
+
+      canRespond = true;
+    }
+
+   }
+   
+  ////////////////////////////////////////////MOVEMENT ANIMATION CHECKING///////////////////////////////////////////////////////////////
+
+  public void AniCheck()
+  {
+        if(isFacingRight == true)
+        {
+            Animator.SetFloat("Movement", Input.x);
+        }
+        else
+        {
+            Animator.SetFloat("Movement", -Input.x);
+        }
+  }
+   
 
 /////////////////////////////////////////////// JUMP FUNCTION START ////////////////////////////////
   public void Jumping()
@@ -171,13 +231,13 @@ public class PlayerMovement : MonoBehaviour
           isGrounded = false; 
 
           ////////Forward jumping////////
-          if((isFacingRight == true && Input.x > 0.5) || (isFacingRight == false && Input.x < -0.5))
+          if((isFacingRight == true && Input.x > 0.5f) || (isFacingRight == false && Input.x < -0.5f))
           {
             if(transform.localScale.x > 0)
             {
               rb.AddForce(Vector2.right * (regJump/2), ForceMode2D.Impulse);
             }
-            else
+            else if(transform.localScale.x < 0)
             {
               rb.AddForce(-Vector2.right * (regJump/2), ForceMode2D.Impulse);
             }
@@ -191,7 +251,7 @@ public class PlayerMovement : MonoBehaviour
             {
               rb.AddForce(Vector2.right * (regJump/2), ForceMode2D.Impulse);
             }
-            else
+            else if(transform.localScale.x > 0)
             {
               rb.AddForce(-Vector2.right * (regJump/2), ForceMode2D.Impulse);
             }
