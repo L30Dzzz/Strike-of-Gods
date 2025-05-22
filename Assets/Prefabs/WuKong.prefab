@@ -292,8 +292,8 @@ MonoBehaviour:
   dmg: 20
   meterGain: 5
   stunTime: 3
-  KBackDirect: {x: 0, y: 0}
-  KBackForce: 0
+  KBackDirect: {x: 1, y: 0}
+  KBackForce: 5
   isHigh: 0
   isLow: 0
   isMid: 1
@@ -967,7 +967,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 3071589977027050339}
         m_TargetAssemblyTypeName: WuKongMoveSet, Assembly-CSharp
-        m_MethodName: MediumAttack
+        m_MethodName: Dash
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1059,6 +1059,8 @@ MonoBehaviour:
   StandHeavy: {fileID: 4369469856385936738}
   CrouchHeavy: {fileID: 5827855733311783314}
   Jumpheavy: {fileID: 5268151226418145566}
+  fDashPow: 20
+  bDashPow: 10
   isBlocking: 0
 --- !u!114 &5554056552317964521
 MonoBehaviour:
@@ -1080,7 +1082,7 @@ MonoBehaviour:
   regJump: 22
   jsFrame: 5
   jsFrameStart: 5
-  doubleJumps: 1
+  Dash: 0
   basehp: 0
   Meter: 0
   isFacingRight: 1

@@ -231,13 +231,13 @@ public class PlayerMovement : MonoBehaviour
           isGrounded = false; 
 
           ////////Forward jumping////////
-          if((isFacingRight == true && Input.x > 0.5) || (isFacingRight == false && Input.x < -0.5))
+          if((isFacingRight == true && Input.x > 0.5f) || (isFacingRight == false && Input.x < -0.5f))
           {
             if(transform.localScale.x > 0)
             {
               rb.AddForce(Vector2.right * (regJump/2), ForceMode2D.Impulse);
             }
-            else if(transform.localScale.x > 0)
+            else if(transform.localScale.x < 0)
             {
               rb.AddForce(-Vector2.right * (regJump/2), ForceMode2D.Impulse);
             }
