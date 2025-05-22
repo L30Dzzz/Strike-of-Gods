@@ -196,12 +196,12 @@ public class WuKongMoveSet : MonoBehaviour
     {
       if(((Player.isFacingRight == true && (Player.Input.x == 0 || Player.Input.x > 0.2f)) || (Player.isFacingRight == false && (Player.Input.x == 0 || Player.Input.x < -0.2f))) && Player.canRespond == true)
       {
-       //Dash Forward
+       Debug.Log("Forward dash");
 
       }
       else if(((Player.isFacingRight == true && Player.Input.x < -0.2f) || (Player.isFacingRight == false && Player.Input.x > 0.2f)) && Player.canRespond == true)
       {
-        //Dash Backwards
+        Debug.Log("Backwards dash");
       }
       
 

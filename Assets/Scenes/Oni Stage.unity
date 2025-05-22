@@ -1886,6 +1886,10 @@ PrefabInstance:
       propertyPath: KBackDirect.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5554056552317964522, guid: 35c87eb1276914a088221c71895c4830, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Dash
+      objectReference: {fileID: 0}
     - target: {fileID: 5554056552317964526, guid: 35c87eb1276914a088221c71895c4830, type: 3}
       propertyPath: m_RootOrder
       value: 1

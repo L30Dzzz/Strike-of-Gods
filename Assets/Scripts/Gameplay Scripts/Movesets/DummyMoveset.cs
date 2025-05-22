@@ -158,43 +158,7 @@ public class DummyMoveset : MonoBehaviour
 
     }
 
-    public void MediumAttack(InputAction.CallbackContext context)
-    {
-      if(context.started && Player.isCrouching == false && Player.isGrounded == true)
-      {
-        if(isAttacking == false && isBlocking == false && Player.canRespond == true)
-        {
-          StartCoroutine(SingleHitAttack(StandMedium, 6, 9));
-        }
-        Debug.Log("Standing Medium attack had been pressed");
-        
-
-        //play animation in here or put it in the singleHitAttack method
-      }
-      
-       if(context.started && Player.isCrouching == true )
-      {
-        if(isAttacking == false && isBlocking == false && Player.canRespond == true)
-        {
-          StartCoroutine(SingleHitAttack(CrouchMedium, 6, 9));
-        }
-      
-         Debug.Log("Crouching Medium attack had been pressed");
-      }
-      
-      if(context.started && Player.isGrounded == false)
-      {
-        if(isAttacking == false && isBlocking == false && Player.canRespond == true)
-        {
-          StartCoroutine(SingleHitAttack(JumpMedium, 8, 12));
-        }
-      
-         Debug.Log("Jumping Medium attack had been pressed");
-      }
-
-
-    }
-
+   
     public void HeavyAttack(InputAction.CallbackContext context)
     {
       if(context.started && Player.isCrouching == false && Player.isGrounded == true)
@@ -228,6 +192,20 @@ public class DummyMoveset : MonoBehaviour
       
          Debug.Log("Jumping Heavy attack had been pressed");
       }
+    }
+
+    public void Dash(InputAction.CallbackContext context)
+    {
+      if(((Player.isFacingRight == true && (Player.Input.x == 0 || Player.Input.x > 0.2f)) || (Player.isFacingRight == false && (Player.Input.x == 0 || Player.Input.x < -0.2f))) && Player.canRespond == true)
+      {
+       //Dash Forward
+
+      }
+      else if(((Player.isFacingRight == true && Player.Input.x < -0.2f) || (Player.isFacingRight == false && Player.Input.x > 0.2f)) && Player.canRespond == true)
+      {
+        //Dash Backwards
+      }
+      
     }
 
     public void SpecialAttack(InputAction.CallbackContext context)
