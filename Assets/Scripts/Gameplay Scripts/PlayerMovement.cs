@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour
    [SerializeField] public Vector2 Input; // think of this as a horziontal and vertical input method mushed together
    // Note that this type of way to get the x and y inputs for your player is good when using unity new input system as far as I know
    public Rigidbody2D  rb; 
+   public float weight; 
    float speed; 
    [SerializeField] float movespeed1; // normal movement speed
    [SerializeField] float movespeed2; // moving back movement speed
@@ -72,7 +73,8 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate()
     {
       Health_n_Meter();
-      
+      AniCheck();
+
       if(canRespond == true)
       {
       MovementFunction();
@@ -139,15 +141,28 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-  /*
+  
    public IEnumerator ForwardDash()
    {
-    private int numCount = 0;
+    int numCount = 0;
 
     
      yield return new WaitForSeconds(5);
   }
-   */ 
+  ////////////////////////////////////////////MOVEMENT ANIMATION CHECKING///////////////////////////////////////////////////////////////
+
+  public void AniCheck()
+  {
+        if(isFacingRight == true)
+        {
+            Animator.SetFloat("Movement", Input.x);
+        }
+        else
+        {
+            Animator.SetFloat("Movement", -Input.x);
+        }
+  }
+   
 
 /////////////////////////////////////////////// JUMP FUNCTION START ////////////////////////////////
   public void Jumping()
