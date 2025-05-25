@@ -1827,7 +1827,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 32767
   m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
   m_Color: {r: 0.745283, g: 0.18632075, b: 0.18632075, a: 1}
   m_FlipX: 0
@@ -1874,6 +1874,34 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4837662902944343764, guid: 35c87eb1276914a088221c71895c4830, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5091975848299001934, guid: 35c87eb1276914a088221c71895c4830, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5091975848299001934, guid: 35c87eb1276914a088221c71895c4830, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5417909245283432045, guid: 35c87eb1276914a088221c71895c4830, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.6438425
+      objectReference: {fileID: 0}
+    - target: {fileID: 5417909245283432045, guid: 35c87eb1276914a088221c71895c4830, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.3936906
+      objectReference: {fileID: 0}
+    - target: {fileID: 5417909245283432045, guid: 35c87eb1276914a088221c71895c4830, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.8292
+      objectReference: {fileID: 0}
+    - target: {fileID: 5417909245283432045, guid: 35c87eb1276914a088221c71895c4830, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.0331
+      objectReference: {fileID: 0}
     - target: {fileID: 5554056552317964522, guid: 35c87eb1276914a088221c71895c4830, type: 3}
       propertyPath: m_ActionEvents.Array.data[5].m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -1881,6 +1909,10 @@ PrefabInstance:
     - target: {fileID: 5554056552317964526, guid: 35c87eb1276914a088221c71895c4830, type: 3}
       propertyPath: m_RootOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5554056552317964526, guid: 35c87eb1276914a088221c71895c4830, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5554056552317964526, guid: 35c87eb1276914a088221c71895c4830, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1922,9 +1954,37 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5554056552317964527, guid: 35c87eb1276914a088221c71895c4830, type: 3}
+      propertyPath: m_FlipX
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5554056552317964527, guid: 35c87eb1276914a088221c71895c4830, type: 3}
+      propertyPath: m_Size.x
+      value: 2.608
+      objectReference: {fileID: 0}
+    - target: {fileID: 5554056552317964527, guid: 35c87eb1276914a088221c71895c4830, type: 3}
+      propertyPath: m_Size.y
+      value: 0.774
+      objectReference: {fileID: 0}
+    - target: {fileID: 5554056552317964527, guid: 35c87eb1276914a088221c71895c4830, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 3801622991306582801, guid: 88f883bb501b99f4c98c544708b93195, type: 3}
+    - target: {fileID: 5554056552317964527, guid: 35c87eb1276914a088221c71895c4830, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5554056552317964528, guid: 35c87eb1276914a088221c71895c4830, type: 3}
       propertyPath: m_Name
       value: WuKong
+      objectReference: {fileID: 0}
+    - target: {fileID: 6935099704288675206, guid: 35c87eb1276914a088221c71895c4830, type: 3}
+      propertyPath: KBackForce
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6935099704288675206, guid: 35c87eb1276914a088221c71895c4830, type: 3}
+      propertyPath: KBackDirect.x
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 35c87eb1276914a088221c71895c4830, type: 3}

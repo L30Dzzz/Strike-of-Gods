@@ -10,15 +10,18 @@ ScriptsOnlyBuild:
     - PlayerMovement
     - PlayerTemplate
     - SceneChanger
+    - TrailerTransition
     - hitProperties
+    Cinemachine.dll:
+    - Cinemachine.CinemachineBrain
+    - Cinemachine.CinemachinePipeline
+    - Cinemachine.CinemachineVirtualCamera
     Unity.2D.Animation.Editor.dll:
     - UnityEditor.U2D.Animation.BoneGizmo
     Unity.2D.IK.Editor.dll:
     - UnityEditor.U2D.IK.IKEditorManager
     Unity.2D.Tilemap.Editor.dll:
     - UnityEditor.Tilemaps.GridPaintingState
-    - UnityEditor.Tilemaps.GridPaletteBrushes
-    - UnityEditor.Tilemaps.GridPalettes
     - UnityEditor.Tilemaps.SceneViewGridManager
     - UnityEditor.Tilemaps.SceneViewOpenTilePaletteHelper
     - UnityEditor.Tilemaps.TileDragAndDropManager
@@ -43,12 +46,13 @@ ScriptsOnlyBuild:
     - TimelinePreferences
     - UnityEditor.Timeline.SequenceHierarchy
     - UnityEditor.Timeline.TimelineWindow
-    UnityEditor.Graphs.dll:
-    - UnityEditor.Graphs.AnimationBlendTree.Graph
-    - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.Graph
-    - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
-    - UnityEditor.Graphs.AnimatorControllerTool
+    Unity.Timeline.dll:
+    - UnityEngine.Timeline.ActivationPlayableAsset
+    - UnityEngine.Timeline.ActivationTrack
+    - UnityEngine.Timeline.AnimationTrack
+    - UnityEngine.Timeline.AudioTrack
+    - UnityEngine.Timeline.MarkerTrack
+    - UnityEngine.Timeline.TimelineAsset
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
     - UnityEditor.TestTools.TestRunner.TestListCacheData
@@ -91,45 +95,45 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1494}
+      Script: {instanceID: 1488}
     - Class: 114
-      Script: {instanceID: 1582}
+      Script: {instanceID: 1490}
     - Class: 114
-      Script: {instanceID: 1590}
+      Script: {instanceID: 1568}
     - Class: 114
-      Script: {instanceID: 1990}
+      Script: {instanceID: 1576}
     - Class: 114
-      Script: {instanceID: 2478}
+      Script: {instanceID: 1976}
     - Class: 114
-      Script: {instanceID: 2784}
+      Script: {instanceID: 2768}
     - Class: 114
-      Script: {instanceID: 2994}
+      Script: {instanceID: 2978}
     - Class: 114
-      Script: {instanceID: 3144}
+      Script: {instanceID: 3128}
     - Class: 114
-      Script: {instanceID: 3218}
+      Script: {instanceID: 3202}
     - Class: 114
-      Script: {instanceID: 3280}
+      Script: {instanceID: 3264}
     - Class: 114
-      Script: {instanceID: 3290}
+      Script: {instanceID: 3274}
     - Class: 114
-      Script: {instanceID: 3414}
+      Script: {instanceID: 3398}
     - Class: 114
-      Script: {instanceID: 3434}
+      Script: {instanceID: 3418}
     - Class: 114
-      Script: {instanceID: 3496}
+      Script: {instanceID: 3480}
     - Class: 114
-      Script: {instanceID: 3662}
+      Script: {instanceID: 3646}
     - Class: 114
-      Script: {instanceID: 3796}
+      Script: {instanceID: 3780}
     - Class: 114
-      Script: {instanceID: 3950}
+      Script: {instanceID: 3934}
     - Class: 114
-      Script: {instanceID: 4708}
+      Script: {instanceID: 4692}
     - Class: 114
-      Script: {instanceID: 4980}
+      Script: {instanceID: 4964}
     - Class: 114
-      Script: {instanceID: 6818}
+      Script: {instanceID: 6802}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -161,8 +165,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 48
       Script: {instanceID: 0}
-    - Class: 49
-      Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
     - Class: 82
@@ -172,35 +174,29 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1590}
+      Script: {instanceID: 1576}
     - Class: 114
-      Script: {instanceID: 1990}
+      Script: {instanceID: 1976}
     - Class: 114
-      Script: {instanceID: 2468}
+      Script: {instanceID: 2978}
     - Class: 114
-      Script: {instanceID: 2994}
+      Script: {instanceID: 3202}
     - Class: 114
-      Script: {instanceID: 3218}
+      Script: {instanceID: 3264}
     - Class: 114
-      Script: {instanceID: 3280}
+      Script: {instanceID: 3274}
     - Class: 114
-      Script: {instanceID: 3290}
+      Script: {instanceID: 3480}
     - Class: 114
-      Script: {instanceID: 3496}
+      Script: {instanceID: 3934}
     - Class: 114
-      Script: {instanceID: 3950}
+      Script: {instanceID: 3982}
     - Class: 114
-      Script: {instanceID: 3998}
+      Script: {instanceID: 4364}
     - Class: 114
-      Script: {instanceID: 4380}
+      Script: {instanceID: 4964}
     - Class: 114
-      Script: {instanceID: 4980}
-    - Class: 114
-      Script: {instanceID: 5454}
-    - Class: 114
-      Script: {instanceID: 5684}
-    - Class: 114
-      Script: {instanceID: 6162}
+      Script: {instanceID: 5438}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -251,49 +247,49 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1494}
+      Script: {instanceID: 1488}
     - Class: 114
-      Script: {instanceID: 1582}
+      Script: {instanceID: 1490}
     - Class: 114
-      Script: {instanceID: 1590}
+      Script: {instanceID: 1568}
     - Class: 114
-      Script: {instanceID: 1990}
+      Script: {instanceID: 1576}
     - Class: 114
-      Script: {instanceID: 2298}
+      Script: {instanceID: 1976}
     - Class: 114
-      Script: {instanceID: 2478}
+      Script: {instanceID: 2284}
     - Class: 114
-      Script: {instanceID: 2784}
+      Script: {instanceID: 2768}
     - Class: 114
-      Script: {instanceID: 2994}
+      Script: {instanceID: 2978}
     - Class: 114
-      Script: {instanceID: 3144}
+      Script: {instanceID: 3128}
     - Class: 114
-      Script: {instanceID: 3218}
+      Script: {instanceID: 3202}
     - Class: 114
-      Script: {instanceID: 3280}
+      Script: {instanceID: 3264}
     - Class: 114
-      Script: {instanceID: 3290}
+      Script: {instanceID: 3274}
     - Class: 114
-      Script: {instanceID: 3414}
+      Script: {instanceID: 3398}
     - Class: 114
-      Script: {instanceID: 3434}
+      Script: {instanceID: 3418}
     - Class: 114
-      Script: {instanceID: 3496}
+      Script: {instanceID: 3480}
     - Class: 114
-      Script: {instanceID: 3662}
+      Script: {instanceID: 3646}
     - Class: 114
-      Script: {instanceID: 3950}
+      Script: {instanceID: 3934}
     - Class: 114
-      Script: {instanceID: 4380}
+      Script: {instanceID: 4364}
     - Class: 114
-      Script: {instanceID: 4708}
+      Script: {instanceID: 4692}
     - Class: 114
-      Script: {instanceID: 4980}
+      Script: {instanceID: 4964}
     - Class: 114
-      Script: {instanceID: 5454}
+      Script: {instanceID: 5438}
     - Class: 114
-      Script: {instanceID: 6818}
+      Script: {instanceID: 6802}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -312,6 +308,77 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 224
       Script: {instanceID: 0}
+    Assets/Scenes/Trailer.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 49
+      Script: {instanceID: 0}
+    - Class: 74
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
+    - Class: 91
+      Script: {instanceID: 0}
+    - Class: 95
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 1976}
+    - Class: 114
+      Script: {instanceID: 2454}
+    - Class: 114
+      Script: {instanceID: 2822}
+    - Class: 114
+      Script: {instanceID: 2920}
+    - Class: 114
+      Script: {instanceID: 3088}
+    - Class: 114
+      Script: {instanceID: 3228}
+    - Class: 114
+      Script: {instanceID: 3232}
+    - Class: 114
+      Script: {instanceID: 3310}
+    - Class: 114
+      Script: {instanceID: 3828}
+    - Class: 114
+      Script: {instanceID: 4676}
+    - Class: 114
+      Script: {instanceID: 5004}
+    - Class: 114
+      Script: {instanceID: 5668}
+    - Class: 114
+      Script: {instanceID: 6146}
+    - Class: 114
+      Script: {instanceID: 6684}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    - Class: 212
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 320
+      Script: {instanceID: 0}
   scriptHashData:
   - hash:
       serializedVersion: 2
@@ -319,6 +386,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: Mask
+  - hash:
+      serializedVersion: 2
+      Hash: 699619b86d9359741a4f58540298c80b
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.UI
+    className: Text
   - hash:
       serializedVersion: 2
       Hash: 5ab533713adae59372fb3e10a585c186
@@ -501,12 +574,6 @@ ScriptsOnlyBuild:
     className: TMP_StyleSheet
   - hash:
       serializedVersion: 2
-      Hash: 699619b86d9359741a4f58540298c80b
-    assemblyName: UnityEngine.UI.dll
-    namespaceName: UnityEngine.UI
-    className: Text
-  - hash:
-      serializedVersion: 2
       Hash: cd0ecdca0166232906c6f2df9dddc3d3
     assemblyName: Unity.InputSystem.dll
     namespaceName: UnityEngine.InputSystem.Editor
@@ -567,7 +634,7 @@ ScriptsOnlyBuild:
     className: HealthBar
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: d91fcd9ac7bd86d3d771dd6171620fad
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: TrailerTransition
@@ -1365,7 +1432,8 @@ ScriptsOnlyBuild:
     className: hitProperties
   platform: 19
   scenePathNames:
+  - Assets/Scenes/Trailer.unity
   - Assets/Scenes/Main Menu.unity
   - Assets/Scenes/Oni Stage.unity
   - Assets/Scenes/2nd Testing Scene.unity
-  playerPath: C:/Users/ruth1/Downloads/Strike of Gods.exe
+  playerPath: C:/Users/ruth1/OneDrive/Documents/Strike of Gods Pre-Alpha.exe

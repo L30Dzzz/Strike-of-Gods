@@ -198,14 +198,16 @@ public class PlayerMovement : MonoBehaviour
 
   public void AniCheck()
   {
-        if(isFacingRight == true)
+        if(isFacingRight == true && isCrouching == false)
         {
             Animator.SetFloat("Movement", Input.x);
         }
-        else
+        else if(isFacingRight == true && isCrouching == false)
         {
             Animator.SetFloat("Movement", -Input.x);
         }
+
+        Animator.SetBool("IsCrouching", isCrouching);
   }
    
 
