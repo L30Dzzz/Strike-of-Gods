@@ -39,7 +39,7 @@ public class PlayerMovement : MonoBehaviour
    bool jumpSquat; 
    private CharacterController playerController; 
    public HealthBar hp; 
-   Animator Animator;
+   public Animator Animator;
 
    public PlayerTemplate playerTemplate; 
    public LayerMask yourLayer;
@@ -73,7 +73,7 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate()
     {
       Health_n_Meter();
-      AniCheck();
+     
 
       if(canRespond == true)
       {
@@ -81,6 +81,7 @@ public class PlayerMovement : MonoBehaviour
       Jumping();  
       characterFlipFunction();
       isBlocking();
+      AniCheck();
       }
       
     }
@@ -151,6 +152,8 @@ public class PlayerMovement : MonoBehaviour
     {
       canRespond = false; 
 
+      Animator.SetTrigger("Dash Forward");
+
       if(transform.localScale.x > 0)
       {
         rb.velocity = Vector2.right * Dash;
@@ -174,9 +177,11 @@ public class PlayerMovement : MonoBehaviour
     
     Dash = dashPow; 
     
-    if(canRespond == true)
+    if(canRespond == true )
     {
       canRespond = false; 
+
+      Animator.SetTrigger("Dash Backwards");
 
       if(transform.localScale.x > 0)
       {
@@ -226,7 +231,7 @@ public class PlayerMovement : MonoBehaviour
         }
       else if (jsFrame == 0) 
         {
-          //animation.SetTrigger("jump");
+          Animator.SetTrigger("JumpForward");
           rb.velocity = new Vector2(rb.velocity.x, regJump);
           jumpSquat = false; 
           jsFrame = jsFrameStart;

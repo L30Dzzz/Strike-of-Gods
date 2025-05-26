@@ -118,7 +118,7 @@ public class WuKongMoveSet : MonoBehaviour
       {
         if(isAttacking == false && Player.canRespond == true) 
         {
-          StartCoroutine(SingleHitAttack(StandLight, 4, 6));
+          StartCoroutine(SingleHitAttack(StandLight, 4, 6, "Standing Light Attack"));
         }
         Debug.Log("Standing Light attack had been pressed");
         
@@ -130,7 +130,7 @@ public class WuKongMoveSet : MonoBehaviour
       {
         if(isAttacking == false && isBlocking == false && Player.canRespond == true)
         {
-          StartCoroutine(SingleHitAttack(CrouchLight, 5, 5));
+          StartCoroutine(SingleHitAttack(CrouchLight, 8, 2, "Light Crouch Attack"));
         }
       
          Debug.Log("Crouching Light attack had been pressed");
@@ -197,14 +197,14 @@ public class WuKongMoveSet : MonoBehaviour
 
     public void Dash(InputAction.CallbackContext context)
     {
-      if(((Player.isFacingRight == true && (Player.Input.x == 0 || Player.Input.x > 0.2f)) || (Player.isFacingRight == false && (Player.Input.x == 0 || Player.Input.x < -0.2f))) && Player.canRespond == true && Player.isGrounded == true)
+      if(((Player.isFacingRight == true && (Player.Input.x == 0 || Player.Input.x > 0.2f)) || (Player.isFacingRight == false && (Player.Input.x == 0 || Player.Input.x < -0.2f))) && Player.canRespond == true && Player.isGrounded == true && Player.isCrouching == false)
       {
        Debug.Log("Forward dash");
        StartCoroutine(Player.ForwardDash(fDashPow));
 
 
       }
-      else if(((Player.isFacingRight == true && Player.Input.x < -0.2f) || (Player.isFacingRight == false && Player.Input.x > 0.2f)) && Player.canRespond == true && Player.isGrounded == true)
+      else if(((Player.isFacingRight == true && Player.Input.x < -0.2f) || (Player.isFacingRight == false && Player.Input.x > 0.2f)) && Player.canRespond == true && Player.isGrounded == true && Player.isCrouching == false)
       {
         Debug.Log("Backwards dash");
         StartCoroutine(Player.BackwardsDash(bDashPow));
@@ -228,6 +228,36 @@ public class WuKongMoveSet : MonoBehaviour
     {
        isAttacking = true; 
        
+      AStart = (AStart/60) * Time.timeScale;
+      AEnd = (AEnd/60) * Time.timeScale;
+
+       yield return new WaitForSeconds(AStart);     
+           hitbox.SetActive(true);   
+           Debug.Log("Active attack frame");
+           
+          
+       yield return new WaitForSeconds(AEnd);  
+            hitbox.SetActive(false);
+            
+            Debug.Log("Attack is not active");
+          
+         
+
+         isAttacking = false;
+         Player.canRespond = true;
+         
+         // going to replace this with a coroutine
+    }
+
+    ///This one is made so I can test out the animations without breaking this entire script
+    private IEnumerator SingleHitAttack( GameObject hitbox, float AStart, float AEnd, string aniName)
+    {
+       isAttacking = true; 
+
+       Animator Animation = Player.Animator;
+
+       Animation.SetTrigger(aniName);
+
       AStart = (AStart/60) * Time.timeScale;
       AEnd = (AEnd/60) * Time.timeScale;
 
