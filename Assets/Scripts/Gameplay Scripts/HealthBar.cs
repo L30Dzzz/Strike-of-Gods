@@ -124,6 +124,10 @@ public class HealthBar : MonoBehaviour
             
         p1HealthBar.rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, basehp);
         p2HealthBar.rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, basehp2);
+
+   
+        players[0].Animator.SetBool("is Hurt", false);
+        players[1].Animator.SetBool("is Hurt", false);
         
      }
 

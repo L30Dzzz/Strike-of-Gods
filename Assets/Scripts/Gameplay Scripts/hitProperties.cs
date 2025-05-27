@@ -54,7 +54,7 @@ public class hitProperties : MonoBehaviour
             {  
               // If the player is not blocking 
               
-              if(P2.basehp >= 0)
+              if(P2.basehp > 0)
               {
                 P2.basehp -= dmg;
                 Player.basehp += dmg;
@@ -69,6 +69,11 @@ public class hitProperties : MonoBehaviour
                 }
                 StartCoroutine(hitstun(stunTime, P2));
                 
+                P2.Animator.SetBool("is Hurt", true);
+              }
+              else
+              {
+                  P2.Animator.SetBool("is Hurt", true);
               }
             
              if(Player.Meter != 302 && P2.basehp >= 0)
@@ -101,7 +106,7 @@ public class hitProperties : MonoBehaviour
               }
 
 
-
+                //P2.Animator.SetTrigger("");
              }
              /*
               Debug.Log(Player.basehp);
@@ -123,6 +128,8 @@ public class hitProperties : MonoBehaviour
 
       p2.canRespond = true;
       Debug.Log("You can attack now");
+
+      p2.Animator.SetBool("is Hurt", false);
     }
     
 }
