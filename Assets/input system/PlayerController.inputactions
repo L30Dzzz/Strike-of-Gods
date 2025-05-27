@@ -229,7 +229,7 @@
                 {
                     "name": "",
                     "id": "a0d866ec-833e-4edc-98fd-1228770338dd",
-                    "path": "<Keyboard>/k",
+                    "path": "<Keyboard>/l",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard P1",
@@ -240,7 +240,7 @@
                 {
                     "name": "",
                     "id": "74b4bdf4-ad11-4e4e-9303-8a99a1ef7a41",
-                    "path": "<Gamepad>/buttonNorth",
+                    "path": "<Gamepad>/buttonEast",
                     "interactions": "",
                     "processors": "",
                     "groups": "Controller",
@@ -284,7 +284,7 @@
                 {
                     "name": "",
                     "id": "8577885d-88f8-423c-bead-9fa06d944f95",
-                    "path": "<Keyboard>/l",
+                    "path": "<Keyboard>/k",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard P1",
@@ -295,7 +295,7 @@
                 {
                     "name": "",
                     "id": "e034f098-a212-4213-b2d8-1a6e3437cd46",
-                    "path": "<Gamepad>/buttonEast",
+                    "path": "<Gamepad>/buttonNorth",
                     "interactions": "",
                     "processors": "",
                     "groups": "Controller",

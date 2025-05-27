@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour
    [SerializeField] public Vector2 Input; // think of this as a horziontal and vertical input method mushed together
    // Note that this type of way to get the x and y inputs for your player is good when using unity new input system as far as I know
    public Rigidbody2D  rb; 
+   public float weight; 
    float speed; 
    [SerializeField] float movespeed1; // normal movement speed
    [SerializeField] float movespeed2; // moving back movement speed
@@ -38,7 +39,7 @@ public class PlayerMovement : MonoBehaviour
    bool jumpSquat; 
    private CharacterController playerController; 
    public HealthBar hp; 
-   Animator Animator;
+   public Animator Animator;
 
    public PlayerTemplate playerTemplate; 
    public LayerMask yourLayer;
@@ -72,13 +73,15 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate()
     {
       Health_n_Meter();
-      
+     
+
       if(canRespond == true)
       {
       MovementFunction();
       Jumping();  
       characterFlipFunction();
       isBlocking();
+      AniCheck();
       }
       
     }
@@ -149,6 +152,8 @@ public class PlayerMovement : MonoBehaviour
     {
       canRespond = false; 
 
+      Animator.SetTrigger("Dash Forward");
+
       if(transform.localScale.x > 0)
       {
         rb.velocity = Vector2.right * Dash;
@@ -172,9 +177,11 @@ public class PlayerMovement : MonoBehaviour
     
     Dash = dashPow; 
     
-    if(canRespond == true)
+    if(canRespond == true )
     {
       canRespond = false; 
+
+      Animator.SetTrigger("Dash Backwards");
 
       if(transform.localScale.x > 0)
       {
@@ -196,14 +203,16 @@ public class PlayerMovement : MonoBehaviour
 
   public void AniCheck()
   {
-        if(isFacingRight == true)
+        if(isFacingRight == true && isCrouching == false)
         {
             Animator.SetFloat("Movement", Input.x);
         }
-        else
+        else if(isFacingRight == true && isCrouching == false)
         {
             Animator.SetFloat("Movement", -Input.x);
         }
+
+        Animator.SetBool("IsCrouching", isCrouching);
   }
    
 
@@ -222,7 +231,7 @@ public class PlayerMovement : MonoBehaviour
         }
       else if (jsFrame == 0) 
         {
-          //animation.SetTrigger("jump");
+          Animator.SetTrigger("JumpForward");
           rb.velocity = new Vector2(rb.velocity.x, regJump);
           jumpSquat = false; 
           jsFrame = jsFrameStart;
