@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FollowCamera : MonoBehaviour
 {
-    public GameObject[] players;
+    public PlayerMovement[] players;
     public Vector3 offset;
     public float smoothTime = .5f;
 
@@ -17,7 +17,6 @@ public class FollowCamera : MonoBehaviour
         {
             findPlayers();
         }
-        
 
         Vector3 centerPoint = GetCenterPoint();
         
@@ -43,7 +42,7 @@ public class FollowCamera : MonoBehaviour
 
     public void findPlayers()
     {
-       players = player.GetComponent<PlayerMovement>();
+       players = FindObjectsOfType<PlayerMovement>();
     }
 
     

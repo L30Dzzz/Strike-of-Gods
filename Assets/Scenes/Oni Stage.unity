@@ -810,6 +810,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 495233241}
   parallaxEffect: 0.5
+--- !u!4 &211975300 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5554056552317964526, guid: 35c87eb1276914a088221c71895c4830, type: 3}
+  m_PrefabInstance: {fileID: 1036929915}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &265507212
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -838,6 +843,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 495233241}
   parallaxEffect: 0
+--- !u!4 &385623779 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1846319266995829880, guid: f82b15c2347f5404793963e3781955fd, type: 3}
+  m_PrefabInstance: {fileID: 1133132503}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &395180222
 GameObject:
   m_ObjectHideFlags: 0
@@ -1144,7 +1154,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da1df610a22664f48a49c973d754d1e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  players: []
+  players:
+  - {fileID: 211975300}
+  - {fileID: 385623779}
   offset: {x: 0, y: 3, z: -8}
   smoothTime: 0
 --- !u!1001 &502318266
@@ -1846,21 +1858,24 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+<<<<<<< HEAD
     - target: {fileID: 5554056552317964522, guid: 35c87eb1276914a088221c71895c4830, type: 3}
       propertyPath: m_ActionEvents.Array.data[5].m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1525673519}
+=======
+>>>>>>> parent of 898ab433 (Merge branch 'red's-branch-' into Paradigm)
     - target: {fileID: 5554056552317964526, guid: 35c87eb1276914a088221c71895c4830, type: 3}
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5554056552317964526, guid: 35c87eb1276914a088221c71895c4830, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -11
+      value: -12.25765
       objectReference: {fileID: 0}
     - target: {fileID: 5554056552317964526, guid: 35c87eb1276914a088221c71895c4830, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.93
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5554056552317964526, guid: 35c87eb1276914a088221c71895c4830, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1921,7 +1936,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1846319266995829880, guid: f82b15c2347f5404793963e3781955fd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1
+      value: -2.5068486
       objectReference: {fileID: 0}
     - target: {fileID: 1846319266995829880, guid: f82b15c2347f5404793963e3781955fd, type: 3}
       propertyPath: m_LocalPosition.y
