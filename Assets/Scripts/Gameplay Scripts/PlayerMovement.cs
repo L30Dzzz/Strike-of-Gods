@@ -18,7 +18,7 @@ public class PlayerMovement : MonoBehaviour
    public float regJump; // How high the character will jump
    public int jsFrame; 
    public int jsFrameStart;
-   public int doubleJumps;
+   public float Dash;
    private int layerAsLayerMask;
    int airMovementFrames; 
    public float basehp = 0;
@@ -142,13 +142,58 @@ public class PlayerMovement : MonoBehaviour
     }
 
   
-   public IEnumerator ForwardDash()
+   public IEnumerator ForwardDash(float dashPow)
    {
-    int numCount = 0;
+    
+    Dash = dashPow; 
+    
+    if(canRespond == true)
+    {
+      canRespond = false; 
+
+      if(transform.localScale.x > 0)
+      {
+        rb.velocity = Vector2.right * Dash;
+      }
+      else if(transform.localScale.x < 0)
+      {
+        rb.velocity = -Vector2.right * Dash;
+      }
+
+      yield return new WaitForSeconds(1);
+
+      canRespond = true;
+    }
 
     
-     yield return new WaitForSeconds(5);
+     
   }
+
+  public IEnumerator BackwardsDash(float dashPow)
+   {
+    
+    Dash = dashPow; 
+    
+    if(canRespond == true)
+    {
+      canRespond = false; 
+
+      if(transform.localScale.x > 0)
+      {
+        rb.velocity = Vector2.left * Dash;
+      }
+      else if(transform.localScale.x < 0)
+      {
+        rb.velocity = -Vector2.left * Dash;
+      }
+
+      yield return new WaitForSeconds(0.5f);
+
+      canRespond = true;
+    }
+
+   }
+   
   ////////////////////////////////////////////MOVEMENT ANIMATION CHECKING///////////////////////////////////////////////////////////////
 
   public void AniCheck()
@@ -186,13 +231,13 @@ public class PlayerMovement : MonoBehaviour
           isGrounded = false; 
 
           ////////Forward jumping////////
-          if((isFacingRight == true && Input.x > 0.5) || (isFacingRight == false && Input.x < -0.5))
+          if((isFacingRight == true && Input.x > 0.5f) || (isFacingRight == false && Input.x < -0.5f))
           {
             if(transform.localScale.x > 0)
             {
               rb.AddForce(Vector2.right * (regJump/2), ForceMode2D.Impulse);
             }
-            else
+            else if(transform.localScale.x < 0)
             {
               rb.AddForce(-Vector2.right * (regJump/2), ForceMode2D.Impulse);
             }
@@ -206,7 +251,7 @@ public class PlayerMovement : MonoBehaviour
             {
               rb.AddForce(Vector2.right * (regJump/2), ForceMode2D.Impulse);
             }
-            else
+            else if(transform.localScale.x > 0)
             {
               rb.AddForce(-Vector2.right * (regJump/2), ForceMode2D.Impulse);
             }
