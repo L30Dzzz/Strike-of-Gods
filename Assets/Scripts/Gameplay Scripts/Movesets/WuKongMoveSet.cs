@@ -310,6 +310,7 @@ public class WuKongMoveSet : MonoBehaviour
       if(Player.basehp <= 0)
       {
         Player.canRespond = false; 
+        Player.Animator.SetBool("is Hurt", true);
       }
       else if(isAttacking == true)
       {

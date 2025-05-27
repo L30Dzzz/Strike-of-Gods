@@ -1914,6 +1914,10 @@ PrefabInstance:
       propertyPath: KBackDirect.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 3135046622182230342, guid: 35c87eb1276914a088221c71895c4830, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3135046622182230343, guid: 35c87eb1276914a088221c71895c4830, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.0068927
@@ -1940,7 +1944,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5091975848299001934, guid: 35c87eb1276914a088221c71895c4830, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5417909245283432045, guid: 35c87eb1276914a088221c71895c4830, type: 3}
       propertyPath: m_LocalScale.x
@@ -2025,7 +2029,7 @@ PrefabInstance:
     - target: {fileID: 5554056552317964527, guid: 35c87eb1276914a088221c71895c4830, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -3303286908486932881, guid: df73fb6ac4e7a3549a89b05aa47f4326, type: 3}
+      objectReference: {fileID: 3801622991306582801, guid: 88f883bb501b99f4c98c544708b93195, type: 3}
     - target: {fileID: 5554056552317964527, guid: 35c87eb1276914a088221c71895c4830, type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 1
@@ -2054,6 +2058,10 @@ PrefabInstance:
     - target: {fileID: 1846319266995829859, guid: f82b15c2347f5404793963e3781955fd, type: 3}
       propertyPath: m_Name
       value: Test player 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1846319266995829862, guid: f82b15c2347f5404793963e3781955fd, type: 3}
+      propertyPath: m_DefaultControlScheme
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 1846319266995829862, guid: f82b15c2347f5404793963e3781955fd, type: 3}
       propertyPath: m_ActionEvents.Array.data[5].m_PersistentCalls.m_Calls.Array.data[0].m_Target
