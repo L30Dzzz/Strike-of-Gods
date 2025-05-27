@@ -251,6 +251,22 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: SceneLoader
       objectReference: {fileID: 0}
+    - target: {fileID: 2233789036337054738, guid: 38caf26e250b24345a304b01b57f3b2e, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 4da9cda8ed2774b08a88e23a3c40736b, type: 2}
+    - target: {fileID: 2233789036337054738, guid: 38caf26e250b24345a304b01b57f3b2e, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3203349311025048788, guid: 38caf26e250b24345a304b01b57f3b2e, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 4da9cda8ed2774b08a88e23a3c40736b, type: 2}
+    - target: {fileID: 3203349311025048788, guid: 38caf26e250b24345a304b01b57f3b2e, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3578871366874075365, guid: 38caf26e250b24345a304b01b57f3b2e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -347,6 +363,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 4697803307740455747, guid: 38caf26e250b24345a304b01b57f3b2e, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 4da9cda8ed2774b08a88e23a3c40736b, type: 2}
+    - target: {fileID: 4697803307740455747, guid: 38caf26e250b24345a304b01b57f3b2e, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5276916648659440245, guid: 38caf26e250b24345a304b01b57f3b2e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -366,6 +390,14 @@ PrefabInstance:
     - target: {fileID: 5511803482998820454, guid: 38caf26e250b24345a304b01b57f3b2e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
       value: Oni Stage
+      objectReference: {fileID: 0}
+    - target: {fileID: 8948135440691346534, guid: 38caf26e250b24345a304b01b57f3b2e, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 4da9cda8ed2774b08a88e23a3c40736b, type: 2}
+    - target: {fileID: 8948135440691346534, guid: 38caf26e250b24345a304b01b57f3b2e, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38caf26e250b24345a304b01b57f3b2e, type: 3}
