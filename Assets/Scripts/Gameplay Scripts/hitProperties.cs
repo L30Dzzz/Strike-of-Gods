@@ -12,6 +12,10 @@ public class hitProperties : MonoBehaviour
    public int dmg = 0;
    public int meterGain = 0;
    public int stunTime = 0;
+   public int maxHitCount;
+
+   public int currentHitCount; 
+
 
    public Vector2 KBackDirect; //Knock Back Direction
    public float KBackForce;  // Knock Back Force
@@ -28,15 +32,45 @@ public class hitProperties : MonoBehaviour
         Player = GetComponentInParent<PlayerMovement>();
         yourLayer_ = Player.yourLayer;
         opsLayer_ = Player.opsLayer;
+        currentHitCount = maxHitCount;
+
     }
 
     // Update is called once per frame
-    void Update()
+    void OnEnable()
     {
-        
+        currentHitCount = maxHitCount;
     }
     
+    void OnTriggerStay2D(Collider2D other)
+    {
+      
+        if(currentHitCount > 0)
+        {
+        hitProp(other);  
+        Debug.Log("Stay works");
+        } 
+    }
+
     void OnTriggerEnter2D(Collider2D other)
+    {
+        if(currentHitCount > 0)
+        {
+        hitProp(other); 
+        Debug.Log("Enter Works"); 
+        } 
+    }
+
+    void OnTriggerExit2D(Collider2D other)
+    {
+        if(currentHitCount > 0)
+        {
+        hitProp(other);  
+        Debug.Log("Exit works");
+        } 
+    }
+
+    public void hitProp(Collider2D other)
     {
         layerAsLayerMask = (1 << other.gameObject.layer);
        
@@ -106,16 +140,16 @@ public class hitProperties : MonoBehaviour
               }
 
 
-                //P2.Animator.SetTrigger("");
+                P2.Animator.SetTrigger("is blocking");
              }
-             /*
-              Debug.Log(Player.basehp);
-              Debug.Log(P2.basehp);
-              */
+            
          }
 
 
        }
+
+        currentHitCount--;
+
     }
 
     public IEnumerator hitstun(int stun, PlayerMovement p2)
