@@ -1214,6 +1214,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 295107253397162097, guid: 8088100a43153a84188246929b3dda1b, type: 3}
+      propertyPath: KBackForce
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 295107253397162097, guid: 8088100a43153a84188246929b3dda1b, type: 3}
+      propertyPath: KBackDirect.x
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7390993351731573474, guid: 8088100a43153a84188246929b3dda1b, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -2379,6 +2387,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5554056552317964522, guid: 35c87eb1276914a088221c71895c4830, type: 3}
+      propertyPath: m_ActionEvents.Array.data[5].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1525673519}
     - target: {fileID: 5554056552317964526, guid: 35c87eb1276914a088221c71895c4830, type: 3}
       propertyPath: m_RootOrder
       value: 1

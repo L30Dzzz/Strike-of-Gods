@@ -41,7 +41,8 @@ public class hitProperties : MonoBehaviour
     {
         currentHitCount = maxHitCount;
     }
-    
+  
+
     void OnTriggerStay2D(Collider2D other)
     {
       
@@ -88,6 +89,8 @@ public class hitProperties : MonoBehaviour
             {  
               // If the player is not blocking 
               
+              
+
               if(P2.basehp > 0)
               {
                 P2.basehp -= dmg;

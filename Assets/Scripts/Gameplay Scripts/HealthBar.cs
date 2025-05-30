@@ -88,13 +88,15 @@ public class HealthBar : MonoBehaviour
      {
         int points = rounds--;
 
+        
+
         for(int x = 0; x < points; x++)
         {
             P1Points[x].SetActive(true);
             P2Points[x].SetActive(true);
         }
 
-        
+        rounds = points;
      }
 
      private void RestartRound()
@@ -161,7 +163,7 @@ public class HealthBar : MonoBehaviour
 
         WinScreen.SetActive(false);
         
-            if(Score < rounds)
+            if(Score < rounds--)
             {
             
             Pimage.color = winColor; 
