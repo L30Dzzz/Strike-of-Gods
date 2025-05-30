@@ -166,7 +166,7 @@ public class WuKongMoveSet : MonoBehaviour
       {
         if(isAttacking == false && isBlocking == false && Player.canRespond == true)
         {
-          StartCoroutine(SingleHitAttack(StandHeavy, 10, 14));
+          StartCoroutine(SingleHitAttack(StandHeavy, 30, 10, "Standing Heavy"));
         }
         Debug.Log("Standing Heavy attack had been pressed");
         
@@ -310,6 +310,7 @@ public class WuKongMoveSet : MonoBehaviour
       if(Player.basehp <= 0)
       {
         Player.canRespond = false; 
+        Player.Animator.SetBool("is Hurt", true);
       }
       else if(isAttacking == true)
       {

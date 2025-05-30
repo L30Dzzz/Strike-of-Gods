@@ -83,6 +83,8 @@ public class PlayerMovement : MonoBehaviour
       isBlocking();
       AniCheck();
       }
+
+      
       
     }
 
@@ -213,6 +215,8 @@ public class PlayerMovement : MonoBehaviour
         }
 
         Animator.SetBool("IsCrouching", isCrouching);
+
+        
   }
    
 
