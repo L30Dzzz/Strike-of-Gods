@@ -6,11 +6,18 @@ using UnityEngine.UI;
 public class VolumeSlider : MonoBehaviour
 {
     public AudioSource music;
-    public Slider vslider;
+    [SerializeField] Slider volumeSlider;
     // Start is called before the first frame update
     void Start()
     {
-        
+        if (PlayerPrefs.HasKey("musicVolume"))
+        {
+            PlayerPrefs.SetFloat("musicVolume", 1);
+        }
+        else
+        {
+            Load();
+        }
     }
 
     // Update is called once per frame
@@ -21,6 +28,17 @@ public class VolumeSlider : MonoBehaviour
 
     public void VolumeController()
     {
-        vslider.value = music.volume;
+        AudioListener.volume = volumeSlider.value;
+        Save();
+    }
+
+    public void Save()
+    {
+        PlayerPrefs.SetFloat("musicVolume", volumeSlider.value);
+    }
+
+    public void Load()
+    {
+        volumeSlider.value = PlayerPrefs.GetFloat("musicVolume");
     }
 }

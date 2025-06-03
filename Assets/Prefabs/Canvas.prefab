@@ -806,17 +806,28 @@ MonoBehaviour:
   currentTime: 0
   MaxTime: 100
   isRunning: 1
+  rounds: 0
   p1Health: {fileID: 3080566770990507503}
-  p2Health: {fileID: 3005289228728199398}
   p1Meter: {fileID: 7139041338333766580}
-  p2Meter: {fileID: 3915708691566341253}
-  KoScreen: {fileID: 4697803307420515297}
   P1WinScreen: {fileID: 4697803307760288140}
+  P1Icon: {fileID: 0}
+  P1PlayerIcon: {fileID: 0}
+  P1Score: 0
+  p1HealthBar: {fileID: 0}
+  p2Health: {fileID: 3005289228728199398}
+  p2Meter: {fileID: 3915708691566341253}
   P2WinScreen: {fileID: 4697803307813209909}
+  P2Icon: {fileID: 0}
+  P2PlayerIcon: {fileID: 0}
+  P2Score: 0
+  p2HealthBar: {fileID: 0}
+  pointIcon: {fileID: 0}
+  KoScreen: {fileID: 4697803307420515297}
   MenuScreen: {fileID: 6594740375398472662}
   P1Points: []
   P2Points: []
   timerText: {fileID: 4697803306177674354}
+  winColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &4697803307091533461
 GameObject:
   m_ObjectHideFlags: 0
