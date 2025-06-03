@@ -200,8 +200,9 @@ public class HealthBar : MonoBehaviour
         {
             
             yield return new WaitForSeconds(1);
-            timerText.text = currentTime.ToString();
             currentTime--;
+            timerText.text = currentTime.ToString();
+            
         }
 
         if(currentTime < 1)

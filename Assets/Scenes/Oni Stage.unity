@@ -365,7 +365,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4697803306994382844, guid: 38caf26e250b24345a304b01b57f3b2e, type: 3}
       propertyPath: MaxTime
-      value: 60
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 4697803307740455747, guid: 38caf26e250b24345a304b01b57f3b2e, type: 3}
       propertyPath: m_fontAsset

@@ -49,7 +49,7 @@ public class hitProperties : MonoBehaviour
         if(currentHitCount > 0)
         {
         hitProp(other);  
-        Debug.Log("Stay works");
+        
         } 
     }
 
@@ -58,7 +58,7 @@ public class hitProperties : MonoBehaviour
         if(currentHitCount > 0)
         {
         hitProp(other); 
-        Debug.Log("Enter Works"); 
+        
         } 
     }
 
@@ -67,7 +67,7 @@ public class hitProperties : MonoBehaviour
         if(currentHitCount > 0)
         {
         hitProp(other);  
-        Debug.Log("Exit works");
+        
         } 
     }
 
@@ -122,9 +122,8 @@ public class hitProperties : MonoBehaviour
               // Makes the player able to can their attack into another attack and cancel thier attacks into other attacks 
               P2.canAttack = false;
               Player.canCancel = true;
+              Player.canRespond = true;
 
-
-             
             }
              else // of the character is blocking
              {
