@@ -31,9 +31,11 @@ public class PlayerMovement : MonoBehaviour
    public bool CrouchBlock = false;
    public bool StandBlock = false; 
    public bool canRespond = true;
+   public bool canAttack = false;
+   public bool canCancel = false; 
 
   // Define the size and direction for the BoxCast
-   public Vector2 boxSize = new Vector2(200f, 6);
+   public Vector2 boxSize = new Vector2(0.5f, 6);
    
 
    bool jumpSquat; 
@@ -209,13 +211,14 @@ public class PlayerMovement : MonoBehaviour
         {
             Animator.SetFloat("Movement", Input.x);
         }
-        else if(isFacingRight == false && isCrouching == false)
+        else if(isFacingRight == true && isCrouching == false)
         {
             Animator.SetFloat("Movement", -Input.x);
         }
-  
-          Animator.SetBool("IsCrouching", isCrouching);
 
+        Animator.SetBool("IsCrouching", isCrouching);
+
+        
   }
    
 

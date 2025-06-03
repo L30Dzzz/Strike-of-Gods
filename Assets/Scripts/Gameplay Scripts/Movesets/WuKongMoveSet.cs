@@ -41,7 +41,8 @@ public class WuKongMoveSet : MonoBehaviour
     Animator animationRunner;
     
     public bool isBlocking = false;
-    bool isAttacking = false;
+    public bool isAttacking = false;
+    
 
     // Start is called before the first frame update
     void Awake()
@@ -53,7 +54,7 @@ public class WuKongMoveSet : MonoBehaviour
          StartCoroutine(FindHp());
         }
 
-        animationRunner = GetComponent<Animator>();
+        animationRunner = Player.GetComponent<Animator>();
          
     }
 
@@ -64,6 +65,15 @@ public class WuKongMoveSet : MonoBehaviour
       IconChanger();
 
     }
+
+  ////////////////////////////////////////// ATTACK CANCELING///////////////////////////////////////////////////////////////
+  public void AttackReset()
+  {
+    isAttacking = false;
+    Player.canAttack = false;
+    Player.canRespond = true;
+    animationRunner.SetTrigger("Attack Ended");
+  }
 
 //////////////////////////////////////// VISUALS /////////////////////////////////////////////
 
@@ -114,13 +124,24 @@ public class WuKongMoveSet : MonoBehaviour
     public void LightAttack(InputAction.CallbackContext context)
     {
       
-      if(context.started && Player.isCrouching == false && Player.isGrounded == true && Player.Input.x == 0)
+      if(context.started && Player.isCrouching == false && Player.isGrounded == true)
       {
         if(isAttacking == false && Player.canRespond == true) 
         {
+          if(Player.canCancel == true)
+          {
+            AttackReset();
+            StopCoroutine(SingleHitAttack(StandLight, 4, 6, "Standing Light Attack"));
+            animationRunner.SetTrigger("Attack Ended");
+            
+            
+            
+            Debug.Log("This works");
+          }
+          
           StartCoroutine(SingleHitAttack(StandLight, 4, 6, "Standing Light Attack"));
         }
-        Debug.Log("Standing Light attack had been pressed");
+        
         
 
         //play animation in here or put it in the singleHitAttack method
@@ -144,16 +165,6 @@ public class WuKongMoveSet : MonoBehaviour
         }
       
          Debug.Log("Jumping Light attack had been pressed");
-      }
-
-      if(context.started && ((Player.Input.x  < 0 &&  Player.isFacingRight == false) || (Player.Input.x > 0 &&  Player.isFacingRight == true)))
-      {
-        if(isAttacking == false && isBlocking == false && Player.canRespond == true)
-        {
-          StartCoroutine(SingleHitAttack(UniAnti, 9, 6));
-        }
-      
-         Debug.Log("6L has been pressed");
       }
 
     }
@@ -221,30 +232,39 @@ public class WuKongMoveSet : MonoBehaviour
 
 
 
-
 //////////////////////////////////////////////////// Frame data method ////////////////////////////////
 
     private IEnumerator SingleHitAttack( GameObject hitbox, float AStart, float AEnd)
     {
        isAttacking = true; 
+       Player.canAttack = true;
        
       AStart = (AStart/60) * Time.timeScale;
       AEnd = (AEnd/60) * Time.timeScale;
-
-       yield return new WaitForSeconds(AStart);     
+      
+      yield return new WaitForSeconds(AStart);   
+      
+      if(Player.canAttack == true)
+      {
+           
            hitbox.SetActive(true);   
-           Debug.Log("Active attack frame");
+           //Debug.Log("Active attack frame");
+      }
+      else
+      {
+        Debug.Log("HitAttack is done");
+      }
+      
            
           
        yield return new WaitForSeconds(AEnd);  
             hitbox.SetActive(false);
             
-            Debug.Log("Attack is not active");
+            //Debug.Log("Attack is not active");
           
          
 
-         isAttacking = false;
-         Player.canRespond = true;
+         AttackReset();
          
          // going to replace this with a coroutine
     }
@@ -253,6 +273,7 @@ public class WuKongMoveSet : MonoBehaviour
     private IEnumerator SingleHitAttack( GameObject hitbox, float AStart, float AEnd, string aniName)
     {
        isAttacking = true; 
+       Player.canAttack = true;
 
        Animator Animation = Player.Animator;
 
@@ -262,19 +283,30 @@ public class WuKongMoveSet : MonoBehaviour
       AEnd = (AEnd/60) * Time.timeScale;
 
        yield return new WaitForSeconds(AStart);     
-           hitbox.SetActive(true);   
-           Debug.Log("Active attack frame");
+           if(Player.canAttack == true)
+           {
+            hitbox.SetActive(true);   
+            //Debug.Log("Active attack frame");
+           }
+           else
+           {
+            Animation.SetTrigger("Attack Ended");
+           }
+           
            
           
        yield return new WaitForSeconds(AEnd);  
             hitbox.SetActive(false);
             
-            Debug.Log("Attack is not active");
+            //Debug.Log("Attack is not active");
           
          
+          /*
 
-         isAttacking = false;
-         Player.canRespond = true;
+          AttackReset();
+
+          */
+         
          
          // going to replace this with a coroutine
     }

@@ -49,7 +49,7 @@ public class hitProperties : MonoBehaviour
         if(currentHitCount > 0)
         {
         hitProp(other);  
-        Debug.Log("Stay works");
+        
         } 
     }
 
@@ -58,7 +58,7 @@ public class hitProperties : MonoBehaviour
         if(currentHitCount > 0)
         {
         hitProp(other); 
-        Debug.Log("Enter Works"); 
+        
         } 
     }
 
@@ -67,7 +67,7 @@ public class hitProperties : MonoBehaviour
         if(currentHitCount > 0)
         {
         hitProp(other);  
-        Debug.Log("Exit works");
+        
         } 
     }
 
@@ -104,6 +104,7 @@ public class hitProperties : MonoBehaviour
                 {
                   P2Rb.AddForce(KBackDirect * KBackForce,ForceMode2D.Impulse);
                 }
+                
                 StartCoroutine(hitstun(stunTime, P2));
                 
                 P2.Animator.SetBool("is Hurt", true);
@@ -117,7 +118,12 @@ public class hitProperties : MonoBehaviour
              {
                Player.Meter += meterGain;
              }
-             
+
+              // Makes the player able to can their attack into another attack and cancel thier attacks into other attacks 
+              P2.canAttack = false;
+              Player.canCancel = true;
+              Player.canRespond = true;
+
             }
              else // of the character is blocking
              {
