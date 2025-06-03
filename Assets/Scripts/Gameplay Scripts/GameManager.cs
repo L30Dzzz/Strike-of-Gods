@@ -9,6 +9,10 @@ public class GameManager : MonoBehaviour
 
     public bool gameIsPaused;
     public GameObject PauseSystem;
+    public GameObject music; 
+
+    private AudioSource musicBox; 
+
     HealthBar hp; 
    // public TextMeshProGUI roundEndText;
 
@@ -16,6 +20,7 @@ public class GameManager : MonoBehaviour
     void Awake()
     {
         hp = GameObject.Find("Canvas").GetComponent<HealthBar>();
+        musicBox = music.GetComponent<AudioSource>();
     }
 
      void Update()
@@ -44,11 +49,13 @@ public class GameManager : MonoBehaviour
         {
             Time.timeScale = 0f;
             PauseSystem.gameObject.SetActive(true);
+            musicBox.Pause();
         }
         else 
         {
             Time.timeScale = 1;
             PauseSystem.gameObject.SetActive(false);
+            musicBox.UnPause();
         }
     }
 

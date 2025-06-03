@@ -17,7 +17,6 @@ public class FollowCamera : MonoBehaviour
         {
             findPlayers();
         }
-        
 
         Vector3 centerPoint = GetCenterPoint();
         
