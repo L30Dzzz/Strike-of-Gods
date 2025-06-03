@@ -38,6 +38,8 @@ public class HealthBar : MonoBehaviour
     public GameObject[] P1Points;
     public GameObject[] P2Points; 
 
+    public GameObject[] countDown;
+
     public TextMeshProUGUI timerText;
 
     public Color winColor; 

@@ -211,7 +211,7 @@ public class PlayerMovement : MonoBehaviour
         {
             Animator.SetFloat("Movement", Input.x);
         }
-        else if(isFacingRight == true && isCrouching == false)
+        else if(isFacingRight == false && isCrouching == false)
         {
             Animator.SetFloat("Movement", -Input.x);
         }
