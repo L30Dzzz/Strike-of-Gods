@@ -24,9 +24,9 @@ public class DummyMoveset : MonoBehaviour
     public GameObject JumpLight; 
     public GameObject UniAnti;
     
-   // public GameObject StandMedium; 
-   // public GameObject CrouchMedium; 
-   // public GameObject JumpMedium; 
+    public GameObject StandMedium; 
+    public GameObject CrouchMedium; 
+    public GameObject JumpMedium; 
 
     public GameObject StandHeavy; 
     public GameObject CrouchHeavy; 

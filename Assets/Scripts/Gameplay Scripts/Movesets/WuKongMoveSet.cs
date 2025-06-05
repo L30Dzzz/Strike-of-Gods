@@ -42,8 +42,6 @@ public class WuKongMoveSet : MonoBehaviour
     
     public bool isBlocking = false;
     public bool isAttacking = false;
-
-
     
 
     // Start is called before the first frame update
@@ -71,11 +69,10 @@ public class WuKongMoveSet : MonoBehaviour
   ////////////////////////////////////////// ATTACK CANCELING///////////////////////////////////////////////////////////////
   public void AttackReset()
   {
-    animationRunner.SetTrigger("Attack Ended");
     isAttacking = false;
     Player.canAttack = false;
     Player.canRespond = true;
-    
+    animationRunner.SetTrigger("Attack Ended");
   }
 
 //////////////////////////////////////// VISUALS /////////////////////////////////////////////
@@ -133,15 +130,16 @@ public class WuKongMoveSet : MonoBehaviour
         {
           if(Player.canCancel == true)
           {
-            
-            StopCoroutine(SingleHitAttack(StandLight, 4, 6, "Standing Light Attack"));
             AttackReset();
+            StopCoroutine(SingleHitAttack(StandLight, 4, 6, "Standing Light Attack"));
+            animationRunner.SetTrigger("Attack Ended");
+            
+            
             
             Debug.Log("This works");
           }
           
-        StartCoroutine(SingleHitAttack(StandLight, 4, 6, "Standing Light Attack"));
-
+          StartCoroutine(SingleHitAttack(StandLight, 4, 6, "Standing Light Attack"));
         }
         
         
@@ -249,7 +247,7 @@ public class WuKongMoveSet : MonoBehaviour
       if(Player.canAttack == true)
       {
            
-           hitbox.SetActive(true); 
+           hitbox.SetActive(true);   
            //Debug.Log("Active attack frame");
       }
       else
@@ -299,7 +297,6 @@ public class WuKongMoveSet : MonoBehaviour
           
        yield return new WaitForSeconds(AEnd);  
             hitbox.SetActive(false);
-           
             
             //Debug.Log("Attack is not active");
           
@@ -333,7 +330,7 @@ public class WuKongMoveSet : MonoBehaviour
 
       /////////////////////////////////// TIMER CHECK /////////////////////////////////////////////
 
-      Canvas = GameObject.Find("Canvas").GetComponent<HealthBar>();
+      Canvas = GameObject.FindObjectOfType<HealthBar>();
 
       if(Canvas.currentTime < 1)
       {
@@ -351,7 +348,7 @@ public class WuKongMoveSet : MonoBehaviour
       {
         Player.canRespond = false; 
       }
-
+      
       if(Canvas.currentTime == Canvas.MaxTime)
       {
         Player.canRespond = true;

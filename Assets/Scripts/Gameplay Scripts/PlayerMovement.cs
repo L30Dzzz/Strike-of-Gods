@@ -211,7 +211,7 @@ public class PlayerMovement : MonoBehaviour
         {
             Animator.SetFloat("Movement", Input.x);
         }
-        else if(isFacingRight == false && isCrouching == false)
+        else if(isFacingRight == true && isCrouching == false)
         {
             Animator.SetFloat("Movement", -Input.x);
         }
@@ -291,7 +291,7 @@ public class PlayerMovement : MonoBehaviour
 
   public void GetHealt_N_Meter()
   {
-      hp = GameObject.Find("Canvas").GetComponent<HealthBar>();
+      hp = GameObject.FindObjectOfType<HealthBar>();
 
       if(hp != null)
       {
