@@ -291,7 +291,7 @@ public class PlayerMovement : MonoBehaviour
 
   public void GetHealt_N_Meter()
   {
-      hp = GameObject.Find("Canvas").GetComponent<HealthBar>();
+      hp = GameObject.FindObjectOfType<HealthBar>();
 
       if(hp != null)
       {

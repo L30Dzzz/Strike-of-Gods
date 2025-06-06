@@ -301,11 +301,11 @@ public class WuKongMoveSet : MonoBehaviour
             //Debug.Log("Attack is not active");
           
          
-          /*
+          
 
           AttackReset();
 
-          */
+          
          
          
          // going to replace this with a coroutine
@@ -330,7 +330,7 @@ public class WuKongMoveSet : MonoBehaviour
 
       /////////////////////////////////// TIMER CHECK /////////////////////////////////////////////
 
-      Canvas = GameObject.Find("Canvas").GetComponent<HealthBar>();
+      Canvas = GameObject.FindObjectOfType<HealthBar>();
 
       if(Canvas.currentTime < 1)
       {

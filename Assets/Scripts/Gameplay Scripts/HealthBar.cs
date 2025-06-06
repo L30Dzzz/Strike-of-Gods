@@ -13,7 +13,10 @@ public class HealthBar : MonoBehaviour
     public int MaxTime;
 
     public bool isRunning = true; //I will turn this into a bool later
-    public int rounds; 
+    public int rounds;
+    private int Points_;
+    private int currentRound = 1;  
+    public GameObject[] RoundCalls;
 
     public GameObject p1Health;
     public GameObject p1Meter; 
@@ -47,10 +50,15 @@ public class HealthBar : MonoBehaviour
     void Awake()
     {   
         //sets the time to the max time and start timer loop 
+        /*
         currentTime = MaxTime;
         timerText.text = MaxTime.ToString();
         StartCoroutine(gameTimer());
+        */
+        
         getPoints();
+        StartCoroutine(startRound());
+        
         
         p1HealthBar = p1Health.GetComponent<Image>();
         p2HealthBar = p2Health.GetComponent<Image>();
@@ -96,7 +104,7 @@ public class HealthBar : MonoBehaviour
             P2Points[x].SetActive(true);
         }
 
-        rounds = points;
+        Points_ = points;
      }
 
      private void RestartRound()
@@ -135,10 +143,52 @@ public class HealthBar : MonoBehaviour
 
      private IEnumerator startRound() // add 2 GameObject coroutines in here
      {
+        string RoundCall = "Round " + currentRound;
+        
+        TextMeshProUGUI thisRound; 
+        ///wait for a bit
+        yield return new WaitForSeconds(1);
+
+        if(currentRound != (rounds - 1))
+        {
+            RoundCalls[0].SetActive(true);
+
+            thisRound = RoundCalls[0].GetComponent<TextMeshProUGUI>();
+            thisRound.text = RoundCall;
+        }
+        else if(currentRound == (rounds - 1))
+        {
+            RoundCalls[2].SetActive(true);
+
+            thisRound = RoundCalls[2].GetComponent<TextMeshProUGUI>();
+            thisRound.text = "Final Round";
+        }
+        
+        
+        
         currentTime = MaxTime;
         timerText.text = currentTime.ToString();
-        yield return new WaitForSeconds(2);
+        
+        ///wait for a bit
+        yield return new WaitForSeconds(1);
+
+        RoundCalls[0].SetActive(false);
+        RoundCalls[2].SetActive(false); 
+
+        ///wait for a bit
+        yield return new WaitForSeconds(1);
+
+        RoundCalls[1].SetActive(true);
+
+        thisRound = RoundCalls[1].GetComponent<TextMeshProUGUI>();
+        thisRound.text = "STRIKE!!";
+
+        ///wait for a bit
+        yield return new WaitForSeconds(0.5f);
+
+        RoundCalls[1].SetActive(false); 
         StartCoroutine(gameTimer());
+        
         isRunning = true;
      }
 
@@ -163,7 +213,7 @@ public class HealthBar : MonoBehaviour
 
         WinScreen.SetActive(false);
         
-            if(Score < rounds--)
+            if(Score < Points_--)
             {
             
             Pimage.color = winColor; 
@@ -189,7 +239,8 @@ public class HealthBar : MonoBehaviour
                 Pimage.color = winColor; 
                 Menu.SetActive(true);
             }
-            
+
+            currentRound++;
      }
 
     }

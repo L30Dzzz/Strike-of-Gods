@@ -1206,6 +1206,7 @@ MonoBehaviour:
   fDashPow: 20
   bDashPow: 10
   isBlocking: 0
+  isAttacking: 0
 --- !u!114 &6651083697737209719
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1235,6 +1236,8 @@ MonoBehaviour:
   CrouchBlock: 0
   StandBlock: 0
   canRespond: 1
+  canAttack: 0
+  canCancel: 0
   boxSize: {x: 0.5, y: 20}
   hp: {fileID: 0}
   Animator: {fileID: 0}
