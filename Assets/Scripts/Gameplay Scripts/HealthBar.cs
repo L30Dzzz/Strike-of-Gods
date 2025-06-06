@@ -88,26 +88,48 @@ public class HealthBar : MonoBehaviour
      {
         int points = rounds--;
 
+        
+
         for(int x = 0; x < points; x++)
         {
             P1Points[x].SetActive(true);
             P2Points[x].SetActive(true);
         }
 
-        
+        rounds = points;
      }
 
      private void RestartRound()
      {
         basehp = 689;
         basehp2 = 689;
+
+        PlayerMovement[] players = FindObjectsOfType<PlayerMovement>();
+        if(players[0].yourLayer.value == 64)
+        {
+            players[0].transform.position = new Vector3(-11,1,0);
+            players[1].transform.position = new Vector3(-1,1,0);
+            
+            players[0].isFacingRight = true;
+            players[1].isFacingRight = false;
+        }
+        else
+        {
+            players[0].transform.position = new Vector3(-1,1,0);
+            players[1].transform.position = new Vector3(-11,1,0);
+
+            players[0].isFacingRight = false;
+            players[1].isFacingRight = true;
+        }
+        
+
             
         p1HealthBar.rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, basehp);
         p2HealthBar.rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, basehp2);
-        /*
-        Debug.Log(basehp);
-        Debug.Log(basehp2);
-        */
+
+   
+        players[0].Animator.SetBool("is Hurt", false);
+        players[1].Animator.SetBool("is Hurt", false);
         
      }
 
@@ -141,7 +163,7 @@ public class HealthBar : MonoBehaviour
 
         WinScreen.SetActive(false);
         
-            if(Score < rounds)
+            if(Score < rounds--)
             {
             
             Pimage.color = winColor; 
@@ -168,7 +190,7 @@ public class HealthBar : MonoBehaviour
                 Menu.SetActive(true);
             }
             
-       }
+     }
 
     }
 
@@ -178,8 +200,9 @@ public class HealthBar : MonoBehaviour
         {
             
             yield return new WaitForSeconds(1);
-            timerText.text = currentTime.ToString();
             currentTime--;
+            timerText.text = currentTime.ToString();
+            
         }
 
         if(currentTime < 1)
@@ -187,14 +210,17 @@ public class HealthBar : MonoBehaviour
             if(basehp > basehp2) // if player one wins 
             {
                 StartCoroutine(gameCondition(KoScreen, P1WinScreen, MenuScreen, P1Points, P1Score));
+                isRunning = false;
                 Debug.Log("Player one wins ");
             }
             else if(basehp2 > basehp) // if player 2 wins 
             {
                 StartCoroutine(gameCondition(KoScreen, P2WinScreen, MenuScreen, P2Points, P2Score));
+                isRunning = false;
                 Debug.Log("Player 2 wins");
             }
 
+            StopCoroutine(gameTimer());
             Debug.Log("Times up");
 
         }

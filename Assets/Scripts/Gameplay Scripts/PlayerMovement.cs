@@ -31,6 +31,8 @@ public class PlayerMovement : MonoBehaviour
    public bool CrouchBlock = false;
    public bool StandBlock = false; 
    public bool canRespond = true;
+   public bool canAttack = false;
+   public bool canCancel = false; 
 
   // Define the size and direction for the BoxCast
    public Vector2 boxSize = new Vector2(0.5f, 6);
@@ -83,6 +85,8 @@ public class PlayerMovement : MonoBehaviour
       isBlocking();
       AniCheck();
       }
+
+      
       
     }
 
@@ -213,6 +217,8 @@ public class PlayerMovement : MonoBehaviour
         }
 
         Animator.SetBool("IsCrouching", isCrouching);
+
+        
   }
    
 

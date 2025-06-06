@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 public class SceneChanger : MonoBehaviour
 {
 
-   public GameManager gameController; 
+    GameManager gameController; 
     
     // Start is called before the first frame update
     void Start()
