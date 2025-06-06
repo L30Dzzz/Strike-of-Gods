@@ -14,7 +14,6 @@ public class HealthBar : MonoBehaviour
 
     public bool isRunning = true; //I will turn this into a bool later
     public int rounds; 
-    private int Point_;
 
     public GameObject p1Health;
     public GameObject p1Meter; 
@@ -97,7 +96,7 @@ public class HealthBar : MonoBehaviour
             P2Points[x].SetActive(true);
         }
 
-        Point_ = points;
+        rounds = points;
      }
 
      private void RestartRound()
@@ -164,7 +163,7 @@ public class HealthBar : MonoBehaviour
 
         WinScreen.SetActive(false);
         
-            if(Score < Point_--)
+            if(Score < rounds--)
             {
             
             Pimage.color = winColor; 
