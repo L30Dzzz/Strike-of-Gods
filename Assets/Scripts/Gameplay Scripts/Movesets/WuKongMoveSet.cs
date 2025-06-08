@@ -161,7 +161,7 @@ public class WuKongMoveSet : MonoBehaviour
       {
         if(isAttacking == false && isBlocking == false && Player.canRespond == true)
         {
-          StartCoroutine(SingleHitAttack(JumpLight, 6, 15));
+          StartCoroutine(SingleHitAttack(JumpLight, 6, 15, "Jump Light"));
         }
       
          Debug.Log("Jumping Light attack had been pressed");
@@ -189,7 +189,7 @@ public class WuKongMoveSet : MonoBehaviour
       {
         if(isAttacking == false && isBlocking == false && Player.canRespond == true)
         {
-          StartCoroutine(SingleHitAttack(CrouchHeavy, 9, 14));
+          StartCoroutine(SingleHitAttack(CrouchHeavy, 9, 14, "Crouching Heavy"));
         }
       
          Debug.Log("Crouching Heavy attack had been pressed");
@@ -199,7 +199,7 @@ public class WuKongMoveSet : MonoBehaviour
       {
         if(isAttacking == false && isBlocking == false && Player.canRespond == true)
         {
-          StartCoroutine(SingleHitAttack(Jumpheavy, 12, 19));
+          StartCoroutine(SingleHitAttack(Jumpheavy, 12, 19, "Jump Heavy"));
         }
       
          Debug.Log("Jumping Heavy attack had been pressed");

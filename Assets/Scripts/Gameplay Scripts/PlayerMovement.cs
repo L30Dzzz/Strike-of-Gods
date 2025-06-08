@@ -218,6 +218,7 @@ public class PlayerMovement : MonoBehaviour
 
         Animator.SetBool("IsCrouching", isCrouching);
 
+        Animator.SetBool("is Grounded", isGrounded);
         
   }
    
