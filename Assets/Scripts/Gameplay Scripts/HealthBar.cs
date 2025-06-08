@@ -15,7 +15,7 @@ public class HealthBar : MonoBehaviour
     public bool isRunning = true; //I will turn this into a bool later
     public int rounds;
     private int Points_;
-    private int currentRound = 1;  
+    public int currentRound = 1;  
     public GameObject[] RoundCalls;
 
     public GameObject p1Health;
@@ -231,6 +231,8 @@ public class HealthBar : MonoBehaviour
 
                 RestartRound();
 
+                currentRound++;
+
                 StartCoroutine(startRound());
             }
             else
@@ -240,7 +242,7 @@ public class HealthBar : MonoBehaviour
                 Menu.SetActive(true);
             }
 
-            currentRound++;
+            
      }
 
     }
