@@ -1,0 +1,4 @@
+# Starting compiling Unity.InputSystem.RebindingUI.dll
+/Applications/2020.3.27f1/Unity.app/Contents/Tools/RoslynScripts/unity_csc.sh /noconfig @Temp/UnityTempFile-acb0541e4f3f34621ba1cb797a28f849
+# Starting compiling Assembly-CSharp.dll
+/Applications/2020.3.27f1/Unity.app/Contents/Tools/RoslynScripts/unity_csc.sh /noconfig @Temp/UnityTempFile-4dcd58f9891b9442c99caa4a1d7638f4
