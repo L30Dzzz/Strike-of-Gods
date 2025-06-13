@@ -189,7 +189,7 @@ public class WuKongMoveSet : MonoBehaviour
       {
         if(isAttacking == false && isBlocking == false && Player.canRespond == true)
         {
-          StartCoroutine(SingleHitAttack(CrouchHeavy, 9, 14, "Crouching Heavy"));
+          StartCoroutine(SingleHitAttack(CrouchHeavy, 30, 5, "Crouching Heavy"));
         }
       
          Debug.Log("Crouching Heavy attack had been pressed");
