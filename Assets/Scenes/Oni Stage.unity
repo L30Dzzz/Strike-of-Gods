@@ -1318,6 +1318,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1543595893415287741, guid: 6bfeb2ddcfb124d8ab375ed044c00f47, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6651083697737209710, guid: 6bfeb2ddcfb124d8ab375ed044c00f47, type: 3}
       propertyPath: m_Name
       value: WuKongP2
@@ -1370,6 +1374,22 @@ PrefabInstance:
       propertyPath: m_ActionEvents.Array.data[5].m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1525673519}
+    - target: {fileID: 7493666830446676575, guid: 6bfeb2ddcfb124d8ab375ed044c00f47, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7493666830446676575, guid: 6bfeb2ddcfb124d8ab375ed044c00f47, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7493666830446676575, guid: 6bfeb2ddcfb124d8ab375ed044c00f47, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7493666830446676575, guid: 6bfeb2ddcfb124d8ab375ed044c00f47, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6bfeb2ddcfb124d8ab375ed044c00f47, type: 3}
 --- !u!1 &600999900
@@ -2085,13 +2105,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1121527850853544437, guid: 35c87eb1276914a088221c71895c4830, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.97
-      objectReference: {fileID: 0}
-    - target: {fileID: 5417909245283432045, guid: 35c87eb1276914a088221c71895c4830, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.97
+    - target: {fileID: 303263082863811619, guid: 35c87eb1276914a088221c71895c4830, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5554056552317964522, guid: 35c87eb1276914a088221c71895c4830, type: 3}
       propertyPath: m_ActionEvents.Array.data[5].m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -2141,13 +2157,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5554056552317964527, guid: 35c87eb1276914a088221c71895c4830, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: -7051433041681389926, guid: fa8de6ebb5fea044b9328d0d9eb296a7, type: 3}
     - target: {fileID: 5554056552317964528, guid: 35c87eb1276914a088221c71895c4830, type: 3}
       propertyPath: m_Name
       value: WuKongP1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8547909216767413697, guid: 35c87eb1276914a088221c71895c4830, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8547909216767413697, guid: 35c87eb1276914a088221c71895c4830, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8547909216767413697, guid: 35c87eb1276914a088221c71895c4830, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8547909216767413697, guid: 35c87eb1276914a088221c71895c4830, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 35c87eb1276914a088221c71895c4830, type: 3}
